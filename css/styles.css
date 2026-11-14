@@ -686,7 +686,44 @@ footer.site strong { color: var(--ink-2); }
 }
 
 /* —— Ownership chain diagrams —— */
-#ownership { scroll-margin-top: 4rem; }
+#ownership { position: relative; scroll-margin-top: 4rem; }
+#ownership > h2 { padding-right: 2.4rem; }
+.own-info {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.6rem;
+  z-index: 2;
+  box-sizing: border-box;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--navy-3);
+  color: var(--navy);
+  background: var(--sheet);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 650;
+  font-size: 0.95rem;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.own-info:hover {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+.own-info:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -776,6 +813,30 @@ footer.site strong { color: var(--ink-2); }
   line-height: 1.25;
   margin: 0;
 }
+.own-box__pct {
+  margin: 0.28rem 0 0;
+  font-family: var(--mono);
+  font-size: 0.92rem;
+  font-weight: 650;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.3;
+}
+.own-box__value {
+  margin: 0.1rem 0 0;
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  font-weight: 550;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.3;
+}
+.own-box__value--nd {
+  font-size: 0.9rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--muted);
+}
 .own-box__meta {
   margin: 0.28rem 0 0;
   font-size: 0.82rem;
@@ -811,6 +872,9 @@ footer.site strong { color: var(--ink-2); }
 }
 .own-box--debtor .own-box__role { color: var(--gold-2); }
 .own-box--debtor .own-box__name { color: #fbf8f1; }
+.own-box--debtor .own-box__pct { color: var(--gold-2); }
+.own-box--debtor .own-box__value { color: #fbf8f1; }
+.own-box--debtor .own-box__value--nd { color: #c9c3b4; }
 .own-box--debtor .own-box__meta,
 .own-box--debtor .own-box__cite { color: #c9c3b4; }
 .own-box--debtor .own-flag {
@@ -1088,7 +1152,50 @@ footer.site strong { color: var(--ink-2); }
   .own-child { max-width: 100%; }
 }
 
+.own-sources {
+  margin: 1.15rem 0 0;
+  border-top: 1px solid var(--rule);
+  padding-top: 0.7rem;
+  font-size: 0.86rem;
+  color: var(--ink-2);
+  scroll-margin-top: 4.25rem;
+}
+.own-sources > summary {
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--gold);
+  padding: 0.15rem 0;
+}
+.own-sources > summary:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+.own-sources-body { margin-top: 0.65rem; }
+.own-sources h3 {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin: 0.85rem 0 0.3rem;
+}
+.own-sources-body > h3:first-child { margin-top: 0.15rem; }
+.own-sources ul {
+  margin: 0.15rem 0 0.35rem;
+  padding-left: 1.2rem;
+}
+.own-sources li { margin: 0.35rem 0; line-height: 1.45; }
+.own-sources a { overflow-wrap: anywhere; }
+
 @media print {
   #ownership { break-inside: avoid; }
   .own-box { break-inside: avoid; }
+  .own-sources { break-inside: avoid; }
+  .own-info { display: none; }
 }
+

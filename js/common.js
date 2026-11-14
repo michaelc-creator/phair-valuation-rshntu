@@ -188,10 +188,24 @@
     },
   };
 
+  function bindOwnershipSources() {
+    document.querySelectorAll("a.own-info").forEach(function (link) {
+      link.addEventListener("click", function () {
+        var href = link.getAttribute("href") || "";
+        var id = href.charAt(0) === "#" ? href.slice(1) : "";
+        var panel = id ? document.getElementById(id) : null;
+        if (panel && panel.tagName === "DETAILS") {
+          panel.open = true;
+        }
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     restoreChecks();
     bindChecks();
     bindFilters();
+    bindOwnershipSources();
     updateProgress();
   });
 })();
