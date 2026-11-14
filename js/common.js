@@ -2,19 +2,19 @@
   "use strict";
 
   var STORAGE_KEY = "phair-dash-v1";
-  var RATE = 125;
 
   function load() {
     try {
       var raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) return { done: {}, missing: {} };
+      if (!raw) return { done: {}, missing: {}, evidence: {} };
       var parsed = JSON.parse(raw);
       return {
         done: parsed.done && typeof parsed.done === "object" ? parsed.done : {},
         missing: parsed.missing && typeof parsed.missing === "object" ? parsed.missing : {},
+        evidence: parsed.evidence && typeof parsed.evidence === "object" ? parsed.evidence : {},
       };
     } catch (e) {
-      return { done: {}, missing: {} };
+      return { done: {}, missing: {}, evidence: {} };
     }
   }
 
@@ -25,11 +25,8 @@
   }
 
   var state = load();
+  if (!state.evidence) state.evidence = {};
 
-  function money(v) {
-    var n = Math.round(Number(v) || 0);
-    return "$" + n.toLocaleString("en-US");
-  }
   function hrs(v) {
     return Number(v).toFixed(1);
   }
@@ -46,6 +43,9 @@
     });
     document.querySelectorAll("input[data-missing]").forEach(function (el) {
       setChecked(el, !!state.missing[el.getAttribute("data-missing")]);
+    });
+    document.querySelectorAll("input[data-evidence]").forEach(function (el) {
+      setChecked(el, !!state.evidence[el.getAttribute("data-evidence")]);
     });
   }
 
@@ -65,6 +65,16 @@
         var id = el.getAttribute("data-missing");
         if (el.checked) state.missing[id] = true;
         else delete state.missing[id];
+        save(state);
+        setChecked(el, el.checked);
+      });
+    });
+    document.querySelectorAll("input[data-evidence]").forEach(function (el) {
+      el.addEventListener("change", function () {
+        var id = el.getAttribute("data-evidence");
+        if (!state.evidence) state.evidence = {};
+        if (el.checked) state.evidence[id] = true;
+        else delete state.evidence[id];
         save(state);
         setChecked(el, el.checked);
       });
@@ -171,9 +181,7 @@
   }
 
   window.PhairDash = {
-    money: money,
     hrs: hrs,
-    RATE: RATE,
     refresh: function () {
       restoreChecks();
       updateProgress();

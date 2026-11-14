@@ -28,7 +28,7 @@
   --serif: "Newsreader", "Iowan Old Style", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
   --sans: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
   --mono: "IBM Plex Mono", "ui-monospace", "SFMono-Regular", Menlo, Consolas, monospace;
-  --max: 1180px;
+  --max: 1280px;
   --radius: 10px;
 }
 
@@ -69,7 +69,7 @@ code, .mono, .num { font-family: var(--mono); font-feature-settings: "tnum"; fon
 .masthead-inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 1.35rem 1.4rem 1.15rem;
+  padding: 1.35rem 0.7rem 1.15rem;
 }
 .eyeline {
   display: flex;
@@ -112,7 +112,7 @@ nav.primary {
 nav.primary ul {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0 0.6rem;
+  padding: 0 0.3rem;
   list-style: none;
   display: flex;
   gap: 0.15rem;
@@ -137,12 +137,12 @@ nav.primary a.is-active {
   border-bottom-color: var(--gold-2);
 }
 
-.wrap { max-width: var(--max); margin: 0 auto; padding: 1.4rem 1.4rem 3.5rem; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 1.4rem 0.7rem 3.5rem; }
 
 /* —— Metrics —— */
 .metrics {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 0.75rem;
   margin: 1.1rem 0 1.4rem;
 }
@@ -150,7 +150,7 @@ nav.primary a.is-active {
   background: var(--sheet);
   border: 1px solid var(--rule);
   border-radius: var(--radius);
-  padding: 0.9rem 1rem 0.85rem;
+  padding: 0.45rem 0.5rem 0.42rem;
   box-shadow: var(--shadow);
 }
 .metric .val {
@@ -181,7 +181,7 @@ nav.primary a.is-active {
 /* —— Callouts —— */
 .callout {
   border-radius: var(--radius);
-  padding: 1rem 1.15rem;
+  padding: 0.5rem 0.575rem;
   margin: 1.1rem 0 1.4rem;
   border: 1px solid var(--rule);
   background: var(--sheet);
@@ -205,7 +205,7 @@ section.block {
   background: var(--sheet);
   border: 1px solid var(--rule);
   border-radius: 12px;
-  padding: 1.15rem 1.25rem 1.3rem;
+  padding: 0.575rem 0.625rem 0.65rem;
   margin: 0 0 1.15rem;
   box-shadow: var(--shadow);
 }
@@ -384,7 +384,7 @@ details.cat > summary {
   align-items: baseline;
   background: var(--navy);
   color: #fbf8f1;
-  padding: 0.7rem 1rem;
+  padding: 0.7rem 0.5rem;
   border-radius: 8px 8px 0 0;
   font-family: var(--serif);
   font-size: 1.08rem;
@@ -451,7 +451,7 @@ tr.is-hidden { display: none; }
   font-family: var(--serif);
   font-size: 1.15rem;
   text-align: center;
-  padding: 1rem;
+  padding: 0.5rem;
   background: var(--paper);
   border: 1px dashed var(--rule-strong);
   border-radius: 8px;
@@ -504,9 +504,62 @@ tr.is-hidden { display: none; }
 }
 .company-nav a:hover { border-color: var(--gold); }
 
+
+/* —— Property photos —— */
+.hero-photo {
+  margin: 0 0 0.75rem;
+}
+.hero-photo img,
+.property-card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  background: var(--paper-2);
+}
+.hero-photo img {
+  max-height: 420px;
+  border-radius: 8px;
+  border: 1px solid var(--rule);
+}
+.hero-photo figcaption,
+.property-card .caption {
+  margin: 0.35rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+.property-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+.property-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.property-card:hover { border-color: var(--gold); }
+.property-card img { height: 148px; }
+.property-card .body { padding: 0.45rem 0.5rem 0.55rem; }
+.property-card strong {
+  display: block;
+  color: var(--navy);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .property-cards { grid-template-columns: 1fr; }
+  .hero-photo img { max-height: 240px; }
+}
+
 footer.site {
   border-top: 1px solid var(--rule);
-  padding: 1.4rem 1.4rem 2.2rem;
+  padding: 1.4rem 0.7rem 2.2rem;
   color: var(--muted);
   font-size: 0.86rem;
 }
@@ -525,7 +578,7 @@ footer.site strong { color: var(--ink-2); }
   .hbar .name, .stacked-row .name { font-weight: 700; }
 }
 @media (max-width: 640px) {
-  .masthead-inner, .wrap { padding-left: 1rem; padding-right: 1rem; }
+  .masthead-inner, .wrap { padding-left: 0.5rem; padding-right: 0.5rem; }
   .calc-grid { grid-template-columns: 1fr; }
   .metrics { grid-template-columns: 1fr 1fr; gap: 0.55rem; }
   table.data { min-width: 0; font-size: 0.88rem; }
