@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:,">
+<title>Property 1 — Conventional development model (interactive)</title>
+<style>
+:root{--bg:#101211;--card:#171918;--card2:#1c1f1e;--blue:#359BC5;--blue2:#6CC0E0;--blue3:#A9DCEF;--line:rgba(255,255,255,.12);--soft:#9aa0a0;--neg:#ff8f8f;--pos:#8fd6a5;--warn:#f0c46c}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:#fff;font:14px/1.45 "Switzer","Inter","Segoe UI",system-ui,-apple-system,sans-serif}
+.wrap{max-width:1320px;margin:0 auto;padding:32px 32px 64px}
+.core-nav{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:0 0 16px;font-size:13px}
+.core-nav a{color:var(--blue3);text-decoration:none;padding:4px 2px;border-bottom:2px solid transparent}
+.core-nav a:hover{color:#4FB3DC}.core-nav a.on{color:#fff;font-weight:700;border-bottom-color:var(--blue)}
+h1{margin:0 0 4px;font:700 22px/1.3 inherit;font-family:inherit}
+h2{margin:0 0 10px;font-weight:700;font-size:15px;color:var(--blue3)}
+h3{margin:14px 0 6px;font-size:13px;color:var(--blue3)}
+.meta{margin:0 0 16px;color:var(--soft);font-size:13px}
+.callout{background:#2a2410;border:1px solid #6a5218;color:#f3e3b0;border-radius:10px;padding:10px 14px;font-size:12.5px;margin:0 0 18px}
+.callout b{color:#fff}
+.sec{background:var(--card);border-radius:14px;padding:18px 18px 16px;margin:0 0 18px;border:1px solid rgba(255,255,255,.05)}
+.presets{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:8px 14px;font:700 12.5px/1.2 inherit;font-family:inherit;background:var(--card2);color:#fff;border:1px solid var(--line);border-radius:8px;cursor:pointer}
+.btn:hover{border-color:var(--blue)}.btn.on{background:var(--blue);color:#101211;border-color:var(--blue)}
+.btn.sm{padding:4px 9px;font-size:13px;min-width:30px}
+.slider-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.slider-row input[type=range]{flex:1 1 260px;accent-color:var(--blue)}
+.slider-row .big{font-size:26px;font-weight:700;min-width:3.2em}
+input[type=number],input[type=text],select{background:#0c0e0d;color:#fff;border:1px solid var(--line);border-radius:6px;padding:6px 8px;font:14px inherit;font-family:inherit;width:100%;min-width:0}
+input[type=number]{text-align:right;font-variant-numeric:tabular-nums}
+input:focus,select:focus{outline:2px solid var(--blue);outline-offset:0}
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse}
+th,td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:middle}
+thead th{background:var(--blue);color:#101211;font-weight:700;font-size:12.5px;white-space:nowrap}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tfoot td{font-weight:700;background:var(--card2)}
+.cats td input[type=number]{width:110px}
+.cats td.u{white-space:nowrap}.cats td.u input{width:70px;display:inline-block}
+.src{display:inline-block;margin-left:4px;font-size:10.5px;color:var(--blue2);cursor:help;vertical-align:super;white-space:nowrap}
+.src.as{color:var(--warn)}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:0 0 18px}
+.metric{background:var(--card);border-radius:12px;padding:12px 14px;border:1px solid rgba(255,255,255,.05)}
+.metric .lbl{color:var(--soft);font-size:12px}.metric .val{font-size:21px;font-weight:700;font-variant-numeric:tabular-nums;margin-top:2px}
+.metric .sub{color:var(--soft);font-size:11.5px;margin-top:2px}
+.neg{color:var(--neg)!important}.pos{color:var(--pos)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fields{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px 14px}
+.fld label{display:block;color:var(--soft);font-size:12px;margin-bottom:3px}
+.fld .row{display:flex;gap:6px;align-items:center}.fld .unit{color:var(--soft);font-size:12px;white-space:nowrap}
+.movebar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0 0;color:var(--soft);font-size:12.5px}
+.movebar select{width:auto}.movebar input{width:80px}
+.note{color:var(--soft);font-size:12px;margin:8px 0 0;max-width:110ch}
+.warnbox{background:#3a1717;border:1px solid #7a2d2d;color:#ffd1d1;border-radius:8px;padding:8px 12px;margin:8px 0;font-size:12.5px}
+canvas{width:100%;height:260px;display:block;background:#0c0e0d;border-radius:10px}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--soft);margin:6px 0 0;flex-wrap:wrap}
+.legend i{display:inline-block;width:14px;height:3px;margin-right:6px;vertical-align:middle}
+.sources li{margin:0 0 5px;font-size:12.5px;color:#d8dcdc}.sources b{color:var(--blue3)}
+.toggle{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;flex-wrap:wrap}
+.toggle button{background:var(--card2);color:#fff;border:0;padding:7px 11px;font:600 12.5px inherit;font-family:inherit;cursor:pointer}
+.toggle button.on{background:var(--blue);color:#101211}
+.cap td input[type=text]{min-width:170px}.cap td input[type=number]{width:90px}
+@media(max-width:800px){.wrap{padding:16px 12px 40px}.grid2{grid-template-columns:1fr}.metric .val{font-size:18px}.metrics{grid-template-columns:1fr 1fr}h1{font-size:19px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="core-nav"><a href="../index.html">Case dashboard</a><a href="../bella-mar.html#dev-cost-model">Property 1 page</a><a class="on" href="./">Conventional model (interactive)</a><a href="#sources">Sources</a><a href="#uspap">Method / USPAP</a></nav>
+<h1>Property 1 — conventional for-sale development model</h1>
+<p class="meta">Property 1 · 14.62 ac · Built from the Bespoke Underwriting core demo layout, with no factory, transport, crane or marriage-line costs. Every input recalculates instantly.</p>
+<div class="callout"><b>Draft — pending California Certified General appraiser review.</b> Work product for counsel and the appraiser. Not an appraisal and not an opinion of value. Every default shows its source tag (hover or tap it); yellow tags <span class="src as">[A]</span> are assumptions with no source in the file. Property-level (100%) unless labeled.</div>
+
+<section class="sec" id="scenario">
+<h2>Scenario and unit count</h2>
+<div class="presets" id="presets">
+ <button class="btn" data-preset="166">Homebuilder plan — 166 units</button>
+ <button class="btn" data-preset="300">300 units</button>
+ <button class="btn" data-preset="380">380 units</button>
+</div>
+<div class="slider-row">
+ <span class="big" id="totU">380</span><span style="color:var(--soft)">total units</span>
+ <input type="range" id="unitSlider" min="100" max="380" step="1" value="380" aria-label="Total units">
+ <input type="number" id="unitNum" min="100" max="380" step="1" value="380" style="width:90px" aria-label="Total units (number)">
+</div>
+<p class="note" id="presetNote"></p>
+</section>
+
+<section class="sec" id="anchor">
+<h2>Anchor: finished-unit sale prices by category</h2>
+<div class="tbl-scroll"><table class="cats"><thead><tr><th>Category</th><th>Units</th><th class="num">Avg sf</th><th class="num">Sale price $/unit</th><th class="num">Sale $/sf</th><th class="num">Hard cost $/sf</th><th class="num">Defect-liability $/unit</th><th class="num">Revenue</th></tr></thead>
+<tbody id="catBody"></tbody><tfoot><tr><td>Total</td><td class="num" id="catU"></td><td class="num" id="catSf"></td><td class="num" id="catAvg"></td><td class="num" id="catPsf"></td><td></td><td></td><td class="num" id="catRev"></td></tr></tfoot></table></div>
+<div class="movebar">Move <input type="number" id="mvN" value="10" min="1" step="1"> units from <select id="mvFrom"></select> to <select id="mvTo"></select> <button class="btn sm" id="mvGo">Move</button> <span>· The − / + buttons and typed counts keep the total fixed by taking from (or giving to) the largest other category. Use the slider to change the total.</span></div>
+</section>
+
+<div class="metrics" id="metrics"></div>
+
+<div class="grid2">
+<section class="sec"><h2>Land, site work and costs</h2><div class="fields" id="fCost"></div>
+<p class="note">Site work: the study totals already include horizontal soft costs and contingency [11]. "Fixed footprint" keeps the full study total at any unit count, because fill and grading are acreage-driven (v1 A-6, assumption). "Scale in-tract" holds the site-specific premium fixed and scales only the in-tract portion by units ÷ 166 (v1 A-9, assumption).</p></section>
+<section class="sec"><h2>Construction loan, schedule and sales absorption</h2><div class="fields" id="fFin"></div>
+<p class="note">Equity funds land and costs first, up to (1 − LTC) × budget. Then the loan draws up to its commitment. Interest accrues monthly on the drawn balance and is capitalized when the interest reserve is on. Each closing repays release % × the loan allocated to that unit (by revenue share), and the last closing sweeps the balance. Sale cash still needed for scheduled construction costs is held back first, and anything left goes to equity. Costs above the loan budget, like carry and the loan fee, are funded by equity.</p></section>
+</div>
+
+<div class="grid2">
+<section class="sec"><h2>Development cost stack</h2><div class="tbl-scroll"><table><tbody id="stack"></tbody></table></div></section>
+<section class="sec"><h2>Financing and return results</h2><div class="tbl-scroll"><table><tbody id="finOut"></tbody></table></div></section>
+</div>
+
+<section class="sec"><h2>Loan balance and cumulative equity cash, by month</h2>
+<canvas id="chart" width="1200" height="260" aria-label="Chart of loan balance and cumulative equity cash by month"></canvas>
+<div class="legend"><span><i style="background:#359BC5"></i>Loan balance</span><span><i style="background:#f0c46c"></i>Cumulative equity cash (distributions − contributions)</span><span><i style="background:#8fd6a5"></i>Cumulative units closed (right scale)</span></div>
+</section>
+
+<section class="sec" id="captable"><h2>Cap table: Property 1 LLC</h2>
+<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 10px"><span style="color:var(--soft);font-size:12.5px">Value basis:</span>
+<div class="toggle" id="basisToggle">
+ <button data-b="rlv">Residual land value</button><button data-b="net">Land value net of debt/liens</button><button data-b="unlev">Project profit (unlevered)</button><button data-b="profit">Levered profit</button><button data-b="dist">Equity distributions</button>
+</div></div>
+<div class="fields" id="fCap"></div>
+<div id="capWarn"></div>
+<div class="tbl-scroll"><table class="cap"><thead><tr><th>Owner</th><th class="num">Ownership %</th><th class="num">Pro-rata $</th><th class="num">After DLOC/DLOM (draft)</th><th></th></tr></thead><tbody id="capBody"></tbody>
+<tfoot><tr><td>Total</td><td class="num" id="capPct"></td><td class="num" id="capVal"></td><td class="num" id="capAdj"></td><td></td></tr></tfoot></table></div>
+<div style="margin:10px 0 0"><button class="btn sm" id="capAdd">+ Add owner</button></div>
+<p class="note">Defaults: Majority member (Sponsor) 75% and Minority member 25%, per the examiner's tax-return table in the case documents <span class="src" title="[X] Examiner report, case document (tax-return table)">[X]</span>. The development-partner JV's 70/30 and 50/50 split on the land lift (case document) is <b>not</b> modeled. DLOC applies to holders under 50%, DLOM to all holders. Both are draft placeholders at 0% by default. The v1 workbook's preliminary picks (A-16) are 10–25% DLOC and 30–45% DLOM. Discounts are not applied to negative values.</p>
+</section>
+
+<section class="sec" id="uspap"><h2>Methodology and USPAP note (draft)</h2>
+<ul class="sources">
+<li><b>Method.</b> This is a subdivision-development (residual) model for a hypothetical conventional for-sale build-out. Gross sales come from the finished-unit sale-price anchors. Deduct selling costs, the developer's profit target, vertical hard and soft costs, contingency, defect liability, site work and impact fees to get the <b>pre-finance residual</b>, which uses the same method as the Property 1 v1 workbook. Then deduct construction interest, the loan fee and property-tax carry from the monthly engine, and divide by (1 + land closing %), to get the <b>residual land value</b>. That value is undiscounted. It applies no time, entitlement-risk or distress discount and no DLOC/DLOM.</li>
+<li><b>Hypothetical conditions.</b> The entitled program is 380 rental apartments (280 market + 100 affordable) [6][7]. A for-sale conventional build of 300 or 380 units is a hypothetical condition, and so is any mix the user enters. The 166-unit preset follows the national homebuilder's LOI program, which requires the buyer to re-entitle [1].</li>
+<li><b>Extraordinary assumptions.</b> Site work uses the 166-unit study [11]. Fees use a single-family schedule. Condo $/sf is proxied from new attached sales in the market-area ZIP [14]. Affordable for-sale value is 50% of market $/sf, adapted from v1 A-4. The sales pace is a proxy taken from apartment lease-up research [9].</li>
+<li><b>USPAP.</b> Standards 1–2 (2024 USPAP) require the appraiser to support every input, reconcile with the sales-comparison and LOI evidence, and disclose all hypothetical conditions and extraordinary assumptions. This page is a scoping and sensitivity tool for that work. It is not a USPAP-compliant appraisal report <span class="src" title="[P] USPAP land appraisal checklist (analysis file)">[P]</span>.</li>
+<li><b>Not deducted.</b> Secured debt and liens are excluded unless entered in the cap table: the secured lender's $2,272,710, the NOD lien $31,606, and the development partner's claim $2,559,917 (case document). Also not deducted: the development-partner JV waterfall (case document), and Prop 13 reassessment or HOA formation costs.</li>
+</ul></section>
+
+<section class="sec" id="sources"><h2>Sources and assumption register</h2><ul class="sources" id="srcList"></ul></section>
+<p class="note">Draft Nov 14, 2026 · Static page. Calculation engine: <a style="color:var(--blue3)" href="conv-model.js">conv-model.js</a>. Companion workbook: <a style="color:var(--blue3)" href="../assets/Property1_DevCost_300-380.xlsx">Model 1 (.xlsx)</a>.</p>
+</div>
+<script src="conv-model.js"></script>
+<script src="ui.js"></script>
+</body>
+</html>
