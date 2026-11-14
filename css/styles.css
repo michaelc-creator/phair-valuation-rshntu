@@ -621,3 +621,66 @@ footer.site strong { color: var(--ink-2); }
   .masthead { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .callout, section.block { break-inside: avoid; }
 }
+
+/* —— Development / raw-land cost models (scoped to #dev-cost-model) —— */
+#dev-cost-model .dev-model-badge {
+  display: inline-block;
+  background: var(--amber-bg);
+  color: var(--amber-ink);
+  border: 1px solid #d9c790;
+  border-radius: 4px;
+  padding: 0.08rem 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 650;
+  margin: 0 0.4rem 0.35rem 0;
+}
+#dev-cost-model .dev-model-badges { margin: 0 0 0.85rem; }
+#dev-cost-model h3.dev-model-h {
+  font-family: var(--serif);
+  font-weight: 550;
+  font-size: 1.12rem;
+  margin: 1.35rem 0 0.5rem;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.25rem;
+}
+#dev-cost-model .dev-model-download {
+  display: inline-block;
+  margin: 0 0 1rem;
+  padding: 0.45rem 0.9rem;
+  background: var(--navy);
+  color: #fff;
+  text-decoration: none;
+  border-radius: var(--radius);
+  font-weight: 650;
+  font-size: 0.9rem;
+}
+#dev-cost-model .dev-model-download:hover { background: var(--navy-3); color: #fff; }
+#dev-cost-model table.data { min-width: 720px; font-size: 0.86rem; }
+#dev-cost-model table.data td { padding: 0.38rem 0.5rem; }
+#dev-cost-model table.data th { padding: 0.4rem 0.5rem; }
+#dev-cost-model tr.dev-model-sec td {
+  background: var(--paper-2);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+#dev-cost-model tr.dev-model-sec:hover td { background: var(--paper-2); }
+#dev-cost-model ol.dev-model-qs {
+  margin: 0.3rem 0 0.8rem;
+  padding-left: 1.25rem;
+}
+#dev-cost-model ol.dev-model-qs li { margin: 0.45rem 0; color: var(--ink-2); }
+#dev-cost-model .dev-model-foot {
+  margin: 1rem 0 0.15rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+#dev-cost-model .dev-model-foot + .dev-model-foot { margin-top: 0.35rem; }
+@media (max-width: 640px) {
+  /* Keep wide model tables scrolling; do not inherit the checklist card layout. */
+  #dev-cost-model table.data { min-width: 720px; }
+}
