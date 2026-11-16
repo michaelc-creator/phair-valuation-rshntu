@@ -7,102 +7,102 @@
 <link rel="stylesheet" href="css/styles.css">
 <script src="js/common.js" defer></script>
 <style>
-.draft-banner{background:#7a2e1a;color:#fff;padding:.55rem 1rem;font-weight:600;text-align:center;letter-spacing:.02em}
-.npv-hero{border:2px solid var(--ink,#1d2a33);border-radius:10px;padding:1.2rem 1.4rem;margin:1rem 0 1.4rem;background:var(--sheet,#fff)}
-.npv-hero .lbl{font-size:.9rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-2,#555)}
+.draft-banner{background:#2D3142;color:#FFFFFF;padding:.55rem 1rem;font-weight:600;text-align:center;letter-spacing:.02em}
+.npv-hero{border:2px solid var(--ink,#2D3142);border-radius:10px;padding:1.2rem 1.4rem;margin:1rem 0 1.4rem;background:var(--sheet,#FFFFFF)}
+.npv-hero .lbl{font-size:.9rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-2,#4F5D75)}
 .npv-hero .big{font-family:Arial, Helvetica, sans-serif;font-size:clamp(2.2rem,6vw,3.6rem);font-weight:600;line-height:1.1;margin:.2rem 0}
-.npv-hero .big.neg{color:#9b1c1c}.npv-hero .big.pos{color:#1d6b36}
+.npv-hero .big.neg{color:#EF8354}.npv-hero .big.pos{color:#2D3142}
 .npv-hero p{margin:.4rem 0 0;max-width:62rem}
-.disclaimer{font-size:.88rem;border-left:4px solid #b58900;padding:.4rem .8rem;background:#fffbea;margin:.8rem 0}
-.placeholder{border:1px dashed #999;padding:.6rem .8rem;color:#555;background:#fafafa;margin-top:.6rem}
+.disclaimer{font-size:.88rem;border-left:4px solid #EF8354;padding:.4rem .8rem;background:#BFC0C0;margin:.8rem 0}
+.placeholder{border:1px dashed #4F5D75;padding:.6rem .8rem;color:#4F5D75;background:#BFC0C0;margin-top:.6rem}
 table.data.compact{font-size:.83rem}
 table.cost{font-size:.82rem;min-width:1180px}
 table.cost td,table.cost th{vertical-align:top;padding:.3rem .4rem}
-table.cost input{width:7.2rem;font-family:Arial, Helvetica, sans-serif;font-size:.8rem;padding:.15rem .25rem;border:1px solid #9bb;background:#f3fbff}
-table.cost input.actual,input.actual{width:7rem;background:#fff;border:1px dashed #aaa}
-table.cost tr.sec td{background:#e9eef1;font-weight:700}
-table.cost tr.sub td,tr.sub td{font-weight:700;border-top:2px solid #333}
-table.cost tr.need td{background:#fff4f2}
-table.cost tr.memo td{color:#666;font-style:italic}
-.flag{display:inline-block;background:#b42318;color:#fff;font-size:.7rem;font-weight:700;padding:.05rem .35rem;border-radius:3px;white-space:nowrap}
-.ok{display:inline-block;background:#1d6b36;color:#fff;font-size:.7rem;font-weight:700;padding:.05rem .35rem;border-radius:3px}
-.memo-tag{display:inline-block;background:#777;color:#fff;font-size:.7rem;padding:.05rem .35rem;border-radius:3px}
-.case-tag{display:inline-block;background:#8a6d00;color:#fff;font-size:.7rem;padding:.05rem .35rem;border-radius:3px}
+table.cost input{width:7.2rem;font-family:Arial, Helvetica, sans-serif;font-size:.8rem;padding:.15rem .25rem;border:1px solid #4F5D75;background:#FFFFFF}
+table.cost input.actual,input.actual{width:7rem;background:#FFFFFF;border:1px dashed #4F5D75}
+table.cost tr.sec td{background:#BFC0C0;font-weight:700}
+table.cost tr.sub td,tr.sub td{font-weight:700;border-top:2px solid #2D3142}
+table.cost tr.need td{background:#BFC0C0}
+table.cost tr.memo td{color:#4F5D75;font-style:italic}
+.flag{display:inline-block;background:#EF8354;color:#2D3142;font-size:.7rem;font-weight:700;padding:.05rem .35rem;border-radius:3px;white-space:nowrap}
+.ok{display:inline-block;background:#2D3142;color:#FFFFFF;font-size:.7rem;font-weight:700;padding:.05rem .35rem;border-radius:3px}
+.memo-tag{display:inline-block;background:#4F5D75;color:#FFFFFF;font-size:.7rem;padding:.05rem .35rem;border-radius:3px}
+.case-tag{display:inline-block;background:#4F5D75;color:#FFFFFF;font-size:.7rem;padding:.05rem .35rem;border-radius:3px}
 .mono{font-family:Arial, Helvetica, sans-serif}
-.formula{font-family:Arial, Helvetica, sans-serif;font-size:.78rem;color:#334}
-.deriv{font-size:.76rem;color:#444;max-width:26rem}
+.formula{font-family:Arial, Helvetica, sans-serif;font-size:.78rem;color:#2D3142}
+.deriv{font-size:.76rem;color:#4F5D75;max-width:26rem}
 .totals{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.6rem;margin:1rem 0}
-.totals div{border:1px solid #ccd;border-radius:6px;padding:.5rem .7rem;background:#fff}
+.totals div{border:1px solid #4F5D75;border-radius:6px;padding:.5rem .7rem;background:#FFFFFF}
 .totals b{display:block;font-family:Arial, Helvetica, sans-serif;font-size:1.15rem}
 .controls{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;align-items:end;margin:.6rem 0}
 .controls label{font-size:.8rem;display:flex;flex-direction:column}
 .controls input{width:7.5rem;font-family:Arial, Helvetica, sans-serif}
-button.btn{padding:.4rem .8rem;border:1px solid #333;background:#1d2a33;color:#fff;border-radius:5px;cursor:pointer}
-button.btn.alt{background:#fff;color:#1d2a33}
-blockquote{border-left:4px solid #1d2a33;margin:.6rem 0;padding:.4rem 1rem;background:#f6f7f8}
-blockquote .cmt{font-size:.88rem;color:#444}
+button.btn{padding:.4rem .8rem;border:1px solid #2D3142;background:#2D3142;color:#FFFFFF;border-radius:5px;cursor:pointer}
+button.btn.alt{background:#FFFFFF;color:#2D3142}
+blockquote{border-left:4px solid #2D3142;margin:.6rem 0;padding:.4rem 1rem;background:#BFC0C0}
+blockquote .cmt{font-size:.88rem;color:#4F5D75}
 blockquote footer{font-size:.8rem;margin-top:.3rem}
 .std{margin:1rem 0 1.4rem}.how{margin:.3rem 0 0}
 .mc-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1rem}
 @media(max-width:820px){.mc-grid{grid-template-columns:1fr}}
-.mc-card{border:1px solid #ccd;border-radius:8px;padding:.7rem;background:#fff;min-width:0;overflow-x:auto}
+.mc-card{border:1px solid #4F5D75;border-radius:8px;padding:.7rem;background:#FFFFFF;min-width:0;overflow-x:auto}
 .mc-card svg{width:100%;height:auto;display:block}
-tr.grp td{background:#e9eef1;font-weight:700}
+tr.grp td{background:#BFC0C0;font-weight:700}
 details.legacy>summary{cursor:pointer;font-weight:700;padding:.6rem 0}
 ul.fact-bullets{margin:.1rem 0 .2rem 1.1rem;padding:0}
 a.ref{font-size:.75rem;text-decoration:none;white-space:nowrap}
 .exec li{margin:.45rem 0}
 
-.inline-src{font-size:.8rem;color:#4a5560;margin:.35rem 0 .2rem;overflow-wrap:anywhere}
-.url{font-family:Arial, Helvetica, sans-serif;font-size:.74rem;color:#334;overflow-wrap:anywhere}
-.fact-gold{color:var(--gold-2)!important}
-.own-box--trust .own-box__name{color:var(--gold-2)}
+.inline-src{font-size:.8rem;color:#4F5D75;margin:.35rem 0 .2rem;overflow-wrap:anywhere}
+.url{font-family:Arial, Helvetica, sans-serif;font-size:.74rem;color:#2D3142;overflow-wrap:anywhere}
+.fact-gold{color:#2D3142!important}
+.own-box--trust .own-box__name,.own-box--trust .own-box__pct{color:#2D3142}
 .math-chain{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:.6rem 0}
-.math-chain>div{border:1px solid #ccd;border-radius:8px;padding:.5rem .7rem;background:#fff;min-width:8rem}
+.math-chain>div{border:1px solid #4F5D75;border-radius:8px;padding:.5rem .7rem;background:#FFFFFF;min-width:8rem}
 .math-chain .mv{display:block;font-family:Arial, Helvetica, sans-serif;font-size:1.3rem;font-weight:600}
-.math-chain .ml{display:block;font-size:.75rem;color:#555}
-.math-chain .arrow{font-size:1.3rem;color:#777}
-span.est{display:inline-block;background:#e8f0fb;color:#1d3d6b;border:1px solid #9db6d8;border-radius:4px;padding:0 .3rem;font-size:.72rem;font-weight:700}
-span.ref{font-size:.75rem;white-space:nowrap;color:#4a5560}
+.math-chain .ml{display:block;font-size:.75rem;color:#4F5D75}
+.math-chain .arrow{font-size:1.3rem;color:#4F5D75}
+span.est{display:inline-block;background:#BFC0C0;color:#2D3142;border:1px solid #4F5D75;border-radius:4px;padding:0 .3rem;font-size:.72rem;font-weight:700}
+span.ref{font-size:.75rem;white-space:nowrap;color:#4F5D75}
 
 /* polish: key findings + visuals */
 .kf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:.8rem;margin:.6rem 0 0}
-.kf{border:1px solid #ccd5dc;border-top:5px solid #1d2a33;border-radius:8px;background:#fff;padding:.75rem .9rem .7rem;display:flex;flex-direction:column}
-.kf.neg{border-top-color:#9b1c1c}.kf.gold{border-top-color:#b58900}
-.kf .n{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5a6670}
+.kf{border:1px solid #4F5D75;border-top:5px solid #2D3142;border-radius:8px;background:#FFFFFF;padding:.75rem .9rem .7rem;display:flex;flex-direction:column}
+.kf.neg{border-top-color:#EF8354}.kf.gold{border-top-color:#EF8354}
+.kf .n{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4F5D75}
 .kf h3{font-size:1.05rem;margin:.15rem 0 .35rem;line-height:1.25}
-.kf .kv{font-family:Arial, Helvetica, sans-serif;font-size:1.7rem;font-weight:600;line-height:1.1;color:#9b1c1c}
-.kf .kv.dk{color:#1d2a33}
+.kf .kv{font-family:Arial, Helvetica, sans-serif;font-size:1.7rem;font-weight:600;line-height:1.1;color:#EF8354}
+.kf .kv.dk{color:#2D3142}
 .kf ul{margin:.35rem 0 .3rem 1.05rem;padding:0;font-size:.9rem}.kf li{margin:.15rem 0}
 .kf .more{margin-top:auto;font-size:.82rem;padding-top:.3rem}
-.kf .ksrc{font-size:.74rem;color:#5a6670;margin:.2rem 0 0}
-.bar{position:relative;height:1.05rem;background:#eef1f3;border-radius:4px;margin:.35rem 0 .15rem;overflow:hidden}
+.kf .ksrc{font-size:.74rem;color:#4F5D75;margin:.2rem 0 0}
+.bar{position:relative;height:1.05rem;background:#2D3142;border-radius:4px;margin:.35rem 0 .15rem;overflow:hidden}
 .bar>i{position:absolute;top:0;bottom:0;display:block}
-.bar-lbl{display:flex;justify-content:space-between;font-size:.72rem;color:#5a6670;font-family:Arial, Helvetica, sans-serif}
-.stack{display:flex;height:1.6rem;border-radius:4px;overflow:hidden;margin:.4rem 0 .2rem;font-size:.75rem;font-weight:700;color:#fff}
+.bar-lbl{display:flex;justify-content:space-between;font-size:.72rem;color:#4F5D75;font-family:Arial, Helvetica, sans-serif}
+.stack{display:flex;height:1.6rem;border-radius:4px;overflow:hidden;margin:.4rem 0 .2rem;font-size:.75rem;font-weight:700;color:#FFFFFF}
 .stack>span{display:flex;align-items:center;justify-content:center;white-space:nowrap}
-.legend{font-size:.76rem;color:#444;display:flex;flex-wrap:wrap;gap:.2rem .8rem}
+.legend{font-size:.76rem;color:#4F5D75;display:flex;flex-wrap:wrap;gap:.2rem .8rem}
 .legend b{display:inline-block;width:.7rem;height:.7rem;border-radius:2px;vertical-align:-.05rem;margin-right:.25rem}
 .rng{margin:.7rem 0}.rng .rt{display:flex;justify-content:space-between;gap:.6rem;font-size:.88rem;flex-wrap:wrap}
 .rng .rt span{font-family:Arial, Helvetica, sans-serif;font-size:.82rem}
-.rng .bar{height:1.3rem}.rng .bar>i.r{background:#b9c7d3;border-radius:3px}.rng .bar>i.m{width:3px;background:#1d2a33}
+.rng .bar{height:1.3rem}.rng .bar>i.r{background:#BFC0C0;border-radius:3px}.rng .bar>i.m{width:3px;background:#2D3142}
 .grp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:.6rem;margin:.8rem 0}
-.grp{border:1px solid #ccd5dc;border-radius:8px;padding:.55rem .75rem;background:#fff}
-.grp h3{font-size:.95rem;margin:0 0 .25rem}.grp .gs{font-size:.74rem;color:#5a6670;margin:0 0 .3rem}
+.grp{border:1px solid #4F5D75;border-radius:8px;padding:.55rem .75rem;background:#FFFFFF}
+.grp h3{font-size:.95rem;margin:0 0 .25rem}.grp .gs{font-size:.74rem;color:#4F5D75;margin:0 0 .3rem}
 .grp ul{margin:0 0 0 1rem;padding:0;font-size:.85rem}.grp li{margin:.1rem 0}
-.tag-u{display:inline-block;background:#fff4f2;color:#9b1c1c;border:1px solid #e4b4ad;font-size:.66rem;font-weight:700;padding:0 .3rem;border-radius:3px;margin-left:.25rem;white-space:nowrap}
-.slot-note{border:1px dashed #9aa;border-radius:6px;padding:.5rem .8rem;color:#555;background:#fafafa;font-size:.85rem}
+.tag-u{display:inline-block;background:#BFC0C0;color:#2D3142;border:1px solid #4F5D75;font-size:.66rem;font-weight:700;padding:0 .3rem;border-radius:3px;margin-left:.25rem;white-space:nowrap}
+.slot-note{border:1px dashed #4F5D75;border-radius:6px;padding:.5rem .8rem;color:#4F5D75;background:#BFC0C0;font-size:.85rem}
 @media(max-width:600px){.kf .kv{font-size:1.45rem}.math-chain>div{min-width:6.5rem}}
 
 /* lead statement at top of page, before the aerial and key findings */
 .zero-lead{
   margin:0.85rem 0 1.1rem;
   padding:1.05rem 1.2rem 1.05rem 1.25rem;
-  background:var(--sheet,#fbf8f1);
-  border:1px solid var(--rule,#d5cebe);
-  border-left:5px solid #9b1c1c;
+  background:var(--sheet,#FFFFFF);
+  border:1px solid var(--rule,#4F5D75);
+  border-left:5px solid #EF8354;
   border-radius:8px;
-  box-shadow:var(--shadow,0 1px 2px rgba(22,32,51,.06));
+  box-shadow:var(--shadow,0 1px 2px transparent);
 }
 .zero-lead p{
   margin:0;
@@ -111,7 +111,7 @@ span.ref{font-size:.75rem;white-space:nowrap;color:#4a5560}
   font-size:clamp(1.12rem,2.8vw,1.55rem);
   line-height:1.4;
   letter-spacing:-0.01em;
-  color:var(--navy,#162033);
+  color:var(--navy,#2D3142);
   max-width:46rem;
 }
 @media(max-width:600px){
@@ -124,7 +124,7 @@ span.ref{font-size:.75rem;white-space:nowrap;color:#4a5560}
 #cost-lines .cl-table td { vertical-align: top; }
 #cost-lines .cl-table td a { display: inline-block; margin: 0 0.3rem 0.2rem 0; }
 #cost-lines .cl-add { color: var(--navy); font-weight: 700; font-size: 0.8rem; }
-#cost-lines tr.cl-comp td, #cost-lines tr.cl-cnt td, #cost-lines tr.cl-ovl td { color: #555; }
+#cost-lines tr.cl-comp td, #cost-lines tr.cl-cnt td, #cost-lines tr.cl-ovl td { color: #4F5D75; }
 #cost-lines .cl-table { min-width: 980px; }
 @media (max-width: 640px) {
   #cost-lines .cl-table { min-width: 0; }
@@ -145,6 +145,29 @@ span.ref{font-size:.75rem;white-space:nowrap;color:#4a5560}
   --serif: Arial, Helvetica, sans-serif;
   --sans: Arial, Helvetica, sans-serif;
   --mono: Arial, Helvetica, sans-serif;
+  --ink: #2D3142;
+  --ink-2: #4F5D75;
+  --muted: #4F5D75;
+  --faint: #4F5D75;
+  --paper: #FFFFFF;
+  --paper-2: #BFC0C0;
+  --sheet: #FFFFFF;
+  --rule: #BFC0C0;
+  --rule-strong: #4F5D75;
+  --navy: #2D3142;
+  --navy-2: #2D3142;
+  --navy-3: #4F5D75;
+  --gold: #4F5D75;
+  --gold-2: #EF8354;
+  --gold-soft: #BFC0C0;
+  --crimson: #2D3142;
+  --crimson-bg: #BFC0C0;
+  --forest: #2D3142;
+  --forest-bg: #BFC0C0;
+  --amber-bg: #BFC0C0;
+  --amber-ink: #4F5D75;
+  --focus: #2D3142;
+  --shadow: none;
 }
 html, body, button, input, select, textarea, optgroup, option,
 table, caption, th, td, label, legend, figcaption, blockquote,
@@ -154,6 +177,190 @@ svg, canvas, text, code, kbd, samp, pre, .mono, .num, .formula {
 *, *::before, *::after {
   font-family: Arial, Helvetica, sans-serif !important;
 }
+
+/* Five-color palette. Shared css/styles.css is unchanged; these overrides
+   confine this page to #2D3142, #FFFFFF, #EF8354, #BFC0C0, and #4F5D75.
+   Coral is not used for small text on white (contrast 2.61:1). Coral on
+   navy is 4.94:1. Navy on gray is 7.07:1; slate on gray is 3.65:1, so
+   body text on gray panels is navy. */
+html, body { background: #FFFFFF; color: #2D3142; }
+a { color: #2D3142; text-decoration-color: #4F5D75; }
+a:hover, a:focus { color: #2D3142; background-color: #BFC0C0; }
+
+.skip { background: #2D3142; color: #FFFFFF; }
+.masthead { background: #2D3142; color: #FFFFFF; border-bottom: 3px solid #EF8354; }
+.masthead h1 { color: #FFFFFF; }
+.eyeline { color: #EF8354; }
+.confidential { color: #EF8354; }
+.deck { color: #BFC0C0; }
+nav.primary { background: #2D3142; border-bottom: 1px solid #4F5D75; }
+nav.primary a { color: #BFC0C0; }
+nav.primary a:hover { color: #FFFFFF; background: transparent; border-bottom-color: #EF8354; }
+nav.primary a[aria-current="page"],
+nav.primary a.is-active { color: #FFFFFF; border-bottom-color: #EF8354; }
+
+.page-kicker, .facts dt, .own-tier, .own-box__role, .own-sources > summary,
+.caption, .field label, .toggle label { color: #4F5D75; }
+.facts dd { color: #2D3142; }
+.own-box--debtor .own-box__role,
+.own-box--debtor .own-box__pct { color: #EF8354; }
+
+table.data th, table.cost th, table.data thead th, table.cost thead th,
+thead th {
+  background: #2D3142 !important;
+  color: #FFFFFF !important;
+  border-bottom-color: #2D3142;
+}
+table.data td, table.cost td { color: #2D3142; }
+table.data tbody tr:nth-child(even) td { background: #BFC0C0; }
+table.data tr:hover td { background: #BFC0C0; }
+table.data tfoot td, table.data tr.total td {
+  color: #2D3142;
+  background: #BFC0C0;
+  border-top-color: #2D3142;
+}
+table.data td.end, table.data th.end { color: inherit; }
+
+.callout.warning, .callout.danger, .callout.success {
+  background: #BFC0C0; border-color: #4F5D75; color: #2D3142;
+}
+.callout.warning .lead, .callout.danger .lead { color: #2D3142; }
+.tone.success { background: #2D3142; color: #FFFFFF; }
+.tone.warning { background: #BFC0C0; color: #2D3142; }
+.tone.danger { background: #EF8354; color: #2D3142; }
+
+button.btn {
+  background: #EF8354; color: #2D3142; border: 1px solid #2D3142;
+}
+button.btn.alt {
+  background: #FFFFFF; color: #2D3142; border: 1px solid #4F5D75;
+}
+button.btn:hover, button.btn:focus {
+  background: #2D3142; color: #FFFFFF; border-color: #2D3142;
+}
+button:focus-visible, select:focus-visible, input:focus-visible,
+a:focus-visible {
+  outline: 2px solid #2D3142;
+  outline-offset: 2px;
+}
+
+.chk input[type="checkbox"]:checked::after,
+table.data input[type="checkbox"]:checked::after {
+  border-color: #FFFFFF;
+}
+.chk input[type="checkbox"], table.data input[type="checkbox"],
+.field input, .field select, .calc-grid input {
+  background: #FFFFFF; color: #2D3142;
+}
+
+details.cat > summary { background: #2D3142; color: #FFFFFF; }
+details.cat > summary .meta { color: #EF8354; }
+.company-nav a[aria-current="page"] { background: #2D3142; color: #FFFFFF; border-color: #2D3142; }
+.c0 { background: #2D3142; }
+.c1 { background: #4F5D75; }
+.c2 { background: #BFC0C0; }
+.c3 { background: #EF8354; }
+.c4 { background: #2D3142; }
+.c5 { background: #4F5D75; }
+.property-card, table.steps tr { background: #FFFFFF; }
+#dev-cost-model .dev-model-badge { background: #BFC0C0; color: #2D3142; border-color: #4F5D75; }
+#dev-cost-model .dev-model-download { background: #EF8354; color: #2D3142; }
+#dev-cost-model .dev-model-download:hover { background: #2D3142; color: #FFFFFF; }
+.own-info:hover, .own-info:focus-visible { background: #2D3142; color: #FFFFFF; border-color: #2D3142; }
+.own-legend i.lg-lien { background: #BFC0C0; border-color: #4F5D75; }
+.own-legend i.lg-buyer { background: #BFC0C0; border-color: #4F5D75; }
+.own-flag { background: #BFC0C0; color: #2D3142; border-color: #4F5D75; }
+.own-box--debtor, .own-box--debtor.own-box--unknown { background: #2D3142; border-color: #2D3142; color: #FFFFFF; }
+.own-box--debtor .own-box__name,
+.own-box--debtor .own-box__value { color: #FFFFFF; }
+.own-box--debtor .own-box__value--nd,
+.own-box--debtor .own-box__meta,
+.own-box--debtor .own-box__cite { color: #BFC0C0; }
+.own-box--debtor .own-flag { background: #2D3142; color: #EF8354; border-color: #EF8354; }
+.own-box--entity { background: #FFFFFF; border-color: #4F5D75; }
+.own-box--trust .own-box__name, .own-box--trust .own-box__pct { color: #2D3142; }
+.own-box--asset .own-box__role, .own-box--lien .own-box__role, .own-box--buyer .own-box__role,
+.own-box--asset .own-box__meta, .own-box--lien .own-box__meta {
+  color: #2D3142;
+}
+.fact-gold { color: #2D3142 !important; }
+
+.own-box--lien, .own-box--buyer { background: #BFC0C0; border-color: #4F5D75; }
+
+/* Page components */
+.draft-banner { background: #2D3142; color: #FFFFFF; border-bottom: 3px solid #EF8354; }
+.npv-hero {
+  background: #2D3142; color: #FFFFFF; border: 2px solid #2D3142;
+}
+.npv-hero .lbl { color: #BFC0C0; }
+.npv-hero .big { color: #FFFFFF; }
+.npv-hero .big.neg { color: #EF8354; }
+.npv-hero .big.pos { color: #FFFFFF; }
+.npv-hero p { color: #FFFFFF; }
+.disclaimer { border-left: 4px solid #2D3142; background: #BFC0C0; color: #2D3142; }
+.placeholder { border: 1px dashed #4F5D75; color: #2D3142; background: #BFC0C0; }
+table.cost input { border: 1px solid #4F5D75; background: #FFFFFF; color: #2D3142; }
+table.cost input.actual, input.actual { background: #FFFFFF; border: 1px dashed #4F5D75; }
+table.cost tr.sec td, tr.grp td { background: #BFC0C0; color: #2D3142; }
+table.cost tr.sub td, tr.sub td { border-top: 2px solid #2D3142; }
+table.cost tr.need td { background: #BFC0C0; }
+table.cost tr.memo td { color: #2D3142; }
+.flag { background: #EF8354; color: #2D3142; }
+.ok { background: #2D3142; color: #FFFFFF; }
+.memo-tag, .case-tag { background: #4F5D75; color: #FFFFFF; }
+.formula, .deriv, .note-below, blockquote .cmt, .inline-src, .url,
+.math-chain .ml, .legend, .sc-legend, .sc-lbl, .bar-lbl, .kf .n, .kf .ksrc,
+.grp .gs, .quote-block cite, .slot-note, .problem-card .fn { color: #4F5D75; }
+.totals div, .mc-card, .math-chain > div, .grp {
+  border: 1px solid #4F5D75; background: #FFFFFF;
+}
+blockquote, .quote-block {
+  border-left: 4px solid #2D3142; background: #BFC0C0; color: #2D3142;
+}
+span.est { background: #BFC0C0; color: #2D3142; border: 1px solid #4F5D75; }
+span.ref, a.fn, a.ref { color: #4F5D75; }
+.kf {
+  border: 1px solid #4F5D75; border-top: 5px solid #2D3142; background: #FFFFFF;
+}
+.kf.neg {
+  background: #2D3142; color: #FFFFFF; border-color: #2D3142; border-top-color: #EF8354;
+}
+.kf.neg .kv { color: #EF8354; }
+.kf.neg .n, .kf.neg .ksrc { color: #BFC0C0; }
+.kf.gold { border-top-color: #2D3142; }
+.kf .kv, .kf .kv.dk { color: #2D3142; }
+.bar, .sc-track { background: #2D3142; }
+.bar > i, .sc-range, .rng .bar > i.r { background: #BFC0C0; }
+.rng .bar > i.m, .sc-avg { background: #EF8354; }
+.tag-u { background: #BFC0C0; color: #2D3142; border: 1px solid #4F5D75; }
+.slot-note { border: 1px dashed #4F5D75; color: #2D3142; background: #BFC0C0; }
+.quote-note, .lead-callout, .rf-close {
+  background: #BFC0C0; border-color: #4F5D75; color: #2D3142;
+}
+details.fold { border: 1px solid #4F5D75; background: #FFFFFF; }
+details.fold[open] > summary { border-bottom-color: #BFC0C0; }
+details.how-calc > summary { color: #2D3142; }
+details.how-calc[open] > div {
+  background: #BFC0C0; color: #2D3142; padding: 0.45rem 0.55rem; border-radius: 4px;
+}
+section.block {
+  background: #FFFFFF; border: 1px solid #4F5D75; box-shadow: none;
+}
+section.block > h2:first-child {
+  background: #2D3142; color: #FFFFFF;
+  margin: -0.575rem -0.625rem 0.85rem;
+  padding: 0.7rem 0.625rem;
+  border-bottom: 3px solid #EF8354;
+  border-radius: 12px 12px 0 0;
+}
+.problem-card {
+  border: 1px solid #4F5D75; background: #FFFFFF;
+}
+.problem-card h2, .problem-card h3 { color: #2D3142; }
+.problem-card .note-below { color: #4F5D75; }
+footer.site { color: #4F5D75; border-top-color: #BFC0C0; }
+footer.site strong { color: #2D3142; }
+.mc-card svg { background: #2D3142; }
 .mono, .num, .formula, code,
 table.data td.end, table.data th.end,
 .kf .kv, .npv-hero .big, .math-chain .mv, .totals b, .url,
@@ -167,31 +374,31 @@ section.block h2 { margin: 0 0 0.85rem; font-weight: 700; }
 section.block p, section.block li { max-width: 46rem; line-height: 1.5; }
 .exec { margin: 0.4rem 0 0.6rem; padding-left: 1.2rem; }
 .exec li { margin: 0.55rem 0; }
-.note-below { font-size: 0.88rem; color: #444; margin: 0.65rem 0 0; max-width: 46rem; line-height: 1.45; }
+.note-below { font-size: 0.88rem; color: #4F5D75; margin: 0.65rem 0 0; max-width: 46rem; line-height: 1.45; }
 .hide-ui { display: none !important; }
 
 /* How value / quotes */
-.zero-lead { margin: 0.6rem 0 1.1rem; padding: 1.05rem 1.2rem; background: var(--sheet,#fbf8f1); border: 1px solid var(--rule,#d5cebe); border-left: 5px solid #9b1c1c; border-radius: 8px; }
-.zero-lead p { margin: 0; font-weight: 600; font-size: clamp(1.12rem, 2.6vw, 1.45rem); line-height: 1.4; color: var(--navy,#162033); max-width: 46rem; }
-.quote-block { margin: 0.8rem 0 1rem; padding: 0.7rem 1rem; border-left: 4px solid #1d2a33; background: #f6f7f8; }
+.zero-lead { margin: 0.6rem 0 1.1rem; padding: 1.05rem 1.2rem; background: var(--sheet,#FFFFFF); border: 1px solid var(--rule,#4F5D75); border-left: 5px solid #EF8354; border-radius: 8px; }
+.zero-lead p { margin: 0; font-weight: 600; font-size: clamp(1.12rem, 2.6vw, 1.45rem); line-height: 1.4; color: var(--navy,#2D3142); max-width: 46rem; }
+.quote-block { margin: 0.8rem 0 1rem; padding: 0.7rem 1rem; border-left: 4px solid #2D3142; background: #BFC0C0; }
 .quote-block p { margin: 0.3rem 0; }
-.quote-block cite { display: block; font-size: 0.82rem; color: #555; font-style: normal; margin-top: 0.25rem; }
+.quote-block cite { display: block; font-size: 0.82rem; color: #4F5D75; font-style: normal; margin-top: 0.25rem; }
 
 /* Site-cost bar chart */
 .sc-chart { margin: 1.1rem 0 0.4rem; }
 .sc-row { margin: 0 0 0.95rem; }
 .sc-lab { font-weight: 700; margin: 0 0 0.22rem; }
-.sc-track { position: relative; height: 1.35rem; background: #eef1f3; border-radius: 4px; }
-.sc-range { position: absolute; top: 0; bottom: 0; background: #c47a74; border-radius: 3px; }
-.sc-avg { position: absolute; top: -3px; bottom: -3px; width: 3px; background: #162033; }
-.sc-nums { display: flex; justify-content: space-between; gap: 0.4rem; font-variant-numeric: tabular-nums; font-size: 0.8rem; color: #444; margin: 0.25rem 0 0; flex-wrap: wrap; }
-.sc-scale { display: flex; justify-content: space-between; font-size: 0.72rem; color: #5a6670; font-variant-numeric: tabular-nums; margin: 0.15rem 0 0.9rem; }
-.sc-legend { font-size: 0.8rem; color: #444; margin: 0.2rem 0 1rem; }
+.sc-track { position: relative; height: 1.35rem; background: #2D3142; border-radius: 4px; }
+.sc-range { position: absolute; top: 0; bottom: 0; background: #BFC0C0; border-radius: 3px; }
+.sc-avg { position: absolute; top: -3px; bottom: -3px; width: 3px; background: #2D3142; }
+.sc-nums { display: flex; justify-content: space-between; gap: 0.4rem; font-variant-numeric: tabular-nums; font-size: 0.8rem; color: #4F5D75; margin: 0.25rem 0 0; flex-wrap: wrap; }
+.sc-scale { display: flex; justify-content: space-between; font-size: 0.72rem; color: #4F5D75; font-variant-numeric: tabular-nums; margin: 0.15rem 0 0.9rem; }
+.sc-legend { font-size: 0.8rem; color: #4F5D75; margin: 0.2rem 0 1rem; }
 
 /* Folded blocks */
-details.fold { margin: 1.5rem 0; border: 1px solid #ccd5dc; border-radius: 8px; background: #fff; padding: 0 1.1rem 0.4rem; }
+details.fold { margin: 1.5rem 0; border: 1px solid #4F5D75; border-radius: 8px; background: #FFFFFF; padding: 0 1.1rem 0.4rem; }
 details.fold > summary { cursor: pointer; font-weight: 700; font-size: 1.15rem; padding: 0.95rem 0; }
-details.fold[open] > summary { border-bottom: 1px solid #e4e7ea; margin-bottom: 0.9rem; }
+details.fold[open] > summary { border-bottom: 1px solid #BFC0C0; margin-bottom: 0.9rem; }
 
 /* Cost build-up: show only #, item name, and estimate. Other columns stay in the DOM. */
 #cost thead th:nth-child(3),
@@ -220,7 +427,7 @@ details.fold[open] > summary { border-bottom: 1px solid #e4e7ea; margin-bottom: 
 #cost tbody tr.sub td:nth-child(3) { text-align: right; font-variant-numeric: tabular-nums; }
 
 /* Red flags close */
-.rf-close { margin-top: 1.2rem; padding: 1rem 1.15rem; border: 1px solid #d5cebe; border-radius: 8px; background: #fbf8f1; }
+.rf-close { margin-top: 1.2rem; padding: 1rem 1.15rem; border: 1px solid #4F5D75; border-radius: 8px; background: #FFFFFF; }
 .rf-close h3 { margin: 0 0 0.55rem; font-size: 1.15rem; }
 
 @media (max-width: 640px) {
@@ -231,7 +438,7 @@ details.fold[open] > summary { border-bottom: 1px solid #e4e7ea; margin-bottom: 
 
 
 details.how-calc { display: inline-block; max-width: 16rem; vertical-align: top; }
-details.how-calc > summary { cursor: pointer; font-size: 0.8rem; font-weight: 600; list-style: none; color: #1d2a33; }
+details.how-calc > summary { cursor: pointer; font-size: 0.8rem; font-weight: 600; list-style: none; color: #2D3142; }
 details.how-calc > summary::-webkit-details-marker { display: none; }
 details.how-calc[open] { max-width: min(28rem, 100%); }
 details.how-calc[open] > div { margin-top: 0.35rem; font-size: 0.8rem; line-height: 1.4; font-weight: 400; overflow-wrap: anywhere; }
@@ -241,14 +448,14 @@ details.how-calc[open] > div { margin-top: 0.35rem; font-size: 0.8rem; line-heig
 
 /* Numbered problem cards */
 .problems-intro { max-width: 46rem; margin: 0 0 1.15rem; line-height: 1.5; }
-.problem-card { border: 1px solid #d5cebe; border-radius: 8px; background: #fff; padding: 1.05rem 1.15rem 1.15rem; margin: 0 0 1rem; }
+.problem-card { border: 1px solid #4F5D75; border-radius: 8px; background: #FFFFFF; padding: 1.05rem 1.15rem 1.15rem; margin: 0 0 1rem; }
 .problem-card h2 { font-size: 1.15rem; margin: 0 0 0.65rem; font-weight: 700; }
 .problem-card h3 { font-size: 1rem; margin: 0.95rem 0 0.35rem; font-weight: 700; }
 .problem-card p, .problem-card li { font-size: 0.95rem; line-height: 1.45; max-width: 46rem; }
 .problem-card .lead { margin: 0 0 0.35rem; }
 .problem-card ul { margin: 0.1rem 0 0.15rem; padding-left: 1.2rem; }
 .problem-card li { margin: 0 0 0.4rem; }
-.problem-card .fn { font-size: 0.72rem; color: #4a5560; text-decoration: none; white-space: nowrap; }
+.problem-card .fn { font-size: 0.72rem; color: #4F5D75; text-decoration: none; white-space: nowrap; }
 .problem-card table.data { margin: 0.35rem 0 0; width: 100%; max-width: 42rem; font-variant-numeric: tabular-nums; }
 .problem-card .note-below { margin-top: 0.45rem; }
 .problem-card .why { margin: 0.1rem 0 0; }
@@ -676,7 +883,7 @@ details.how-calc[open] > div { margin-top: 0.35rem; font-size: 0.8rem; line-heig
 <div><span class="mv">$15.73M</span><span class="ml">adjusted purchase price</span></div><span class="arrow">×</span>
 <div><span class="mv">10%</span><span class="ml">per year</span></div><span class="arrow">×</span>
 <div><span class="mv">3 yrs</span><span class="ml">Apr 4, 2024 – Apr 3, 2027</span></div><span class="arrow">=</span>
-<div><span class="mv" style="color:#9b1c1c">$4,719,000</span><span class="ml">undertaking</span></div></div>
+<div><span class="mv" style="color:#2D3142">$4,719,000</span><span class="ml">undertaking</span></div></div>
 <ul class="exec">
 <li>Compliance date Dec 27, 2024; if not shown, the court would expunge the lis pendens. Whether it was posted is not shown in the record reviewed here.</li>
 <li><b>Scope:</b> the order concerns the property under the Phair–Renzulli purchase agreement. It does not name Bella Mar Land Investors LLC, 408 Hollister or the Bella Mar project.</li>
@@ -686,8 +893,8 @@ details.how-calc[open] > div { margin-top: 0.35rem; font-size: 0.8rem; line-heig
 
 <section class="block" id="opex">
 <h2>Operating Expenses: About 35% of Rent Is Typical After a Tax Reassessment</h2>
-<div class="stack" style="height:2rem" role="img" aria-label="Expense ratio 35.6 percent: 20.5 percent controllable including reserves, 15.1 percent property tax; NOI 64.4 percent"><span style="width:20.5%;background:#4a6a80">20.5%</span><span style="width:15.1%;background:#9b1c1c">15.1%</span><span style="width:64.4%;background:#1d6b36">NOI 64.4%</span></div>
-<div class="legend"><span><b style="background:#4a6a80"></b>Controllable opex incl. reserves $2,503,975</span><span><b style="background:#9b1c1c"></b>Property tax $1,838,768</span><span><b style="background:#1d6b36"></b>NOI $7,857,209</span><span>of EGI $12,199,951</span></div>
+<div class="stack" style="height:2rem" role="img" aria-label="Expense ratio 35.6 percent: 20.5 percent controllable including reserves, 15.1 percent property tax; NOI 64.4 percent"><span style="width:20.5%;background:#4F5D75;color:#FFFFFF">20.5%</span><span style="width:15.1%;background:#2D3142;color:#FFFFFF">15.1%</span><span style="width:64.4%;background:#BFC0C0;color:#2D3142">NOI 64.4%</span></div>
+<div class="legend"><span><b style="background:#4F5D75"></b>Controllable opex incl. reserves $2,503,975</span><span><b style="background:#2D3142"></b>Property tax $1,838,768</span><span><b style="background:#BFC0C0"></b>NOI $7,857,209</span><span>of EGI $12,199,951</span></div>
 <ul class="exec">
 <li>Draft ratio <b>35.6%</b> (derived from the model's defaults): controllable 20.5% matches the South Bay Class A benchmark the model uses; tax adds 15.1% because the finished project is fully reassessed.</li>
 <li>Normal for a new, fully reassessed San Diego building; high only against older Class A buildings still on Prop 13 values.</li>
@@ -865,14 +1072,14 @@ details.how-calc[open] > div { margin-top: 0.35rem; font-size: 0.8rem; line-heig
 <article class="kf neg"><span class="n">1 · Value</span><h3>The land is worth essentially nothing</h3>
 <span class="kv">−$61.2M</span><span class="ksrc">NPV of building the approved 380 units, land at $19M</span>
 <ul><li>Monte Carlo median: <b>−$125.6M</b></li><li><b>0 of 1,000</b> runs positive (P(NPV&gt;0) = 0.0%)</li><li>Even with land at ≈ $0: median −$107.8M, 0 of 1,000 positive</li><li>Residual land value: −$42.2M</li></ul>
-<div class="bar" style="height:1.3rem" role="img" aria-label="Monte Carlo P10 to P90 range, minus 162.8 to minus 99.8 million, entirely below zero"><i style="left:18.6%;width:31.5%;background:#e3b3ad;border-radius:3px"></i><i style="left:37.25%;width:3px;background:#9b1c1c"></i><i style="right:0;width:3px;background:#1d6b36"></i></div>
+<div class="bar" style="height:1.3rem" role="img" aria-label="Monte Carlo P10 to P90 range, minus 162.8 to minus 99.8 million, entirely below zero"><i style="left:18.6%;width:31.5%;background:#BFC0C0;border-radius:3px"></i><i style="left:37.25%;width:3px;background:#EF8354"></i><i style="right:0;width:3px;background:#FFFFFF"></i></div>
 <div class="bar-lbl"><span>−$200M</span><span>P10–P90: −$163M to −$100M</span><span>$0</span></div>
 <a class="more" href="#montecarlo">Monte Carlo detail →</a></article>
 
 <article class="kf"><span class="n">2 · Market practice</span><h3>Builders walk when the numbers fail</h3>
 <span class="kv dk">15,500</span><span class="ksrc">homesites Lennar walked away from in FY2025 <span class="ref" title="Lennar Corporation Form 10-K, fiscal year ended Nov 30, 2025 (filed Jan 28, 2026)">[38]</span></span>
 <ul><li><b>$23.1M</b> of deposits written off on those walk-aways <span class="ref" title="Lennar Corporation Form 10-K, fiscal year ended Nov 30, 2025 (filed Jan 28, 2026)">[38]</span></li><li>Equal to about <b>18.8%</b> of its 82,583 FY2025 deliveries (derived)</li><li>Walks are driven by the property's expected cash flows <span class="ref" title="Lennar Corporation Form 10-K, fiscal year ended Nov 30, 2025 (filed Jan 28, 2026)">[38]</span></li></ul>
-<div class="bar" role="img" aria-label="15,500 is about 18.8 percent of 82,583"><i style="left:0;width:18.8%;background:#1d2a33"></i></div>
+<div class="bar" role="img" aria-label="15,500 is about 18.8 percent of 82,583"><i style="left:0;width:18.8%;background:#BFC0C0"></i></div>
 <div class="bar-lbl"><span>15,500 walked</span><span>82,583 deliveries</span></div>
 <a class="more" href="#approach">Valuation approach →</a></article>
 
@@ -883,8 +1090,8 @@ details.how-calc[open] > div { margin-top: 0.35rem; font-size: 0.8rem; line-heig
 <a class="more" href="#cost-stack">Cost stack →</a></article>
 
 <article class="kf gold"><span class="n">4 · Ownership</span><h3>Who owns what</h3>
-<div class="stack" role="img" aria-label="Bella Mar Land Investors LLC: Phair 75 percent, Pressley Family Trust 25 percent"><span style="width:75%;background:#1d2a33">Phair 75%</span><span style="width:25%;background:#b58900">25%</span></div>
-<div class="legend"><span><b style="background:#1d2a33"></b>Jeffrey D. Phair 75%</span><span><b style="background:#b58900"></b>Pressley Family Trust 25%</span></div>
+<div class="stack" role="img" aria-label="Bella Mar Land Investors LLC: Phair 75 percent, Pressley Family Trust 25 percent"><span style="width:75%;background:#2D3142;color:#FFFFFF">Phair 75%</span><span style="width:25%;background:#4F5D75;color:#FFFFFF">25%</span></div>
+<div class="legend"><span><b style="background:#2D3142"></b>Jeffrey D. Phair 75%</span><span><b style="background:#4F5D75"></b>Pressley Family Trust 25%</span></div>
 <ul><li>Title: <b>Bella Mar Land Investors LLC</b> (owner of record)</li><li>Phair personally also holds <b>50%</b> of RTA Phair/Hollister, LLC; examiner: it has never conducted business</li></ul>
 <span class="ksrc"><span class="ref" title="Examiner&#x27;s Report, Bankr. S.D. Cal. Doc 282, Exhibit J, Pg. 71">[49]</span> <span class="ref" title="Examiner&#x27;s Report, Bankr. S.D. Cal. Doc 282, Pg. 9 and 13–14">[50]</span> <span class="ref" title="Examiner&#x27;s Supplemental Report, Bankr. S.D. Cal. Doc 362, Pg. 13, 15 and 122">[51]</span></span>
 <a class="more" href="#ownership">Ownership chart →</a></article>
@@ -896,7 +1103,7 @@ details.how-calc[open] > div { margin-top: 0.35rem; font-size: 0.8rem; line-heig
 
 <article class="kf"><span class="n">6 · Operating costs</span><h3>35% expense ratio is normal here</h3>
 <span class="kv dk">35.6%</span><span class="ksrc">of effective gross income, model default (derived)</span>
-<div class="stack" role="img" aria-label="20.5 percent controllable expenses plus 15.1 percent property tax"><span style="width:57.6%;background:#4a6a80">20.5% opex</span><span style="width:42.4%;background:#9b1c1c">15.1% tax</span></div>
+<div class="stack" role="img" aria-label="20.5 percent controllable expenses plus 15.1 percent property tax"><span style="width:57.6%;background:#4F5D75;color:#FFFFFF">20.5% opex</span><span style="width:42.4%;background:#2D3142;color:#FFFFFF">15.1% tax</span></div>
 <ul><li>Typical for new San Diego multifamily after full reassessment</li><li>Tax is the difference vs. older Prop 13 buildings</li></ul>
 <a class="more" href="#opex">Details →</a></article>
 </div>
@@ -1286,14 +1493,14 @@ function hist(el, data, title, st){
   if (lo > 0) lo = 0; if (hi < 0) hi = Math.max(0, hi);
   var w = (hi - lo) / bins || 1, cnt = new Array(bins).fill(0);
   data.forEach(function(x){ var b = Math.min(bins-1, Math.floor((x - lo) / w)); cnt[b]++; });
-  var mx = Math.max.apply(null, cnt), bw = (W - 2*pad) / bins, s = '';
+  var mx = Math.max.apply(null, cnt), bw = (W - 2*pad) / bins, s = '<rect width="'+W+'" height="'+H+'" fill="#2D3142"/>';
   cnt.forEach(function(c, i){ var x0 = lo + i*w, hgt = (H - 2*pad) * c / mx;
-    s += '<rect x="'+(pad + i*bw + 0.5)+'" y="'+(H - pad - hgt)+'" width="'+(bw - 1)+'" height="'+hgt+'" fill="'+(x0 + w <= 0 ? '#9b1c1c' : '#1d6b36')+'"><title>'+mil(x0)+' to '+mil(x0+w)+': '+c+'</title></rect>'; });
+    s += '<rect x="'+(pad + i*bw + 0.5)+'" y="'+(H - pad - hgt)+'" width="'+(bw - 1)+'" height="'+hgt+'" fill="'+(x0 + w <= 0 ? '#EF8354' : '#BFC0C0')+'"><title>'+mil(x0)+' to '+mil(x0+w)+': '+c+'</title></rect>'; });
   function X(v){ return pad + (v - lo) / (hi - lo) * (W - 2*pad); }
-  [['P10',st.p10],['P50',st.p50],['P90',st.p90]].forEach(function(p){ s += '<line x1="'+X(p[1])+'" x2="'+X(p[1])+'" y1="'+pad+'" y2="'+(H-pad)+'" stroke="#1d2a33" stroke-dasharray="3,3"/><text x="'+X(p[1])+'" y="'+(pad-6)+'" font-size="10" text-anchor="middle">'+p[0]+'</text>'; });
-  if (lo <= 0 && hi >= 0) s += '<line x1="'+X(0)+'" x2="'+X(0)+'" y1="'+(pad-2)+'" y2="'+(H-pad)+'" stroke="#000" stroke-width="2"/><text x="'+X(0)+'" y="'+(H-pad+24)+'" font-size="10" text-anchor="middle">NPV = 0</text>';
-  s += '<line x1="'+pad+'" x2="'+(W-pad)+'" y1="'+(H-pad)+'" y2="'+(H-pad)+'" stroke="#333"/>';
-  s += '<text x="'+pad+'" y="'+(H-pad+12)+'" font-size="10">'+mil(lo)+'</text><text x="'+(W-pad)+'" y="'+(H-pad+12)+'" font-size="10" text-anchor="end">'+mil(hi)+'</text>';
+  [['P10',st.p10],['P50',st.p50],['P90',st.p90]].forEach(function(p){ s += '<line x1="'+X(p[1])+'" x2="'+X(p[1])+'" y1="'+pad+'" y2="'+(H-pad)+'" stroke="#FFFFFF" stroke-dasharray="3,3"/><text x="'+X(p[1])+'" y="'+(pad-6)+'" font-size="10" text-anchor="middle" fill="#FFFFFF">'+p[0]+'</text>'; });
+  if (lo <= 0 && hi >= 0) s += '<line x1="'+X(0)+'" x2="'+X(0)+'" y1="'+(pad-2)+'" y2="'+(H-pad)+'" stroke="#FFFFFF" stroke-width="2"/><text x="'+X(0)+'" y="'+(H-pad+24)+'" font-size="10" text-anchor="middle" fill="#FFFFFF">NPV = 0</text>';
+  s += '<line x1="'+pad+'" x2="'+(W-pad)+'" y1="'+(H-pad)+'" y2="'+(H-pad)+'" stroke="#BFC0C0"/>';
+  s += '<text x="'+pad+'" y="'+(H-pad+12)+'" font-size="10" fill="#FFFFFF">'+mil(lo)+'</text><text x="'+(W-pad)+'" y="'+(H-pad+12)+'" font-size="10" text-anchor="end" fill="#FFFFFF">'+mil(hi)+'</text>';
   el.innerHTML = '<h3>'+title+'</h3><svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Histogram of NPV, '+title+'">'+s+'</svg>' +
     '<table class="data compact"><tbody><tr><td>P10 / P50 / P90</td><td class="end mono">'+mil(st.p10)+' / '+mil(st.p50)+' / '+mil(st.p90)+'</td></tr><tr><td>Mean / SD</td><td class="end mono">'+mil(st.mean)+' / '+mil(st.sd)+'</td></tr><tr><td>P(NPV &gt; 0)</td><td class="end mono">'+(st.pPos*100).toFixed(1)+'%</td></tr><tr><td>Runs</td><td class="end mono">'+st.n.toLocaleString()+'</td></tr></tbody></table>';
 }
