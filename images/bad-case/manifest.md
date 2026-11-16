@@ -1,0 +1,31 @@
+# Bad Case plan-sheet images (Bella Mar draft)
+
+Prepared 2026-11-16 (ET). Rendered with `pdftoppm` (150 dpi; Bio Fig. 8 at 300 dpi; restoration Fig. 4 at 200 dpi), cropped with PIL, saved as JPG at max 1200 px wide, each under 300 KB. No CONFIDENTIAL / EXAMINER EYES ONLY material used. Captions quote the Bad Case figures already on the page (`bella-mar.html`, `id="bad-case"`); no number was changed.
+
+Source abbreviations
+- **Att 1–8** = `walt_pennington_docs/bella_mar_pc_2025/pc-25-032-bella-mar-report-attachments-1-8.pdf` (Attachment 8 plan set = PDF pp. 79–115)
+- **Geocon** = CEQAnet `Geotechnical Investigation.PDF` (Geocon, Project G2129-52-03, Apr 2019)
+- **RECON BTR** = CEQAnet `Biological Technical Report.PDF`
+- **RECON NPRP** = CEQAnet `Biology_Native Plant Restoration Plan.PDF`
+(CEQAnet PDFs are in `research/bella-mar-records/Draft Environmental Document [...]/`.)
+
+| # | File | Bad Case card | Source, PDF page | Sheet / detail | Proposed caption |
+|---|---|---|---|---|---|
+| 1 | `01-north-mhpa-wall.jpg` | #bad-4 Retaining walls | Att 1–8 p. 87 + p. 84 | Sheet L-2 "MHPA Wall View 2" + legend; civil Sheet 4 of 5, Detail E/4 | North habitat (MHPA) wall. Rendering from the pad side (L-2) and Detail E/4: retaining wall up to 7′6″ exposed, 3-ft freestanding wall and fence on top, 4-ft DG trail in a 4.5-ft recreation easement. Scaled at about 1,050–1,100 LF (derived). Part of the walls midpoint of about $377,976 (derived); time not stated in the record. |
+| 2 | `02-hollister-wall.jpg` | #bad-4 | Att 1–8 p. 84 | Sheet 4 of 5, Cross Section A/4 (east end) | Retaining wall up to 3 ft exposed with a 42-inch guardrail or wall at the street edge. Included in the same $377,976 midpoint (derived); time not stated in the record. |
+| 3 | `03-offsite-south-wall-f4.jpg` | #bad-4 | Att 1–8 p. 84 | Sheet 4 of 5, Detail F/4 (Hollister St temporary sidewalk, STA 7+03.35–14+08.19) | Off-site, about 705 LF: a 3-ft-maximum wall with guard rail *or a slope*. Not in the walls range. |
+| 4 | `04-imported-fill-section-b.jpg` | #bad-1 Imported fill | Att 1–8 p. 84 | Sheet 4 of 5, Cross Section B/4 (west end) | Existing grade sits close to the dashed 100-year flood line; the pad is built up with imported fill to a 23.80 ft finished floor. About $2,453,066 for 81,350 CY, then a 3–4 month settlement wait. |
+| 5 | `05-remedial-grading-quantities.jpg` | #bad-2 Remedial grading | Att 1–8 p. 81 | Tentative Parcel Map Sheet 1 of 5, "Grading Quantities" note | "Remedial grading = 56,860 CY." About $640,191; time not stated in the record. **No removal cross-section is drawn in Att 1–8; this is the quantity note, not a drawing.** |
+| 6 | `06-biofiltration-basin-c4.jpg` | #bad-10 Drainage | Att 1–8 p. 84 | Sheet 4 of 5, Detail C/4 Biofiltration Basin | Lined basin with soil media, gravel, underdrain, overflow and spillway. Basin line A12a ($212,066) is part of the $503,323 drainage midpoint (derived); construction time not stated in the record. |
+| 7 | `07-public-trail-overlook-l7.jpg` | #bad-5 Public trail | Att 1–8 p. 92 | Landscape Sheet L-7 "Interpretive Area" (plan + legend) | Public DG trail (F), observation point (H, "Otay Valley Observation Point MHPA Hollister Pond"), benches and signs at the northeast corner. Not priced; easement before the final map and recorded before occupancy. |
+| 8 | `08-habitat-restoration-area.jpg` | #bad-6 Habitat | RECON NPRP p. 9 | Figure 4 "Location of Restoration Area" (not in Att 1–8) | The 2.3-acre restoration area (green) along the north edge, inside the adjusted MHPA. $450,717 to restore plus $20,593 present value of perpetual care; covenant before the final map. |
+| 9 | `09-hollister-storm-drain.jpg` | #bad-10 | Att 1–8 p. 83 | Civil Sheet 3 of 5, Hollister frontage (STA ~18+00–21+40) | "Public 18″ RCP SD main @ 0.3%" in Hollister Street. Line A17m ($132,957) is part of the $503,323 drainage midpoint (derived). |
+| 10 | `10-dewatering-groundwater-section.jpg` | #bad-9 Dewatering | Geocon PDF p. 41 | Figure 3, Geologic Cross-Section A-A′ (not in Att 1–8) | Blue dashed line: estimated groundwater, below existing grade (red) and proposed grade (green). Dewatering about $1,325,000 midpoint (derived); 60-day Water Board notice before any discharge. |
+| 10b | `10-water-proximity.jpg` | #bad-9 | RECON BTR PDF p. 31 | Figure 8, "Location of Off-site Wetlands, 100 Year Floodplain, and 100-foot Wetland Buffer" | Off-site freshwater marsh and open water along the Otay River, directly north of the site; the 100-year floodplain covers the whole site. Measured on the figure's scale (derived): marsh edge about 15–35 ft and open water about 140–150 ft from the north property line. |
+
+## Notes on honesty / gaps
+- **Dewatering (item 10):** Att 1–8 has no groundwater figure. The closest Att 8 image is Section B/4, which shows the *100-year flood water surface*, not groundwater, so it was not used for dewatering. Geocon Figure 3 (CEQAnet record) is the real groundwater section; Geocon text: water at 13.5 and 16 ft in B-1/B-2 (about elev. 6.5 and 4 ft MSL), design groundwater elev. 10 ft MSL (§5).
+- **Water proximity:** The water body is named in the record only generically: RECON BTR p. 17 "a larger freshwater marsh area with ponded water that occurs within the Otay River to the north"; p. 30 "freshwater marsh, willow riparian woodland, and open water"; Phase I (Geocon) Photograph #9 "Pond and open space adjacent to the north" (Phase I PDF p. 37); landscape Sheet L-7 legend H "Otay Valley Observation Point MHPA Hollister Pond". Att 8 Sheets 1–2 label the land to the north "OTAY RIVER, APN 627-100-13". Distances are **derived** by pixel measurement on Fig. 8 at 300 dpi against its 0–200 ft scale bar (243 px = 200 ft) and cross-checked against the figure's 100-ft buffer arrow; mapped polygon edges are approximate, so treat as ± ~10 ft. No source states a distance.
+- **Imagery credit:** Figs. 4 and 8 are RECON exhibits in the public CEQA record; their base imagery is Nearmap (flown Feb 2019), credited on the image. No Google or other outside imagery was added.
+- **Not imaged (no clear plan image):** foundation premium (#bad-3), owl surveys (#owl-surveys) and bird season (#bad-8).
+- Phase I alternative for water proximity: `Phase I Environmental Site Assessment.PDF` p. 37, Photograph #9 (ground-level photo of the pond); not cropped.
