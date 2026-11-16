@@ -950,22 +950,234 @@ section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
   .bad-cards { grid-template-columns: 1fr; }
   .bad-owl { padding: 0.9rem 0.9rem 1rem; }
 }
+/* =====================================================================
+   Bella Mar design system (draft). One set of tokens and components,
+   Flowbite marketing-block patterns adapted to the light page palette.
+   Presentation only: no figures, model or chart logic touched.
+   ===================================================================== */
+:root{
+  --ds-navy:#2D3142; --ds-slate:#4F5D75; --ds-coral:#EF8354; --ds-coral-ink:#B4471A;
+  --ds-gray:#BFC0C0; --ds-panel:#F6F6F7; --ds-line:#E4E4E6; --ds-white:#FFFFFF;
+  --ds-font:Arial, Helvetica, sans-serif;
+  --ds-fs-xs:.75rem; --ds-fs-sm:.875rem; --ds-fs-base:1rem; --ds-fs-lg:1.125rem;
+  --ds-fs-h3:1.15rem; --ds-fs-h2:clamp(1.4rem,2.6vw,1.85rem); --ds-fs-hero:clamp(1.8rem,4vw,2.6rem); --ds-fs-stat:clamp(1.35rem,2.4vw,1.75rem);
+  --ds-s1:.25rem; --ds-s2:.5rem; --ds-s3:.75rem; --ds-s4:1rem; --ds-s5:1.5rem; --ds-s6:2rem; --ds-s7:3rem;
+  --ds-radius:12px; --ds-radius-sm:8px;
+}
+body{font-family:var(--ds-font);color:var(--ds-navy)}
+/* ---- section shell + section header ---- */
+section.block{background:var(--ds-white);border:1px solid var(--ds-gray);border-radius:var(--ds-radius);padding:var(--ds-s6) var(--ds-s6) var(--ds-s6);margin:0 0 var(--ds-s6);box-shadow:none}
+section.block > h2:first-child, section.block h2, .problem-card h2{background:none;color:var(--ds-navy);margin:0 0 var(--ds-s4);padding:0;border:0;border-radius:0;font-family:var(--ds-font);font-size:var(--ds-fs-h2);font-weight:800;line-height:1.2;letter-spacing:-.02em}
+section.block > h2:first-child::before, .problem-card > h2:first-child::before, .ds-hero h2::before, .loc-banner h2::before{content:"";display:block;width:2.5rem;height:4px;border-radius:2px;background:var(--ds-coral);margin:0 0 var(--ds-s3)}
+.loc-banner h2::before{display:none}
+section.block h3, .problem-card h3{color:var(--ds-navy);font-size:var(--ds-fs-h3);font-weight:700;margin:var(--ds-s5) 0 var(--ds-s2)}
+section.block p, section.block li{color:var(--ds-navy);line-height:1.55;max-width:46rem}
+section.block a{color:var(--ds-slate)}
+section.block a:hover{color:var(--ds-coral-ink)}
+.ds-center{text-align:center}
+section.block h2.ds-center::before{margin-left:auto;margin-right:auto}
+.ds-sub{max-width:46rem !important;margin:0 auto var(--ds-s5) !important;text-align:center;color:var(--ds-slate) !important}
+.ds-kicker{margin:0 0 var(--ds-s2);font-size:var(--ds-fs-xs);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ds-coral-ink)}
+.ds-divider{border:0;border-top:1px solid var(--ds-line);margin:var(--ds-s4) 0}
+/* ---- buttons (anchor links only) ---- */
+.ds-btns{display:flex;flex-wrap:wrap;gap:var(--ds-s3);margin-top:var(--ds-s5)}
+.ds-btn{display:inline-flex;align-items:center;gap:.45rem;padding:.7rem 1.2rem;border-radius:var(--ds-radius-sm);font-weight:700;font-size:var(--ds-fs-sm);line-height:1.2;text-decoration:none !important}
+.ds-btn-solid{background:var(--ds-coral);border:1px solid var(--ds-coral);color:var(--ds-navy) !important}
+.ds-btn-solid:hover{background:#E46F3E;border-color:#E46F3E}
+.ds-btn-outline{background:var(--ds-white);border:1px solid var(--ds-navy);color:var(--ds-navy) !important}
+.ds-btn-outline:hover{background:var(--ds-panel)}
+.ds-btn:focus-visible,.ds-row-btn:focus-visible,.ds-jump:focus-visible{outline:3px solid var(--ds-slate);outline-offset:2px}
+.ds-arrow{flex:none}
+/* ---- check-list ---- */
+.ds-checks{list-style:none;padding:0 !important;margin:var(--ds-s4) 0 0;display:grid;gap:var(--ds-s2)}
+.ds-checks li{display:flex;align-items:center;gap:.55rem;font-weight:700}
+.ds-checks a{color:var(--ds-navy) !important;text-decoration:none}
+.ds-checks a:hover{text-decoration:underline}
+.ds-check{color:var(--ds-coral);flex:none}
+.ds-checklist, section.block ul.exec, .ds-bad .bad-owl ul{list-style:none;padding-left:0 !important}
+.ds-checklist li, section.block ul.exec > li, .ds-bad .bad-owl ul > li{position:relative;padding-left:1.7rem;margin:0 0 var(--ds-s2)}
+.ds-checklist li::before, section.block ul.exec > li::before, .ds-bad .bad-owl ul > li::before{content:"";position:absolute;left:0;top:.2rem;width:1.05rem;height:1.05rem;border-radius:50%;background:var(--ds-coral) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%232D3142' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round' d='M6 10.5l2.6 2.6L14 7.5'/%3E%3C/svg%3E") center/80% no-repeat}
+/* ---- cards ---- */
+.problem-card, .ds-card, .bad-owl, .kf, .npv-hero, .hs-figure, .street-yard, details.fold, .callout{background:var(--ds-white) !important;border:1px solid var(--ds-gray) !important;border-radius:var(--ds-radius) !important;box-shadow:none !important}
+.problem-card{padding:var(--ds-s5) !important;margin:0 0 var(--ds-s5) !important}
+.ds-card{padding:var(--ds-s5) !important;margin:0 0 var(--ds-s4) !important}
+.ds-card h3{display:flex;align-items:center;gap:.6rem;margin:0 0 var(--ds-s3) !important;font-size:var(--ds-fs-h3) !important}
+.bad-owl{border-left:4px solid var(--ds-coral) !important}
+.kf{padding:var(--ds-s4) !important}
+.kf .n{color:var(--ds-coral-ink) !important;font-weight:700;font-size:var(--ds-fs-xs)}
+.npv-hero{padding:var(--ds-s5) !important;background:var(--ds-panel) !important}
+.npv-hero .big{color:var(--ds-navy);font-weight:800}
+.ds-icon{flex:none;display:inline-flex;align-items:center;justify-content:center;width:2.1rem;height:2.1rem;border-radius:var(--ds-radius-sm);background:var(--ds-panel);border:1px solid var(--ds-gray);color:var(--ic,var(--ds-coral))}
+/* ---- stat cards ---- */
+.ds-stat{background:var(--ds-white);border:1px solid var(--ds-gray);border-radius:var(--ds-radius);padding:var(--ds-s4)}
+section.block .ds-stat-lbl{margin:0;font-size:var(--ds-fs-xs);font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ds-slate);line-height:1.3}
+section.block .ds-stat-num{margin:var(--ds-s1) 0;font-size:var(--ds-fs-stat);font-weight:800;color:var(--ds-navy);letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.15}
+section.block .ds-stat-sub{margin:0;font-size:var(--ds-fs-xs);color:var(--ds-slate)}
+.ds-stat-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--ds-s4);margin:0 0 var(--ds-s5)}
+/* ---- hero: visual left, text right ---- */
+.ds-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:var(--ds-s6);align-items:center}
+.ds-hero .ds-hero-text h2{font-size:var(--ds-fs-hero) !important;line-height:1.12}
+.ds-hero-text > p{color:var(--ds-slate)}
+.ds-hero .diagnosis-frame{font-size:var(--ds-fs-base);line-height:1.6;margin:0;color:var(--ds-navy);border:0;padding:0;background:none}
+.ds-panel{background:var(--ds-panel);border:1px solid var(--ds-gray);border-radius:16px;padding:var(--ds-s4);display:grid;grid-template-columns:1fr 1fr;gap:var(--ds-s3)}
+.ds-panel-bar{grid-column:1/-1;display:flex;gap:.35rem}
+.ds-panel-bar span{width:.6rem;height:.6rem;border-radius:50%;background:var(--ds-gray)}
+.ds-panel-bar span:first-child{background:var(--ds-coral)}
+.ds-stat-wide{grid-column:1/-1}
+.ds-bars{display:grid;gap:var(--ds-s2);margin-top:var(--ds-s2)}
+.ds-bar-row{display:grid;grid-template-columns:9rem 1fr auto;gap:var(--ds-s2);align-items:center;font-size:var(--ds-fs-xs);color:var(--ds-navy)}
+.ds-bar,.ds-meter{display:block;height:.55rem;background:var(--ds-line);border-radius:99px;overflow:hidden}
+.ds-bar i,.ds-meter i{display:block;height:100%;border-radius:99px;background:var(--ds-navy)}
+.ds-bar i.ds-bar-2{background:var(--ds-slate)}
+.ds-meter i{background:var(--ds-coral)}
+/* ---- tables: thin dividers, light header, horizontal scroll ---- */
+.table-wrap,.ds-table-wrap,.loc-table-wrap,.sy-table-wrap,.bad-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;border:1px solid var(--ds-gray);border-radius:var(--ds-radius);background:var(--ds-white);margin:var(--ds-s2) 0 var(--ds-s5)}
+section.block table.data, .loc-table, .sy-figs, .bad-table, table.ds-table{width:100%;border-collapse:collapse;background:var(--ds-white);color:var(--ds-navy);font-size:var(--ds-fs-sm)}
+section.block table.data th, .loc-table th, .sy-figs th, .bad-table th, table.ds-table th{background:var(--ds-panel) !important;color:var(--ds-slate) !important;font-size:var(--ds-fs-xs);font-weight:700;text-transform:uppercase;letter-spacing:.05em;text-align:left;padding:.7rem .8rem;border:0;border-bottom:1px solid var(--ds-gray) !important;vertical-align:bottom}
+section.block table.data td, .loc-table td, .sy-figs td, .bad-table td, table.ds-table td{padding:.65rem .8rem;border:0;border-bottom:1px solid var(--ds-line) !important;vertical-align:top}
+section.block table.data tr:last-child td, .loc-table tr:last-child td, .bad-table tr:last-child td, table.ds-table tr:last-child td{border-bottom:0 !important}
+section.block table.data tr:hover td{background:#FAFAFB}
+section.block table caption, .loc-table caption, .bad-table caption{caption-side:top;text-align:left;font-weight:700;color:var(--ds-navy);padding:.75rem .8rem .5rem;font-size:var(--ds-fs-sm)}
+.loc-table tr.grp td{background:var(--ds-panel) !important;font-weight:700}
+table.ds-table b{font-weight:800;color:var(--ds-navy)}
+.ds-table-wrap > table.ds-table{min-width:720px}
+.ds-income table.ds-table td:last-child,.ds-income table.ds-table th:last-child{text-align:right}
+.ds-income table.ds-table td:last-child{font-weight:700}
+.loc-table tr.grp td, .loc-table tr.grp .amt, table.cat-table tr.lc-group td{background:var(--ds-panel) !important;color:var(--ds-navy) !important;font-weight:700;border-top:1px solid var(--ds-gray) !important}
+.loc-table tr.grp .loc-cite{color:var(--ds-slate) !important;font-weight:400}
+.loc-table tr.total td, .loc-table tr.combo td, .loc-table tr.combo .amt, section.block table.data tfoot td, section.block table.data tr.total td{background:var(--ds-panel) !important;color:var(--ds-navy) !important;font-weight:800;border-top:2px solid var(--ds-navy) !important}
+.loc-table tr.combo .loc-cite, .loc-table tr.total .loc-cite{color:var(--ds-slate) !important}
+section.block table.data tbody tr:nth-child(even) td, .street-yard table.sy-figs tbody tr:nth-child(even) td, table.cat-table tbody tr.lc-row:nth-child(even) td{background:#FAFAFB}
+/* ---- notes, quotes, chips: one light treatment ---- */
+.disclaimer, blockquote, .quote-block, .street-yard blockquote, details.how-calc[open] > div, table.cat-table details.lc-src[open] > div, .hs-dialog .hs-cost{background:var(--ds-panel) !important;color:var(--ds-navy) !important;border-left:4px solid var(--ds-coral) !important;border-radius:0 var(--ds-radius-sm) var(--ds-radius-sm) 0}
+.placeholder, .slot-note{background:var(--ds-panel) !important;color:var(--ds-navy) !important;border:1px dashed var(--ds-slate) !important;border-radius:var(--ds-radius-sm)}
+span.est, .tag-u, .own-flag, .tone.warning, #dev-cost-model .dev-model-badge{background:var(--ds-panel) !important;color:var(--ds-navy) !important;border:1px solid var(--ds-gray) !important;border-radius:6px}
+#ownership .own-box--asset{background:var(--ds-panel) !important;border:1px solid var(--ds-gray) !important}
+.kf{border-top:4px solid var(--ds-navy) !important;color:var(--ds-navy) !important}
+.kf.neg, .kf.gold{border-top-color:var(--ds-coral) !important}
+.kf .n, .kf .ksrc, .kf.neg .n, .kf.neg .ksrc, .npv-hero .lbl{color:var(--ds-slate) !important}
+.kf.neg h3, .kf.neg li, .kf.neg p{color:var(--ds-navy) !important}
+.kf .kv, .kf.neg .kv, .npv-hero .big.neg{color:var(--ds-coral-ink) !important}
+.kf .kv{font-weight:800}
+.fact-card{background:var(--ds-white) !important;border:1px solid var(--ds-gray) !important;border-radius:var(--ds-radius) !important;padding:var(--ds-s4) !important;box-shadow:none !important}
+.fact-card__value{color:var(--ds-navy) !important;font-weight:800 !important;font-size:var(--ds-fs-stat) !important;letter-spacing:-.02em}
+.fact-card__lbl{color:var(--ds-slate) !important;font-weight:700;font-size:var(--ds-fs-xs) !important;text-transform:uppercase;letter-spacing:.04em}
+@media (max-width:700px){.ds-sub{text-align:left}section.block h2.ds-center{text-align:left}section.block h2.ds-center::before{margin-left:0}}
+/* ---- badges ---- */
+.ds-badge{display:inline-block;padding:.12rem .5rem;border-radius:6px;font-size:var(--ds-fs-xs);font-weight:700;line-height:1.4;margin:0 .15rem .15rem 0;border:1px solid transparent}
+.ds-badge b{color:inherit !important}
+.ds-badge-red{background:#FDE8E8;color:#9B1C1C;border-color:#F8B4B4}
+.ds-badge-amber{background:#FDF0E8;color:#8A3A12;border-color:#F5C3A6}
+.ds-badge-gray{background:var(--ds-panel);color:var(--ds-navy);border-color:var(--ds-gray)}
+.bad-flag{color:var(--ds-coral-ink) !important}
+.ds-row-btn{display:table;margin-top:.4rem;padding:.2rem .6rem;border-radius:6px;background:var(--ds-white);border:1px solid var(--ds-navy);color:var(--ds-navy) !important;font-size:var(--ds-fs-xs);font-weight:700;text-decoration:none !important}
+.ds-row-btn:hover{background:var(--ds-coral);border-color:var(--ds-coral)}
+.ds-bad .bad-note{max-width:46rem;margin:var(--ds-s2) auto var(--ds-s5) !important;text-align:center;color:var(--ds-slate)}
+.ds-bad .bad-table td:first-child{width:11rem}
+.ds-bad .bad-table td.bad-src{white-space:nowrap}
+.ds-bad .bad-cards{gap:var(--ds-s4)}
+.fn{color:var(--ds-slate) !important}
+/* ---- quick-jump 2x2 grid ---- */
+.ds-jump-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--ds-s3);margin-top:var(--ds-s5)}
+.ds-jump{display:flex;align-items:center;gap:var(--ds-s3);background:var(--ds-panel);border:1px solid var(--ds-gray);border-radius:var(--ds-radius);padding:.85rem 1rem;color:var(--ds-navy) !important;text-decoration:none !important;font-weight:700;font-size:var(--ds-fs-sm)}
+.ds-jump:hover{border-color:var(--ds-coral);background:var(--ds-white)}
+.ds-jump-t{flex:1}
+.ds-jump .ds-arrow{color:var(--ds-coral)}
+/* ---- location costs: light feature panel ---- */
+section.block.loc-lead .loc-banner{background:var(--ds-panel) !important;border:1px solid var(--ds-gray);border-left:4px solid var(--ds-coral);border-bottom:1px solid var(--ds-gray);color:var(--ds-navy);border-radius:var(--ds-radius);padding:var(--ds-s5)}
+section.block.loc-lead .loc-banner h2{color:var(--ds-navy) !important;font-size:var(--ds-fs-h2) !important;font-weight:800}
+section.block.loc-lead .loc-banner,section.block.loc-lead .loc-banner p,section.block.loc-lead .loc-banner .loc-zero,section.block.loc-lead .loc-banner .loc-big,section.block.loc-lead .loc-banner .loc-sum-parts,section.block.loc-lead .loc-banner .loc-sum-parts b{color:var(--ds-navy) !important}
+section.block.loc-lead .loc-banner .loc-kicker{color:var(--ds-coral-ink) !important;text-transform:uppercase;font-size:var(--ds-fs-xs)}
+section.block.loc-lead .loc-banner .loc-big-lbl{color:var(--ds-slate) !important}
+.loc-sum{border-top:1px solid var(--ds-gray) !important}
+.loc-sum .loc-big{background:var(--ds-white);border:1px solid var(--ds-gray);border-radius:var(--ds-radius);padding:var(--ds-s4)}
+/* ---- ownership: profile sidebar ---- */
+.ds-profile-grid{display:grid;grid-template-columns:17rem minmax(0,1fr);gap:var(--ds-s5);align-items:start}
+.ds-profile{background:var(--ds-panel);border:1px solid var(--ds-gray);border-radius:var(--ds-radius);padding:var(--ds-s5)}
+section.block .ds-profile-name{margin:0;font-size:var(--ds-fs-lg);font-weight:800;color:var(--ds-navy)}
+section.block .ds-profile-sub{margin:0 0 var(--ds-s4);color:var(--ds-slate);font-size:var(--ds-fs-sm)}
+.ds-profile-list{margin:0;display:grid;gap:0}
+.ds-profile-list > div{padding:var(--ds-s2) 0;border-top:1px solid var(--ds-gray)}
+.ds-profile-list dt{font-size:var(--ds-fs-xs);font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--ds-slate)}
+.ds-profile-list dd{margin:.1rem 0 0;font-size:var(--ds-fs-sm);font-weight:700;color:var(--ds-navy)}
+.ds-profile-main{min-width:0;overflow-x:auto}
+.own-box--debtor, .own-box--debtor.own-box--unknown{background:var(--ds-white) !important;border:2px solid var(--ds-coral) !important;color:var(--ds-navy) !important}
+.own-box--debtor .own-box__name, .own-box--debtor .own-box__value{color:var(--ds-navy) !important}
+.own-box--debtor .own-box__role, .own-box--debtor .own-box__pct{color:var(--ds-coral-ink) !important}
+.own-box--debtor .own-box__meta, .own-box--debtor .own-box__cite, .own-box--debtor .own-box__value--nd{color:var(--ds-slate) !important}
+/* ---- facts list ---- */
+.facts dt{color:var(--ds-slate);font-weight:700;font-size:var(--ds-fs-sm);border-bottom:1px solid var(--ds-line)}
+.facts dd{border-bottom:1px solid var(--ds-line)}
+/* ---- general form controls/buttons already on page ---- */
+section.block .btn{background:var(--ds-white);border:1px solid var(--ds-navy);color:var(--ds-navy);border-radius:var(--ds-radius-sm);font-weight:700;padding:.5rem .9rem}
+section.block .btn:hover{background:var(--ds-panel)}
+/* ---- responsive ---- */
+
+@media (max-width:900px){.ds-hero-grid,.ds-profile-grid{grid-template-columns:1fr}.ds-visual{order:2}.ds-hero-text{order:1}}
+@media (max-width:700px){
+  section.block{padding:var(--ds-s5) var(--ds-s4)}
+  .problem-card{padding:var(--ds-s4) !important}
+  .ds-stat-row,.ds-jump-grid,.ds-panel{grid-template-columns:1fr}
+  .ds-bar-row{grid-template-columns:1fr auto}
+  .ds-bar-row .ds-bar{grid-column:1/-1;grid-row:2}
+  .bad-table.ds-table thead{position:static;width:auto;height:auto;overflow:visible;clip:auto}
+  .bad-table.ds-table{display:table;width:100% !important;min-width:760px}
+  .bad-table.ds-table tbody{display:table-row-group;width:auto !important}
+  .bad-table.ds-table tr{display:table-row;width:auto !important;border:0;margin:0;background:transparent}
+  .bad-table.ds-table td{display:table-cell;width:auto !important;white-space:normal}
+  .bad-table.ds-table td:first-child{background:transparent;color:var(--ds-navy);border-radius:0;width:9rem !important}
+  .bad-table.ds-table td.bad-src{white-space:nowrap !important}
+  .bad-table.ds-table td::before{display:none}
+  .bad-table.ds-table caption{display:table-caption}
+  section.block table.data{min-width:560px}
+}
 </style>
 </head>
 <body data-page="company" data-company="bella">
 <a class="skip" href="#main">Skip to content</a>
 <main id="main" class="wrap">
-<section class="block" id="summary">
+<section class="block ds-hero" id="summary">
+<div class="ds-hero-grid">
+<div class="ds-visual" aria-label="Site figures already stated on this page">
+<div class="ds-panel">
+<div class="ds-panel-bar"><span></span><span></span><span></span></div>
+<div class="ds-stat ds-stat-wide"><p class="ds-stat-lbl">Floodplain and location costs, at midpoints (derived)</p><p class="ds-stat-num">$4,229,267</p>
+<div class="ds-bars" role="img" aria-label="Floodplain $3,533,475; habitat and environmental $695,792">
+<div class="ds-bar-row"><span class="ds-bar-name">Floodplain</span><span class="ds-bar"><i style="width:100%"></i></span><b>$3,533,475</b></div>
+<div class="ds-bar-row"><span class="ds-bar-name">Habitat and environmental</span><span class="ds-bar"><i class="ds-bar-2" style="width:19.7%"></i></span><b>$695,792</b></div>
+</div></div>
+<div class="ds-stat"><p class="ds-stat-lbl">Parcel in FEMA Zone AE</p><p class="ds-stat-num">about 94%</p><div class="ds-meter" role="img" aria-label="About 94 percent of the parcel in Zone AE"><i style="width:94%"></i></div></div>
+<div class="ds-stat"><p class="ds-stat-lbl">Approved units</p><p class="ds-stat-num">380</p><p class="ds-stat-sub">280 market, 100 affordable</p></div>
+<div class="ds-stat"><p class="ds-stat-lbl">Bought</p><p class="ds-stat-num">2016</p><p class="ds-stat-sub">Still vacant today</p></div>
+<div class="ds-stat"><p class="ds-stat-lbl">With liquefaction and groundwater lines</p><p class="ds-stat-num">$7,487,187</p><p class="ds-stat-sub">At midpoints (derived)</p></div>
+</div>
+</div>
+<div class="ds-hero-text">
 <h2>Bella Mar Land Investors LLC</h2>
 <p>408 Hollister Street, San Diego, CA 92154 · Assessor parcel 627-100-09-00</p>
-<p class="diagnosis-frame" style="border-left:4px solid #EF8354;padding:.6rem .9rem;margin-top:.8rem;background:#F6F6F7">This page is a diagnosis, not a criticism of anyone. Bella Mar Land Investors LLC bought this land in 2016, and it is still vacant today. Builder letters of intent have come and gone without a closing. The aim here is to name the specific site problems that explain why: the floodplain, the soil, the groundwater, the habitat and the required public work. A site that has sat undeveloped this long, even with builder interest, shows that these costs are real and that the market has already weighed them. The bad case and the problems below are an honest look at what it would take to make the numbers work: what the location and the permit conditions require, what each item costs, and how much time it adds.</p>
+<hr class="ds-divider">
+<p class="diagnosis-frame">This page is a diagnosis, not a criticism of anyone. Bella Mar Land Investors LLC bought this land in 2016, and it is still vacant today. Builder letters of intent have come and gone without a closing. The aim here is to name the specific site problems that explain why: the floodplain, the soil, the groundwater, the habitat and the required public work. A site that has sat undeveloped this long, even with builder interest, shows that these costs are real and that the market has already weighed them. The bad case and the problems below are an honest look at what it would take to make the numbers work: what the location and the permit conditions require, what each item costs, and how much time it adds.</p>
+<ul class="ds-checks" aria-label="Site problems named above">
+<li><svg class="ds-check" aria-hidden="true" viewBox="0 0 20 20" width="18" height="18"><path fill="currentColor" fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.6 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4z" clip-rule="evenodd"/></svg><a href="#problem-2">The floodplain</a></li><li><svg class="ds-check" aria-hidden="true" viewBox="0 0 20 20" width="18" height="18"><path fill="currentColor" fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.6 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4z" clip-rule="evenodd"/></svg><a href="#problem-1">The soil</a></li><li><svg class="ds-check" aria-hidden="true" viewBox="0 0 20 20" width="18" height="18"><path fill="currentColor" fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.6 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4z" clip-rule="evenodd"/></svg><a href="#bad-9">The groundwater</a></li><li><svg class="ds-check" aria-hidden="true" viewBox="0 0 20 20" width="18" height="18"><path fill="currentColor" fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.6 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4z" clip-rule="evenodd"/></svg><a href="#bad-6">The habitat</a></li><li><svg class="ds-check" aria-hidden="true" viewBox="0 0 20 20" width="18" height="18"><path fill="currentColor" fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.6 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4z" clip-rule="evenodd"/></svg><a href="#problem-4">The required public work</a></li>
+</ul>
+<div class="ds-btns">
+<a class="ds-btn ds-btn-solid" href="#bad-case">See the bad case <svg class="ds-arrow" aria-hidden="true" viewBox="0 0 20 20" width="14" height="14"><path fill="currentColor" d="M10.3 3.3a1 1 0 0 1 1.4 0l6 6a1 1 0 0 1 0 1.4l-6 6a1 1 0 1 1-1.4-1.4L14.6 11H3a1 1 0 1 1 0-2h11.6l-4.3-4.3a1 1 0 0 1 0-1.4z"/></svg></a>
+<a class="ds-btn ds-btn-outline" href="#unit-income">See the income table</a>
+</div>
+</div>
+</div>
 </section>
 
-<section class="block" id="unit-income">
-<h2>Rent and Income by Unit Type</h2>
-<p>This table works up a simple yearly income from the approved unit mix. Unit counts and sizes are from the Planning Commission staff report PC-25-032, pp. 5&#x2013;6. Market-rate rent is $2.50 per square foot per month. Affordable rents are the 2026 CTCAC (California Tax Credit Allocation Committee) maximum gross rents for San Diego County at 30% of area median income: $984 (1 BR), $1,181 (2 BR) and $1,364 (3 BR). Every number below is derived from those inputs. This is an illustration, separate from the valuation model on this page.</p>
-<div style="overflow-x:auto">
-<table class="data compact">
+<section class="block ds-income" id="unit-income">
+<h2 class="ds-center">Rent and Income by Unit Type</h2>
+<p class="ds-sub">This table works up a simple yearly income from the approved unit mix. Unit counts and sizes are from the Planning Commission staff report PC-25-032, pp. 5&#x2013;6. Market-rate rent is $2.50 per square foot per month. Affordable rents are the 2026 CTCAC (California Tax Credit Allocation Committee) maximum gross rents for San Diego County at 30% of area median income: $984 (1 BR), $1,181 (2 BR) and $1,364 (3 BR). Every number below is derived from those inputs. This is an illustration, separate from the valuation model on this page.</p>
+<div class="ds-stat-row">
+<div class="ds-stat"><p class="ds-stat-lbl">Gross annual income</p><p class="ds-stat-num">$9,361,614</p><p class="ds-stat-sub">$8,000,790 market + $1,360,824 affordable</p></div>
+<div class="ds-stat"><p class="ds-stat-lbl">Net annual income</p><p class="ds-stat-num">$6,085,049</p><p class="ds-stat-sub"><span class="ds-badge ds-badge-amber">Less operating expenses at 35%</span></p></div>
+<div class="ds-stat"><p class="ds-stat-lbl">Net rentable area</p><p class="ds-stat-num">338,375 sf</p><p class="ds-stat-sub">380 units</p></div>
+</div>
+<div class="ds-table-wrap">
+<table class="data compact ds-table">
 <thead><tr><th>Unit type</th><th>Units</th><th>Size (sf)</th><th>Total sf</th><th>Rent per unit per month</th><th>Monthly rent, all units</th><th>Annual rent</th></tr></thead>
 <tbody>
 <tr><td>Market 1 BR</td><td>85</td><td>647</td><td>85 &#xD7; 647 = 54,995</td><td>647 &#xD7; $2.50 = $1,617.50</td><td>85 &#xD7; $1,617.50 = $137,487.50</td><td>&#xD7; 12 = $1,649,850</td></tr>
@@ -981,7 +1193,8 @@ section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
 </table>
 </div>
 <h3>From Gross Income to Net Income</h3>
-<table class="data compact">
+<div class="ds-table-wrap">
+<table class="data compact ds-table">
 <thead><tr><th>Step</th><th>Math</th><th>Annual amount</th></tr></thead>
 <tbody>
 <tr><td>Gross annual income</td><td>$8,000,790 market + $1,360,824 affordable</td><td>$9,361,614</td></tr>
@@ -989,8 +1202,9 @@ section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
 <tr><td><b>Net annual income</b></td><td>$9,361,614 &#x2212; $3,276,565 (equal to $9,361,614 &#xD7; 65%)</td><td><b>$6,085,049</b></td></tr>
 </tbody>
 </table>
+</div>
 <h3>Cross-Check Against Net Rentable Area</h3>
-<ul class="exec">
+<ul class="exec ds-checklist">
 <li>The unit-size total is 266,693 + 71,682 = 338,375 sf, which matches the 338,375 sf net rentable area used on this page.</li>
 <li>Gross income per square foot: $9,361,614 &#xF7; 338,375 sf &#xF7; 12 = about $2.31 per sf per month across all units. Market units are at $2.50 ($8,000,790 &#xF7; 266,693 &#xF7; 12), and affordable units average about $1.58 ($1,360,824 &#xF7; 71,682 &#xF7; 12).</li>
 <li>No vacancy or collection loss is deducted. The affordable rents are gross caps, which include the tenant utility allowance, so the rent actually collected would be lower.</li>
@@ -1042,64 +1256,64 @@ section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
   <p class="loc-note">Midpoints of a range are labeled derived. None of the figures in this section is a new model input. They do not change this page&#39;s net present value of &#x2212;$61,209,294, residual land value of &#x2212;$42,209,294, or all-in cost of $206,339,300.</p>
 </section>
 
-<section class="block" id="bad-case">
-<h2>The Bad Case: Costs and Delays the Site Requires</h2>
-<p class="bad-intro">The items below are not choices a builder can skip. Each one is required by where the land sits (in the floodplain, on soft and wet ground, next to a habitat preserve) or by a written condition of the 2025 approvals. For each item the table gives what the site requires, what it costs, and how much time it adds. The point is to explain why this site is hard, not to fault anyone. Where the record gives no cost or no delay, the table says so. Ranges, midpoints and anything worked out here are labeled derived.</p>
-<div class="bad-table-wrap">
-<table class="bad-table">
+<section class="block ds-bad" id="bad-case">
+<h2 class="ds-center">The Bad Case: Costs and Delays the Site Requires</h2>
+<p class="bad-intro ds-sub">The items below are not choices a builder can skip. Each one is required by where the land sits (in the floodplain, on soft and wet ground, next to a habitat preserve) or by a written condition of the 2025 approvals. For each item the table gives what the site requires, what it costs, and how much time it adds. The point is to explain why this site is hard, not to fault anyone. Where the record gives no cost or no delay, the table says so. Ranges, midpoints and anything worked out here are labeled derived.</p>
+<div class="bad-table-wrap ds-table-wrap">
+<table class="bad-table ds-table">
 <caption>Site-required costs and time impacts (presentation only; no figure here changes the model)</caption>
 <thead><tr><th scope="col">Item</th><th scope="col">What the site requires</th><th scope="col">Cost</th><th scope="col">Time impact</th><th scope="col">Source</th></tr></thead>
 <tbody>
-<tr><td data-label="Item"><b>1. Imported fill</b> (A2)</td><td data-label="What the site requires">78,200 CY on site plus 3,150 CY off site (81,350 CY), so floors sit 2 ft above the 100-year flood level, compacted to 95% Standard Proctor.</td><td data-label="Cost">About <b>$2,453,066</b> (catalog line A2, in the headline total)</td><td data-label="Time impact"><b>3&#x2013;4 months.</b> Geocon expects settlement of 90 to 120 days after the fill is placed; fine pad grading waits for it.</td><td data-label="Source" class="bad-src"><a class="fn" href="#src-TPM" title="Tentative Parcel Map No. 2361780, Sheet 1">[5]</a> <a class="fn" href="#src-ATT" title="Attachment 6, condition 25; Attachment 8, Sheet 3">[4]</a> <a class="fn" href="#src-GEO" title="Geocon Geotechnical Investigation, &#xA7;&#xA7;7.8.5&#x2013;7.8.6">[10]</a></td></tr>
-<tr><td data-label="Item"><b>2. Remedial grading</b> (A5)</td><td data-label="What the site requires">56,860 CY of soft soil dug out and recompacted, per the map and Geocon&#x2019;s remedial removals.</td><td data-label="Cost">About <b>$640,191</b> (catalog line A5, in the headline total)</td><td data-label="Time impact">Not stated in the record.</td><td data-label="Source" class="bad-src"><a class="fn" href="#src-TPM" title="Tentative Parcel Map No. 2361780, Sheet 1">[5]</a> <a class="fn" href="#src-GEO" title="Geocon Geotechnical Investigation, &#xA7;7">[10]</a></td></tr>
-<tr><td data-label="Item"><b>3. Foundation premium</b></td><td data-label="What the site requires">A thickened mat or post-tensioned slab to handle liquefaction settlement (or, instead, ground improvement under line A6).</td><td data-label="Cost"><b>$0 to about $2,861,502</b>, concrete only. <span class="bad-flag">Derived. Not in the model.</span></td><td data-label="Time impact">Not stated in the record.</td><td data-label="Source" class="bad-src"><a class="fn" href="#src-GEO" title="Geocon Geotechnical Investigation, &#xA7;&#xA7;6.4, 7.8&#x2013;7.9">[10]</a> <a class="fn" href="#src-UPL" title="County of San Diego Unit Price List (July 2025)">[6]</a></td></tr>
-<tr><td data-label="Item"><b>4. Retaining walls</b> (A15)</td><td data-label="What the site requires">North habitat wall, scaled at about 1,050&#x2013;1,100 LF, 5.4&#x2013;7.6 ft exposed; Hollister wall up to 3 ft exposed along part of the 790 LF frontage; walls must be rated for flooding.</td><td data-label="Cost">About <b>$377,976</b> (midpoint of $167,989&#x2013;$587,962). <span class="bad-flag">Derived. Not in the headline total.</span></td><td data-label="Time impact">Not stated in the record.</td><td data-label="Source" class="bad-src"><a class="fn" href="#src-ATT" title="Attachment 6, conditions 30 and 31; permit item (f); Attachment 8, Sheets 3&#x2013;4">[4]</a> <a class="fn" href="#src-SR" title="Planning Commission Staff Report PC-25-032">[1]</a></td></tr>
-<tr><td data-label="Item"><b>5. Public trail and overlook</b> (A18)</td><td data-label="What the site requires">A privately owned, publicly open trail and overlook along the north edge (4 ft minimum DG trail in a 4.5 ft recreation easement), built, maintained and repaired forever.</td><td data-label="Cost"><b>Not priced</b> in the model or the record.</td><td data-label="Time impact">Not stated in the record. Easement before the final map and recorded before occupancy.</td><td data-label="Source" class="bad-src"><a class="fn" href="#src-ATT" title="Attachment 6, conditions 12 and 13; Attachment 5, condition 29; Attachment 8, Detail E/4">[4]</a></td></tr>
-<tr><td data-label="Item"><b>6. Habitat restoration and care</b> (A16, H1)</td><td data-label="What the site requires">Restore 2.3 acres to coastal sage scrub with a 5-year program, then care for it forever under a covenant; keep a 47&#x2013;67 ft brush-management zone at all times.</td><td data-label="Cost"><b>$450,717</b> (A16) plus <b>$20,593</b> (H1, present value of perpetual care). Both in the headline total. Brush management not priced.</td><td data-label="Time impact">Not stated in the record. Covenant before the final map; brush plans before grading and building permits.</td><td data-label="Source" class="bad-src"><a class="fn" href="#src-SR" title="Planning Commission Staff Report PC-25-032, pp. 7 and 15">[1]</a> <a class="fn" href="#src-NPR" title="RECON, Native Plant Restoration Plan">[53]</a> <a class="fn" href="#src-ATT" title="Attachment 5, condition 30; Attachment 6, conditions 49&#x2013;54">[4]</a> <a class="fn" href="#src-SDMC" title="San Diego Municipal Code section 143.0152">[56]</a></td></tr>
-<tr><td data-label="Item"><b>7. Burrowing owl surveys</b> (part of C13)</td><td data-label="What the site requires">Surveys 14&#x2013;30 days before any clearing or grading, rechecked 24 hours before; no work within 300 ft of an active burrow.</td><td data-label="Cost">About <b>$8,000&#x2013;$20,000</b>. <span class="bad-flag">Derived. Not in the model.</span></td><td data-label="Time impact">Surveys run 14&#x2013;30 days before work. If a burrow is active in breeding season, the 300 ft area waits until the young fledge; the record gives no length. <span class="bad-flag">Derived:</span> about 2&#x2013;6 months in that area.</td><td data-label="Source" class="bad-src"><a class="fn" href="#src-ATT2" title="PC-25-032 Attachment 18, MMRP Bio-2">[19]</a> <a class="fn" href="#src-BUOW" title="RECON, Burrowing Owl Assessment (Jan 13, 2020)">[31]</a></td></tr>
-<tr><td data-label="Item"><b>8. Bird-season rule</b> (part of C13)</td><td data-label="What the site requires">March 15&#x2013;Sept 15: no clearing, grubbing or grading until protocol surveys for least Bell&#x2019;s vireo and Ridgway&#x2019;s rail are done; noise limits at the habitat edge if birds are there.</td><td data-label="Cost">Vireo surveys about <b>$8,960&#x2013;$13,680</b>; noise monitoring in season about <b>$47,424&#x2013;$82,368</b>. <span class="bad-flag">Derived. Not in the model.</span> Noise walls not priced.</td><td data-label="Time impact"><span class="bad-flag">Derived:</span> 0&#x2013;2 months likely, up to about 6 months if loud grading has to wait for Sept 16. Worst case about <b>10 months</b> when stacked with the settlement wait.</td><td data-label="Source" class="bad-src"><a class="fn" href="#src-ATT2" title="PC-25-032 Attachment 18, MMRP Bio-3">[19]</a> <a class="fn" href="#src-ATT" title="Attachment 5, condition 28; Attachment 6, condition 54">[4]</a> <a class="fn" href="#src-CDFW" title="CDFW comment letter, p. 3">[32]</a></td></tr>
-<tr><td data-label="Item"><b>9. Dewatering</b> (A6b)</td><td data-label="What the site requires">Pumping groundwater (found at 13.5&#x2013;16 ft) out of excavations, under a Water Board discharge permit.</td><td data-label="Cost">About <b>$1,325,000</b> (midpoint of $150,000&#x2013;$2,500,000). <span class="bad-flag">Derived. Not in the headline total.</span></td><td data-label="Time impact">60-day notice to the Water Board before any discharge. <span class="bad-flag">Derived:</span> no delay if filed early; about 2 months if filed late.</td><td data-label="Source" class="bad-src"><a class="fn" href="#src-GEO" title="Geocon Geotechnical Investigation, &#xA7;7.1.4">[10]</a></td></tr>
-<tr><td data-label="Item"><b>10. Drainage</b></td><td data-label="What the site requires">Biofiltration basin, packaged treatment unit, public 18-inch storm drain in Hollister, slope protection for 5 ft/s flood flow, FEMA map-revision fees.</td><td data-label="Cost">About <b>$503,323</b> at midpoints (range $257,613&#x2013;$749,031). <span class="bad-flag">Derived.</span> Three more lines unpriced.</td><td data-label="Time impact">Not stated in the record for construction. <span class="bad-flag">Derived:</span> FEMA&#x2019;s 90-day review of the final map revision is a tail before bond release.</td><td data-label="Source" class="bad-src"><a class="fn" href="#src-SWQMP" title="Fuscoe, PDP Storm Water Quality Management Plan">[3]</a> <a class="fn" href="#src-DRN" title="Fuscoe, Preliminary Drainage Study">[16]</a> <a class="fn" href="#src-ATT" title="Attachment 5, conditions 13&#x2013;14; Attachment 6, conditions 25 and 27">[4]</a> <a class="fn" href="#src-FEMA" title="FEMA flood-map-related fee schedule">[13]</a></td></tr>
+<tr><td data-label="Item"><b>1. Imported fill</b> (A2) <a class="ds-row-btn" href="#bad-1">Details</a></td><td data-label="What the site requires">78,200 CY on site plus 3,150 CY off site (81,350 CY), so floors sit 2 ft above the 100-year flood level, compacted to 95% Standard Proctor.</td><td data-label="Cost">About <b>$2,453,066</b> (catalog line A2, in the headline total)</td><td data-label="Time impact"><span class="ds-badge ds-badge-red"><b>3&#x2013;4 months.</b></span> Geocon expects settlement of 90 to 120 days after the fill is placed; fine pad grading waits for it.</td><td data-label="Source" class="bad-src"><a class="fn" href="#src-TPM" title="Tentative Parcel Map No. 2361780, Sheet 1">[5]</a> <a class="fn" href="#src-ATT" title="Attachment 6, condition 25; Attachment 8, Sheet 3">[4]</a> <a class="fn" href="#src-GEO" title="Geocon Geotechnical Investigation, &#xA7;&#xA7;7.8.5&#x2013;7.8.6">[10]</a></td></tr>
+<tr><td data-label="Item"><b>2. Remedial grading</b> (A5) <a class="ds-row-btn" href="#bad-2">Details</a></td><td data-label="What the site requires">56,860 CY of soft soil dug out and recompacted, per the map and Geocon&#x2019;s remedial removals.</td><td data-label="Cost">About <b>$640,191</b> (catalog line A5, in the headline total)</td><td data-label="Time impact"><span class="ds-badge ds-badge-gray">Not stated in the record.</span></td><td data-label="Source" class="bad-src"><a class="fn" href="#src-TPM" title="Tentative Parcel Map No. 2361780, Sheet 1">[5]</a> <a class="fn" href="#src-GEO" title="Geocon Geotechnical Investigation, &#xA7;7">[10]</a></td></tr>
+<tr><td data-label="Item"><b>3. Foundation premium</b> <a class="ds-row-btn" href="#bad-3">Details</a></td><td data-label="What the site requires">A thickened mat or post-tensioned slab to handle liquefaction settlement (or, instead, ground improvement under line A6).</td><td data-label="Cost"><b>$0 to about $2,861,502</b>, concrete only. <span class="bad-flag">Derived. Not in the model.</span></td><td data-label="Time impact"><span class="ds-badge ds-badge-gray">Not stated in the record.</span></td><td data-label="Source" class="bad-src"><a class="fn" href="#src-GEO" title="Geocon Geotechnical Investigation, &#xA7;&#xA7;6.4, 7.8&#x2013;7.9">[10]</a> <a class="fn" href="#src-UPL" title="County of San Diego Unit Price List (July 2025)">[6]</a></td></tr>
+<tr><td data-label="Item"><b>4. Retaining walls</b> (A15) <a class="ds-row-btn" href="#bad-4">Details</a></td><td data-label="What the site requires">North habitat wall, scaled at about 1,050&#x2013;1,100 LF, 5.4&#x2013;7.6 ft exposed; Hollister wall up to 3 ft exposed along part of the 790 LF frontage; walls must be rated for flooding.</td><td data-label="Cost">About <b>$377,976</b> (midpoint of $167,989&#x2013;$587,962). <span class="bad-flag">Derived. Not in the headline total.</span></td><td data-label="Time impact"><span class="ds-badge ds-badge-gray">Not stated in the record.</span></td><td data-label="Source" class="bad-src"><a class="fn" href="#src-ATT" title="Attachment 6, conditions 30 and 31; permit item (f); Attachment 8, Sheets 3&#x2013;4">[4]</a> <a class="fn" href="#src-SR" title="Planning Commission Staff Report PC-25-032">[1]</a></td></tr>
+<tr><td data-label="Item"><b>5. Public trail and overlook</b> (A18) <a class="ds-row-btn" href="#bad-5">Details</a></td><td data-label="What the site requires">A privately owned, publicly open trail and overlook along the north edge (4 ft minimum DG trail in a 4.5 ft recreation easement), built, maintained and repaired forever.</td><td data-label="Cost"><b>Not priced</b> in the model or the record.</td><td data-label="Time impact"><span class="ds-badge ds-badge-gray">Not stated in the record.</span> Easement before the final map and recorded before occupancy.</td><td data-label="Source" class="bad-src"><a class="fn" href="#src-ATT" title="Attachment 6, conditions 12 and 13; Attachment 5, condition 29; Attachment 8, Detail E/4">[4]</a></td></tr>
+<tr><td data-label="Item"><b>6. Habitat restoration and care</b> (A16, H1) <a class="ds-row-btn" href="#bad-6">Details</a></td><td data-label="What the site requires">Restore 2.3 acres to coastal sage scrub with a 5-year program, then care for it forever under a covenant; keep a 47&#x2013;67 ft brush-management zone at all times.</td><td data-label="Cost"><b>$450,717</b> (A16) plus <b>$20,593</b> (H1, present value of perpetual care). Both in the headline total. Brush management not priced.</td><td data-label="Time impact"><span class="ds-badge ds-badge-gray">Not stated in the record.</span> Covenant before the final map; brush plans before grading and building permits.</td><td data-label="Source" class="bad-src"><a class="fn" href="#src-SR" title="Planning Commission Staff Report PC-25-032, pp. 7 and 15">[1]</a> <a class="fn" href="#src-NPR" title="RECON, Native Plant Restoration Plan">[53]</a> <a class="fn" href="#src-ATT" title="Attachment 5, condition 30; Attachment 6, conditions 49&#x2013;54">[4]</a> <a class="fn" href="#src-SDMC" title="San Diego Municipal Code section 143.0152">[56]</a></td></tr>
+<tr><td data-label="Item"><b>7. Burrowing owl surveys</b> (part of C13) <a class="ds-row-btn" href="#owl-surveys">Details</a></td><td data-label="What the site requires">Surveys 14&#x2013;30 days before any clearing or grading, rechecked 24 hours before; no work within 300 ft of an active burrow.</td><td data-label="Cost">About <b>$8,000&#x2013;$20,000</b>. <span class="bad-flag">Derived. Not in the model.</span></td><td data-label="Time impact"><span class="ds-badge ds-badge-amber">Surveys run 14&#x2013;30 days before work.</span> If a burrow is active in breeding season, the 300 ft area waits until the young fledge; the record gives no length. <span class="bad-flag">Derived:</span> about 2&#x2013;6 months in that area.</td><td data-label="Source" class="bad-src"><a class="fn" href="#src-ATT2" title="PC-25-032 Attachment 18, MMRP Bio-2">[19]</a> <a class="fn" href="#src-BUOW" title="RECON, Burrowing Owl Assessment (Jan 13, 2020)">[31]</a></td></tr>
+<tr><td data-label="Item"><b>8. Bird-season rule</b> (part of C13) <a class="ds-row-btn" href="#bad-8">Details</a></td><td data-label="What the site requires">March 15&#x2013;Sept 15: no clearing, grubbing or grading until protocol surveys for least Bell&#x2019;s vireo and Ridgway&#x2019;s rail are done; noise limits at the habitat edge if birds are there.</td><td data-label="Cost">Vireo surveys about <b>$8,960&#x2013;$13,680</b>; noise monitoring in season about <b>$47,424&#x2013;$82,368</b>. <span class="bad-flag">Derived. Not in the model.</span> Noise walls not priced.</td><td data-label="Time impact"><span class="bad-flag">Derived:</span> <span class="ds-badge ds-badge-amber">0&#x2013;2 months likely</span>, up to about 6 months if loud grading has to wait for Sept 16. Worst case about <span class="ds-badge ds-badge-red"><b>10 months</b></span> when stacked with the settlement wait.</td><td data-label="Source" class="bad-src"><a class="fn" href="#src-ATT2" title="PC-25-032 Attachment 18, MMRP Bio-3">[19]</a> <a class="fn" href="#src-ATT" title="Attachment 5, condition 28; Attachment 6, condition 54">[4]</a> <a class="fn" href="#src-CDFW" title="CDFW comment letter, p. 3">[32]</a></td></tr>
+<tr><td data-label="Item"><b>9. Dewatering</b> (A6b) <a class="ds-row-btn" href="#bad-9">Details</a></td><td data-label="What the site requires">Pumping groundwater (found at 13.5&#x2013;16 ft) out of excavations, under a Water Board discharge permit.</td><td data-label="Cost">About <b>$1,325,000</b> (midpoint of $150,000&#x2013;$2,500,000). <span class="bad-flag">Derived. Not in the headline total.</span></td><td data-label="Time impact"><span class="ds-badge ds-badge-amber">60-day notice to the Water Board before any discharge.</span> <span class="bad-flag">Derived:</span> no delay if filed early; about 2 months if filed late.</td><td data-label="Source" class="bad-src"><a class="fn" href="#src-GEO" title="Geocon Geotechnical Investigation, &#xA7;7.1.4">[10]</a></td></tr>
+<tr><td data-label="Item"><b>10. Drainage</b> <a class="ds-row-btn" href="#bad-10">Details</a></td><td data-label="What the site requires">Biofiltration basin, packaged treatment unit, public 18-inch storm drain in Hollister, slope protection for 5 ft/s flood flow, FEMA map-revision fees.</td><td data-label="Cost">About <b>$503,323</b> at midpoints (range $257,613&#x2013;$749,031). <span class="bad-flag">Derived.</span> Three more lines unpriced.</td><td data-label="Time impact"><span class="ds-badge ds-badge-gray">Not stated in the record for construction.</span> <span class="bad-flag">Derived:</span> FEMA&#x2019;s 90-day review of the final map revision is a tail before bond release.</td><td data-label="Source" class="bad-src"><a class="fn" href="#src-SWQMP" title="Fuscoe, PDP Storm Water Quality Management Plan">[3]</a> <a class="fn" href="#src-DRN" title="Fuscoe, Preliminary Drainage Study">[16]</a> <a class="fn" href="#src-ATT" title="Attachment 5, conditions 13&#x2013;14; Attachment 6, conditions 25 and 27">[4]</a> <a class="fn" href="#src-FEMA" title="FEMA flood-map-related fee schedule">[13]</a></td></tr>
 </tbody>
 </table>
 </div>
 <p class="bad-note"><b>No total is shown</b>, because not every item is priced. Unpriced: the public trail and overlook (A18), brush-management upkeep, temporary noise walls, the on-site storm drain (A12), erosion control and the stormwater pollution plan (A20), the green-street work on Hollister (A17), and any time added by foundation work, remedial grading or the walls. None of these figures is a new model input. They do not change this page&#39;s net present value of &#x2212;$61,209,294, residual land value of &#x2212;$42,209,294, or all-in cost of $206,339,300.</p>
 
 <div class="bad-cards">
-<article class="problem-card bad-card" id="bad-1">
-<h3>1. Imported Fill</h3>
+<article class="problem-card bad-card ds-card" id="bad-1">
+<h3><span class="ds-icon" style="--ic:var(--ds-navy)" aria-hidden="true"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M3 17h14v-2H3v2zm1-4h12l-2-6H6l-2 6z" fill="currentColor" stroke="currentColor" stroke-width="1.2"/></svg></span>1. Imported Fill</h3>
 <p><b>Cost:</b> about $2,453,066 for 81,350 CY (78,200 on site plus 3,150 off site). <b>Time:</b> 3&#x2013;4 months.</p>
 <p>About 94% of the parcel is in FEMA Zone AE, and the approvals require finished floors at least 2 feet above the 100-year flood level, so the pads have to be raised with trucked-in dirt. Fill in the flood zone has to be compacted to 95% of Standard Proctor (Attachment 6, condition 25).<a class="fn" href="#src-ATT" title="Attachment 6, condition 25">[4]</a> Geocon expects the soft, wet soil left underneath to settle for roughly 90 to 120 days after the fill goes in, and says fine pad grading should wait until that settlement has happened.<a class="fn" href="#src-GEO" title="Geocon Geotechnical Investigation, &#xA7;&#xA7;7.8.5&#x2013;7.8.6">[10]</a> The wait can be shortened with extra surcharge fill (5&#x2013;10 feet, handled twice) or wick drains, which cost more and are not priced here. The plan quantities leave out shrinkage; line A23 (midpoint $176,856, derived) covers that separately.</p>
 </article>
-<article class="problem-card bad-card" id="bad-2">
-<h3>2. Remedial Grading</h3>
+<article class="problem-card bad-card ds-card" id="bad-2">
+<h3><span class="ds-icon" style="--ic:var(--ds-coral)" aria-hidden="true"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M4 15l4-8 3 5 2-3 3 6H4z" fill="currentColor" stroke="currentColor" stroke-width="1.2"/></svg></span>2. Remedial Grading</h3>
 <p><b>Cost:</b> about $640,191 for 56,860 CY. <b>Time:</b> not stated in the record.</p>
 <p>The map and Geocon&#x2019;s report call for removing and recompacting the soft upper soil before the new fill is placed.<a class="fn" href="#src-TPM" title="Tentative Parcel Map No. 2361780, Sheet 1">[5]</a> <a class="fn" href="#src-GEO" title="Geocon Geotechnical Investigation, &#xA7;7">[10]</a> No separate duration is given for this work. It happens before the fill and the settlement wait in item 1.</p>
 </article>
-<article class="problem-card bad-card" id="bad-3">
-<h3>3. Foundation Premium for Liquefaction</h3>
+<article class="problem-card bad-card ds-card" id="bad-3">
+<h3><span class="ds-icon" style="--ic:var(--ds-slate)" aria-hidden="true"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M3 14h14v3H3zM5 9h10v4H5z" fill="currentColor" stroke="currentColor" stroke-width="1.2"/></svg></span>3. Foundation Premium for Liquefaction</h3>
 <p><b>Cost:</b> $0 to about $2,861,502, extra concrete only (derived). <b>Time:</b> not stated in the record.</p>
 <p>The City rates the site Category 31, high liquefaction potential. Geocon allows a mat or post-tensioned slab if settlement stays within limits, or ground improvement (stone columns, line A6) instead.<a class="fn" href="#src-GEO" title="Geocon Geotechnical Investigation, &#xA7;&#xA7;6.4, 7.8&#x2013;7.9">[10]</a> Geocon does not state a mat thickness. The range is derived from two other projects&#x2019; reports: a 5.0-inch minimum slab (Garden Grove townhomes) and a 10-inch preliminary planning assumption for a Contra Costa County project (Pittsburg), compared with a normal 4&#x2013;5 inch slab. At the County structural-concrete price, each extra inch over about 150,964 sf of building footprint is about $476,917, so 0 to 6 extra inches gives $0 to $2,861,502.<a class="fn" href="#src-UPL" title="County of San Diego Unit Price List (July 2025)">[6]</a> That is concrete only, with no extra steel, post-tensioning or edge beams. It is not a design and is not in the model. Ground improvement under A6 has a midpoint of $1,637,960 (derived) if the slab is not accepted.</p>
 </article>
-<article class="problem-card bad-card" id="bad-4">
-<h3>4. Flood-Rated Retaining Walls</h3>
+<article class="problem-card bad-card ds-card" id="bad-4">
+<h3><span class="ds-icon" style="--ic:var(--ds-slate)" aria-hidden="true"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M3 4h3v13H3zm5 4h3v9H8zm5-2h3v11h-3z" fill="currentColor" stroke="currentColor" stroke-width="1.2"/></svg></span>4. Flood-Rated Retaining Walls</h3>
 <p><b>Cost:</b> about $377,976, the midpoint of the page&#x2019;s $167,989&#x2013;$587,962 range (derived). <b>Time:</b> not stated in the record.</p>
 <p>Before any retaining-wall permit, the walls have to be shown to hold up when flooded, with the top of wall at least 2 feet above the base flood level, and a private maintenance agreement is required (Attachment 6, conditions 30 and 31).<a class="fn" href="#src-ATT" title="Attachment 6, conditions 30 and 31">[4]</a> The <b>north habitat wall</b> is masonry with up to 7&#x2032;6&#x2033; exposed; the plan labels show 5.4 to 7.6 feet exposed, with a 3-foot freestanding wall and fence on top (Detail E/4). Its length is not tabulated; scaled from Sheet 3 it is about 1,050&#x2013;1,100 LF (derived). The permit also describes a 1- to 6-foot metal fence on top of this wall, and the staff report calls it a six-foot perimeter wall.<a class="fn" href="#src-SR" title="Planning Commission Staff Report PC-25-032">[1]</a> The <b>Hollister wall</b> is up to 3 feet exposed (mostly 2 to 3 feet) with a 42-inch guardrail. 790 LF is the stationed frontage, not a stated wall length; the wall runs along the developed part of it. Off site, Detail F/4 shows about 705 LF along the temporary Hollister sidewalk as a 3-foot-maximum wall <i>or a slope</i>, so it may not be a wall at all; it is not in the range above. The 5-foot fence on the south property line is a fence, not a retaining wall. The page&#x2019;s range assumes 790 LF for both walls, which is shorter than the scaled north wall, so it is likely low.</p>
 </article>
-<article class="problem-card bad-card" id="bad-5">
-<h3>5. Public Trail and Overlook</h3>
+<article class="problem-card bad-card ds-card" id="bad-5">
+<h3><span class="ds-icon" style="--ic:var(--ds-slate)" aria-hidden="true"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M10 2l3 6-3 2-3-2 3-6zm0 9v7" fill="currentColor" stroke="currentColor" stroke-width="1.2"/></svg></span>5. Public Trail and Overlook</h3>
 <p><b>Cost:</b> not priced in the model or the record. <b>Time:</b> not stated in the record.</p>
 <p>The approvals require a privately owned, publicly accessible trail with an overlook along the north edge. The owner must build, maintain and repair it in perpetuity (Attachment 6, condition 12), provide a recreation easement before the final map (Attachment 5, condition 29), and record it before a certificate of occupancy (Attachment 6, condition 13). Detail E/4 shows a 4-foot minimum decomposed-granite trail in a 4.5-foot recreation easement on the habitat side of the north wall.<a class="fn" href="#src-ATT" title="Attachment 6, conditions 12 and 13; Attachment 5, condition 29; Attachment 8, Detail E/4">[4]</a> The cost sits in line A18, which has no quantity and is carried at $0.</p>
 </article>
-<article class="problem-card bad-card" id="bad-6">
-<h3>6. Habitat Restoration, Covenant and Brush Management</h3>
+<article class="problem-card bad-card ds-card" id="bad-6">
+<h3><span class="ds-icon" style="--ic:var(--ds-coral)" aria-hidden="true"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M10 3c4 2 6 5 6 9a6 6 0 0 1-12 0c0-4 2-7 6-9z" fill="currentColor" stroke="currentColor" stroke-width="1.2"/></svg></span>6. Habitat Restoration, Covenant and Brush Management</h3>
 <p><b>Cost:</b> $450,717 for restoration and the 5-year program, plus $20,593 for perpetual care (derived present value, about $2,421 a year). Brush-management upkeep is not priced. <b>Time:</b> not stated in the record.</p>
 <p>The remaining 2.3 acres of on-site habitat preserve land must be restored to coastal sage scrub.<a class="fn" href="#src-SR" title="Planning Commission Staff Report PC-25-032, pp. 7 and 15">[1]</a> <a class="fn" href="#src-NPR" title="RECON, Native Plant Restoration Plan">[53]</a> A Covenant of Easement protecting it must be recorded before the final map (Attachment 5, condition 30), and the care continues forever.<a class="fn" href="#src-SDMC" title="San Diego Municipal Code section 143.0152">[56]</a> A brush-management Zone One 47 to 67 feet wide sits between Buildings 1&#x2013;5 and the preserve; plans are due before grading permits (condition 50) and building permits (condition 51), and the zone must be maintained at all times (condition 53). Work near the preserve that could leak or intrude must be watched by a qualified biologist (condition 54).<a class="fn" href="#src-ATT" title="Attachment 6, conditions 49&#x2013;54">[4]</a> These steps gate the map and the permits, but the record gives no number of months.</p>
 </article>
 </div>
 
-<div class="bad-owl" id="owl-surveys">
-<h3>7. Burrowing Owl Surveys</h3>
+<div class="bad-owl ds-card ds-card-wide" id="owl-surveys">
+<h3><span class="ds-icon" style="--ic:var(--ds-coral)" aria-hidden="true"><svg viewBox="0 0 20 20" width="16" height="16"><circle cx="7" cy="9" r="2.5" fill="currentColor"/><circle cx="13" cy="9" r="2.5" fill="currentColor"/><path d="M10 12l-1.5 2h3z" fill="currentColor"/></svg></span>7. Burrowing Owl Surveys</h3>
 <p><b>Cost:</b> about $8,000 (mid) to $20,000 (high) for surveys and follow-up checks, derived from 2023 City-contract biologist rates; not in the model, which carries biological surveys (C13) as an unpriced placeholder of $0&#x2013;$50,000. Exclusion work, if needed, is extra and not priced. <b>Time:</b> surveys run 14&#x2013;30 days before work; an active burrow in breeding season holds a 300-foot area for an unstated period (derived: about 2&#x2013;6 months).</p>
 <ul>
 <li>Pre-construction surveys must be done 14 to 30 days before any brushing, clearing, grubbing or grading, at any time of year, covering the site and 450 feet around it. A biologist rechecks 24 hours before ground disturbance, and monitoring for new burrows continues until construction is complete.<a class="fn" href="#src-ATT2" title="PC-25-032 Attachment 18, MMRP Bio-2">[19]</a></li>
@@ -1109,22 +1323,25 @@ section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
 </div>
 
 <div class="bad-cards">
-<article class="problem-card bad-card" id="bad-8">
-<h3>8. Bird-Season Rule (Least Bell&#x2019;s Vireo and Ridgway&#x2019;s Rail)</h3>
+<article class="problem-card bad-card ds-card" id="bad-8">
+<h3><span class="ds-icon" style="--ic:var(--ds-navy)" aria-hidden="true"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M3 10c3-4 11-4 14 0-3 4-11 4-14 0z" fill="currentColor" stroke="currentColor" stroke-width="1.2"/></svg></span>8. Bird-Season Rule (Least Bell&#x2019;s Vireo and Ridgway&#x2019;s Rail)</h3>
 <p><b>Cost:</b> vireo protocol surveys about $8,960&#x2013;$13,680, and twice-weekly noise monitoring about $47,424&#x2013;$82,368 if work continues in season (derived; not in the model). Temporary noise walls are not priced. <b>Time:</b> derived 0&#x2013;2 months likely; up to about 10 months in the worst stacked case.</p>
 <p>Between March 15 and September 15, no clearing, grubbing, grading or other construction may happen until protocol surveys are done to the City&#x2019;s satisfaction. If vireos are present, occupied habitat cannot be graded and construction noise must stay at or below 60 dB(A) at the habitat edge, backed by an acoustician&#x2019;s analysis approved at least two weeks before work; if the noise controls fail, work stops until they are fixed or until September 16.<a class="fn" href="#src-ATT2" title="PC-25-032 Attachment 18, MMRP Bio-3">[19]</a> The rail has a matching condition, and CDFW says it has high potential north of the site.<a class="fn" href="#src-ATT" title="Attachment 5, condition 28; Attachment 6, condition 54">[4]</a> <a class="fn" href="#src-CDFW" title="CDFW comment letter, p. 3">[32]</a> The surveys have to be done in the breeding season before construction; the U.S. Fish and Wildlife Service guidelines call for eight visits, at least 10 days apart, between April 10 and July 31. The rule does not by itself stop all grading for six months. The worst case (derived) is about 6 months waiting for September 16 plus the 3&#x2013;4 month settlement wait in item 1, about 10 months in all. At the page&#x2019;s 8% discount rate, a delay of 3 months is worth about $2.77 million of present value and 10 months about $9.02 million (derived; not added to any total here).</p>
 </article>
-<article class="problem-card bad-card" id="bad-9">
-<h3>9. Dewatering</h3>
+<article class="problem-card bad-card ds-card" id="bad-9">
+<h3><span class="ds-icon" style="--ic:var(--ds-coral)" aria-hidden="true"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M10 2c3 5 5 8 5 11a5 5 0 0 1-10 0c0-3 2-6 5-11z" fill="currentColor" stroke="currentColor" stroke-width="1.2"/></svg></span>9. Dewatering</h3>
 <p><b>Cost:</b> about $1,325,000, the midpoint of the page&#x2019;s $150,000&#x2013;$2,500,000 range (derived; the supporting memo&#x2019;s own middle case is about $450,000&#x2013;$750,000). <b>Time:</b> a 60-day Water Board notice before any discharge; derived delay of none if filed early, about 2 months if late.</p>
 <p>Geocon found groundwater at 13.5 to 16 feet and says dewatering will likely be required.<a class="fn" href="#src-GEO" title="Geocon Geotechnical Investigation, &#xA7;7.1.4">[10]</a> Pumped water going to the storm drain needs coverage under San Diego Water Board Order R9-2015-0013, which requires a complete notice at least 60 days before discharge. Geocon says the groundwater &#x201C;should be considered brackish&#x201D; because the site is close to San Diego Bay, but the record has no test of its salt content (no TDS, chloride or salinity result). If it is too salty for the 1,000 mg/L limit in the Otay Valley, it may have to go to the City sewer, which pushes the cost toward the top of the range. Desalting treatment is not priced. How long the pumps would run is not stated in the record.</p>
 </article>
-<article class="problem-card bad-card" id="bad-10">
-<h3>10. Drainage and Stormwater</h3>
+<article class="problem-card bad-card ds-card" id="bad-10">
+<h3><span class="ds-icon" style="--ic:var(--ds-navy)" aria-hidden="true"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M3 6h14M3 10h14M3 14h14" fill="currentColor" stroke="currentColor" stroke-width="1.2"/></svg></span>10. Drainage and Stormwater</h3>
 <p><b>Cost:</b> about $503,323 at midpoints (derived; range $257,613&#x2013;$749,031), plus three unpriced lines. <b>Time:</b> not stated in the record for construction.</p>
 <p>The midpoint total is the biofiltration basin A12a ($212,066), the packaged treatment unit A12c ($25,196), the public 18-inch storm drain in Hollister A17m ($132,957), slope protection for a 5 ft/s flood flow A22 ($118,104), and FEMA map-revision fees A7 ($15,000).<a class="fn" href="#src-SWQMP" title="Fuscoe, PDP Storm Water Quality Management Plan">[3]</a> <a class="fn" href="#src-DRN" title="Fuscoe, Preliminary Drainage Study">[16]</a> <a class="fn" href="#src-FEMA" title="FEMA flood-map-related fee schedule">[13]</a> A stormwater technical report and a permanent maintenance agreement are required before any construction permit (Attachment 5, conditions 13 and 14), and an approved map revision (LOMR) is required before bonds are released (Attachment 6, condition 27).<a class="fn" href="#src-ATT" title="Attachment 5, conditions 13&#x2013;14; Attachment 6, conditions 25 and 27">[4]</a> FEMA has 90 days to act on a complete revision request, so that is a tail at the end of the job rather than a construction delay (derived). Not priced: the on-site storm drain, pavers and inlets (A12), erosion control and the stormwater pollution plan (A20), and the green-street work on Hollister (A17).</p>
 </article>
 </div>
+<nav class="ds-jump-grid" aria-label="Jump to the problem sections">
+<a class="ds-jump" href="#problem-1"><span class="ds-icon" style="--ic:var(--ds-navy)" aria-hidden="true"><svg viewBox="0 0 20 20" width="14" height="14"><circle cx="10" cy="10" r="5" fill="currentColor"/></svg></span><span class="ds-jump-t">Problem 1: The Ground Can Give Way in an Earthquake</span><svg class="ds-arrow" aria-hidden="true" viewBox="0 0 20 20" width="14" height="14"><path fill="currentColor" d="M10.3 3.3a1 1 0 0 1 1.4 0l6 6a1 1 0 0 1 0 1.4l-6 6a1 1 0 1 1-1.4-1.4L14.6 11H3a1 1 0 1 1 0-2h11.6l-4.3-4.3a1 1 0 0 1 0-1.4z"/></svg></a><a class="ds-jump" href="#problem-2"><span class="ds-icon" style="--ic:var(--ds-coral)" aria-hidden="true"><svg viewBox="0 0 20 20" width="14" height="14"><circle cx="10" cy="10" r="5" fill="currentColor"/></svg></span><span class="ds-jump-t">Problem 2: The Site Sits in a Floodplain and Must Be Raised</span><svg class="ds-arrow" aria-hidden="true" viewBox="0 0 20 20" width="14" height="14"><path fill="currentColor" d="M10.3 3.3a1 1 0 0 1 1.4 0l6 6a1 1 0 0 1 0 1.4l-6 6a1 1 0 1 1-1.4-1.4L14.6 11H3a1 1 0 1 1 0-2h11.6l-4.3-4.3a1 1 0 0 1 0-1.4z"/></svg></a><a class="ds-jump" href="#problem-3"><span class="ds-icon" style="--ic:var(--ds-navy)" aria-hidden="true"><svg viewBox="0 0 20 20" width="14" height="14"><circle cx="10" cy="10" r="5" fill="currentColor"/></svg></span><span class="ds-jump-t">Problem 3: Stormwater Has to Be Caught, Treated, and Kept Up</span><svg class="ds-arrow" aria-hidden="true" viewBox="0 0 20 20" width="14" height="14"><path fill="currentColor" d="M10.3 3.3a1 1 0 0 1 1.4 0l6 6a1 1 0 0 1 0 1.4l-6 6a1 1 0 1 1-1.4-1.4L14.6 11H3a1 1 0 1 1 0-2h11.6l-4.3-4.3a1 1 0 0 1 0-1.4z"/></svg></a><a class="ds-jump" href="#problem-4"><span class="ds-icon" style="--ic:var(--ds-coral)" aria-hidden="true"><svg viewBox="0 0 20 20" width="14" height="14"><circle cx="10" cy="10" r="5" fill="currentColor"/></svg></span><span class="ds-jump-t">Problem 4: Required Street and Utility Work on Hollister</span><svg class="ds-arrow" aria-hidden="true" viewBox="0 0 20 20" width="14" height="14"><path fill="currentColor" d="M10.3 3.3a1 1 0 0 1 1.4 0l6 6a1 1 0 0 1 0 1.4l-6 6a1 1 0 1 1-1.4-1.4L14.6 11H3a1 1 0 1 1 0-2h11.6l-4.3-4.3a1 1 0 0 1 0-1.4z"/></svg></a><a class="ds-jump" href="#problem-5"><span class="ds-icon" style="--ic:var(--ds-coral)" aria-hidden="true"><svg viewBox="0 0 20 20" width="14" height="14"><circle cx="10" cy="10" r="5" fill="currentColor"/></svg></span><span class="ds-jump-t">Problem 5: Rent Limits on Affordable Units Cut Income</span><svg class="ds-arrow" aria-hidden="true" viewBox="0 0 20 20" width="14" height="14"><path fill="currentColor" d="M10.3 3.3a1 1 0 0 1 1.4 0l6 6a1 1 0 0 1 0 1.4l-6 6a1 1 0 1 1-1.4-1.4L14.6 11H3a1 1 0 1 1 0-2h11.6l-4.3-4.3a1 1 0 0 1 0-1.4z"/></svg></a><a class="ds-jump" href="#problem-6"><span class="ds-icon" style="--ic:var(--ds-slate)" aria-hidden="true"><svg viewBox="0 0 20 20" width="14" height="14"><circle cx="10" cy="10" r="5" fill="currentColor"/></svg></span><span class="ds-jump-t">Problem 6: Building-Code and Permit Conditions Add Extra Work</span><svg class="ds-arrow" aria-hidden="true" viewBox="0 0 20 20" width="14" height="14"><path fill="currentColor" d="M10.3 3.3a1 1 0 0 1 1.4 0l6 6a1 1 0 0 1 0 1.4l-6 6a1 1 0 1 1-1.4-1.4L14.6 11H3a1 1 0 1 1 0-2h11.6l-4.3-4.3a1 1 0 0 1 0-1.4z"/></svg></a><a class="ds-jump" href="#problem-7"><span class="ds-icon" style="--ic:var(--ds-navy)" aria-hidden="true"><svg viewBox="0 0 20 20" width="14" height="14"><circle cx="10" cy="10" r="5" fill="currentColor"/></svg></span><span class="ds-jump-t">Problem 7: The Costs Exceed the Value</span><svg class="ds-arrow" aria-hidden="true" viewBox="0 0 20 20" width="14" height="14"><path fill="currentColor" d="M10.3 3.3a1 1 0 0 1 1.4 0l6 6a1 1 0 0 1 0 1.4l-6 6a1 1 0 1 1-1.4-1.4L14.6 11H3a1 1 0 1 1 0-2h11.6l-4.3-4.3a1 1 0 0 1 0-1.4z"/></svg></a>
+</nav>
 </section>
 
 <section class="block" id="problems">
@@ -1145,7 +1362,7 @@ section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
 <li>Brackish groundwater was measured at about 13.5 to 16 feet down, so pumping is likely needed during digging.<a class="fn" href="#src-GEO" title="Geocon Geotechnical Investigation, §7">[10]</a></li>
 </ul>
 <h3>What It Costs</h3>
-<table class="data compact">
+<div class="table-wrap"><table class="data compact">
 <thead><tr><th>Item</th><th>Low</th><th>High</th></tr></thead>
 <tbody>
 <tr><td>Ground improvement, rock columns or a heavy slab (A6)</td><td>$0</td><td>$3,275,919</td></tr>
@@ -1153,7 +1370,7 @@ section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
 <tr><td>Dewatering, pumping groundwater (A6b)</td><td>$150,000</td><td>$2,500,000</td></tr>
 <tr><td>Sum of the three lines above (derived)</td><td>$790,191</td><td>$6,416,110</td></tr>
 </tbody>
-</table>
+</table></div>
 <p class="note-below">These are the low and high already used on this page. A6 is $0 in this page’s headline total (the low end if a heavy slab is accepted). The $1.4 to $2.1 million rock-column figure in the paragraph above is a separate rough estimate in 2017 dollars; it is not a bid and is not added into the headline total.</p>
 <h3>Why It Matters</h3>
 <p class="why">This is ground work a normal site does not need, and it has to be done before the land can safely hold buildings.</p>
@@ -1168,7 +1385,7 @@ section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
 <li>The plans also call for flood-rated walls along the north habitat edge and along Hollister, and for a formal change to the federal flood map (a Letter of Map Revision, or LOMR) plus the related engineering and review fees.</li>
 </ul>
 <h3>What It Costs</h3>
-<table class="data compact">
+<div class="table-wrap"><table class="data compact">
 <thead><tr><th>Item</th><th>Low</th><th>High</th></tr></thead>
 <tbody>
 <tr><td>Import fill, including trucking the dirt to the site (A2)</td><td>$2,453,066</td><td>$2,453,066</td></tr>
@@ -1179,7 +1396,7 @@ section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
 <tr><td>FEMA review fees (A7)</td><td>$15,000</td><td>$15,000</td></tr>
 <tr><td>Sum of the six lines above (derived)</td><td>$3,893,873</td><td>$8,483,712</td></tr>
 </tbody>
-</table>
+</table></div>
 <p class="note-below">Figures are the lows and highs already used on this page. A2 is in the headline total; A23 and the wall ranges are additional planning ranges, not contractor bids.</p>
 <h3>Why It Matters</h3>
 <p class="why">Until the site is raised and protected, it cannot be built as planned, and that work is a large cost a normal site does not have.</p>
@@ -1195,7 +1412,7 @@ section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
 <li>The owner has to keep these stormwater facilities working in perpetuity, under a maintenance agreement.</li>
 </ul>
 <h3>What It Costs</h3>
-<table class="data compact">
+<div class="table-wrap"><table class="data compact">
 <thead><tr><th>Item</th><th>Low</th><th>High</th></tr></thead>
 <tbody>
 <tr><td>Biofiltration basin (S1)</td><td>$141,377</td><td>$713,000</td></tr>
@@ -1203,7 +1420,7 @@ section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
 <tr><td>Public storm drain in Hollister (S2)</td><td>$143,000</td><td>$243,000</td></tr>
 <tr><td>Perpetual upkeep of these facilities (S5)</td><td>$3,676 a year</td><td>$51,376 a year</td></tr>
 </tbody>
-</table>
+</table></div>
 <p class="note-below">The first three lines are one-time construction ranges already used on this page. The upkeep line is a yearly operating cost, so it is not added to the construction figures. Green-street treatment in the Hollister parkway (S3) is a separate line and is not repeated here.</p>
 <h3>Why It Matters</h3>
 <p class="why">These stormwater facilities are required in order to build, and the upkeep does not end when construction does.</p>
@@ -1218,7 +1435,7 @@ section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
 <li>Existing and proposed overhead utilities along Hollister have to be put underground, and a public sewer main (and a manhole) must be built in the street. New streetlights are also required.</li>
 </ul>
 <h3>What It Costs</h3>
-<table class="data compact">
+<div class="table-wrap"><table class="data compact">
 <thead><tr><th>Item</th><th>Low</th><th>High</th></tr></thead>
 <tbody>
 <tr><td>Street work on Hollister (widening, curb, sidewalk, crossings, bus stops, driveways, traffic control, and related priced items)</td><td>$225,562</td><td>$340,223</td></tr>
@@ -1227,7 +1444,7 @@ section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
 <tr><td>New streetlights (A17p)</td><td>$18,897</td><td>$56,690</td></tr>
 <tr><td>Sum of the four lines above (derived)</td><td>$553,364</td><td>$1,825,370</td></tr>
 </tbody>
-</table>
+</table></div>
 <p class="note-below">The street-work line is the sum of A17b, A17c, A17d, A17f, A17g, A17h, A17i, A17j, A17k, A17l, A17r, and A17s. The public storm drain in Hollister is counted in Problem 3, not here. Parkway planting (A17e) is excluded from this sum as an overlap.</p>
 <h3>Why It Matters</h3>
 <p class="why">The project cannot go forward without this off-site street and utility work, which the owner has to pay for.</p>
@@ -1241,12 +1458,12 @@ section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
 <li>Those caps are $984, $1,181, and $1,364 a month for a one-, two-, and three-bedroom unit (2026 state tax-credit limits). That is lower than the other affordable rents used in this page’s model.<a class="fn" href="#src-AFFR" title="CTCAC 2026 maximum gross rent limits">[2]</a></li>
 </ul>
 <h3>What It Costs</h3>
-<table class="data compact">
+<div class="table-wrap"><table class="data compact">
 <thead><tr><th>Item</th><th>Low</th><th>High</th></tr></thead>
 <tbody>
 <tr><td>Yearly rent shortfall on the 11 units at the 30% cap (O1)</td><td>$127,000 a year</td><td>$127,000 a year</td></tr>
 </tbody>
-</table>
+</table></div>
 <p class="note-below">This is a reduction in yearly rental income, not a construction cost. It is the sourced estimate already shown in the income adjustments on this page (11 units at the 30% caps versus the model’s other affordable rents, before utility allowances, which would widen the shortfall).</p>
 <h3>Why It Matters</h3>
 <p class="why">Lower allowed rents reduce the income the project can produce, which lowers the value a lender would assign to it.</p>
@@ -1262,7 +1479,7 @@ section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
 <li>Archaeological and Native American monitors must be present during soil disturbance, and biological surveys and monitoring are also required.</li>
 </ul>
 <h3>What It Costs</h3>
-<table class="data compact">
+<div class="table-wrap"><table class="data compact">
 <thead><tr><th>Item</th><th>Low</th><th>High</th></tr></thead>
 <tbody>
 <tr><td>Interior noise upgrades (B3)</td><td>$0</td><td>Not priced</td></tr>
@@ -1271,7 +1488,7 @@ section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
 <tr><td>Archaeological and Native American monitors (C12)</td><td>$45,000</td><td>$214,000</td></tr>
 <tr><td>Biological surveys and monitoring (C13)</td><td>$20,000</td><td>$171,000</td></tr>
 </tbody>
-</table>
+</table></div>
 <p class="note-below">These are the lows and highs already used on this page. Filtration is carried at $0 because it is treated as already inside the building cost. Noise upgrades and the fire glazing are required, but the record has no separate price for them.</p>
 <h3>Why It Matters</h3>
 <p class="why">These conditions are mandatory extras, and several still have no price in the record, which leaves the true cost even less certain.</p>
@@ -1286,14 +1503,14 @@ section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
 <li>In Michael Corkery, CFA’s analysis, a bank would not lend against this plan, so the land as it sits does not work as loan collateral and is treated as worth about $0.</li>
 </ul>
 <h3>What It Costs</h3>
-<table class="data compact">
+<div class="table-wrap"><table class="data compact">
 <thead><tr><th>Item</th><th>Estimate</th></tr></thead>
 <tbody>
 <tr><td>All-in cost used on this page</td><td>$206,339,300</td></tr>
 <tr><td>Net present value (today’s value after costs)</td><td>Negative</td></tr>
 <tr><td>Land value as collateral in this analysis</td><td>About $0</td></tr>
 </tbody>
-</table>
+</table></div>
 <p class="note-below">The full calculation, including the residual land value and the 1,000-run stress test, is in the Valuation Figures section later on this page. No new figures are introduced here.</p>
 <h3>Why It Matters</h3>
 <p class="why">The cost of making this land usable is greater than what it could return, so the plan is not financeable and the land is worth about $0.</p>
@@ -2253,9 +2470,24 @@ section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
 
 <section class="block" id="ownership">
   <h2>Ownership</h2>
-<p>This chart shows who owns the company that holds title to the land, and a related company that was formed to build the project.</p>
+
   <p id="own-bella-desc" class="visually-hidden">Jeffrey D. Phair personally owns 75 percent of Bella Mar Land Investors LLC. The Pressley Family Trust owns 25 percent. Bella Mar Land Investors LLC is the owner of record of 408 Hollister Street, San Diego, assessor parcel 627-100-09-00, 14.62 acres, and title remains in that company. Jeffrey D. Phair also holds a 50 percent interest in RTA Phair/Hollister, LLC, a company formed to build the Bella Mar project. The bankruptcy examiner reports that company has never conducted business.</p>
-  <div class="own-chart" role="img" aria-labelledby="ownership" aria-describedby="own-bella-desc">
+<div class="ds-profile-grid">
+<aside class="ds-profile" aria-label="Property profile">
+<p class="ds-kicker">Property profile</p>
+<p class="ds-profile-name">408 Hollister Street</p>
+<p class="ds-profile-sub">San Diego, CA 92154</p>
+<dl class="ds-profile-list">
+<div><dt>APN</dt><dd>627-100-09-00</dd></div>
+<div><dt>Area</dt><dd>14.62 acres</dd></div>
+<div><dt>Owner of record</dt><dd>Bella Mar Land Investors LLC</dd></div>
+<div><dt>Members</dt><dd>Jeffrey D. Phair 75%<br>Pressley Family Trust 25%</dd></div>
+<div><dt>Build-out entity</dt><dd>RTA Phair/Hollister, LLC (Jeffrey D. Phair 50% interest; examiner: never conducted business)</dd></div>
+</dl>
+</aside>
+<div class="ds-profile-main">
+<p>This chart shows who owns the company that holds title to the land, and a related company that was formed to build the project.</p>
+<div class="own-chart" role="img" aria-labelledby="ownership" aria-describedby="own-bella-desc">
     <div class="own-tier">Members</div>
     <div class="own-fork">
       <div class="own-fork__tops">
@@ -2297,6 +2529,8 @@ section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
       </article>
     </div>
   </div>
+</div>
+</div>
   
 </section>
 
