@@ -927,6 +927,43 @@ section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
 <p>408 Hollister Street, San Diego, CA 92154 · Assessor parcel 627-100-09-00</p>
 </section>
 
+<section class="block" id="unit-income">
+<h2>Rent and Income by Unit Type</h2>
+<p>This table works up a simple yearly income from the approved unit mix. Unit counts and sizes are from the Planning Commission staff report PC-25-032, pp. 5&#x2013;6. Market-rate rent is $2.50 per square foot per month. Affordable rents are the 2026 CTCAC (California Tax Credit Allocation Committee) maximum gross rents for San Diego County at 30% of area median income: $984 (1 BR), $1,181 (2 BR) and $1,364 (3 BR). Every number below is derived from those inputs. This is an illustration, separate from the valuation model on this page.</p>
+<div style="overflow-x:auto">
+<table class="data compact">
+<thead><tr><th>Unit type</th><th>Units</th><th>Size (sf)</th><th>Total sf</th><th>Rent per unit per month</th><th>Monthly rent, all units</th><th>Annual rent</th></tr></thead>
+<tbody>
+<tr><td>Market 1 BR</td><td>85</td><td>647</td><td>85 &#xD7; 647 = 54,995</td><td>647 &#xD7; $2.50 = $1,617.50</td><td>85 &#xD7; $1,617.50 = $137,487.50</td><td>&#xD7; 12 = $1,649,850</td></tr>
+<tr><td>Market 2 BR</td><td>129</td><td>1,000</td><td>129 &#xD7; 1,000 = 129,000</td><td>1,000 &#xD7; $2.50 = $2,500.00</td><td>129 &#xD7; $2,500.00 = $322,500.00</td><td>&#xD7; 12 = $3,870,000</td></tr>
+<tr><td>Market 3 BR</td><td>66</td><td>1,253</td><td>66 &#xD7; 1,253 = 82,698</td><td>1,253 &#xD7; $2.50 = $3,132.50</td><td>66 &#xD7; $3,132.50 = $206,745.00</td><td>&#xD7; 12 = $2,480,940</td></tr>
+<tr><td><b>Market subtotal</b></td><td><b>280</b></td><td></td><td><b>266,693</b></td><td></td><td><b>$666,732.50</b></td><td><b>$8,000,790</b></td></tr>
+<tr><td>Affordable 1 BR</td><td>48</td><td>572</td><td>48 &#xD7; 572 = 27,456</td><td>$984</td><td>48 &#xD7; $984 = $47,232</td><td>&#xD7; 12 = $566,784</td></tr>
+<tr><td>Affordable 2 BR</td><td>26</td><td>738</td><td>26 &#xD7; 738 = 19,188</td><td>$1,181</td><td>26 &#xD7; $1,181 = $30,706</td><td>&#xD7; 12 = $368,472</td></tr>
+<tr><td>Affordable 3 BR</td><td>26</td><td>963</td><td>26 &#xD7; 963 = 25,038</td><td>$1,364</td><td>26 &#xD7; $1,364 = $35,464</td><td>&#xD7; 12 = $425,568</td></tr>
+<tr><td><b>Affordable subtotal</b></td><td><b>100</b></td><td></td><td><b>71,682</b></td><td></td><td><b>$113,402</b></td><td><b>$1,360,824</b></td></tr>
+<tr><td><b>All units</b></td><td><b>380</b></td><td></td><td><b>338,375</b></td><td></td><td><b>$780,134.50</b></td><td><b>$9,361,614</b></td></tr>
+</tbody>
+</table>
+</div>
+<h3>From Gross Income to Net Income</h3>
+<table class="data compact">
+<thead><tr><th>Step</th><th>Math</th><th>Annual amount</th></tr></thead>
+<tbody>
+<tr><td>Gross annual income</td><td>$8,000,790 market + $1,360,824 affordable</td><td>$9,361,614</td></tr>
+<tr><td>Less operating expenses at 35% (management, taxes, insurance and the rest)</td><td>$9,361,614 &#xD7; 35%</td><td>&#x2212;$3,276,565</td></tr>
+<tr><td><b>Net annual income</b></td><td>$9,361,614 &#x2212; $3,276,565 (equal to $9,361,614 &#xD7; 65%)</td><td><b>$6,085,049</b></td></tr>
+</tbody>
+</table>
+<h3>Cross-Check Against Net Rentable Area</h3>
+<ul class="exec">
+<li>The unit-size total is 266,693 + 71,682 = 338,375 sf, which matches the 338,375 sf net rentable area used on this page.</li>
+<li>Gross income per square foot: $9,361,614 &#xF7; 338,375 sf &#xF7; 12 = about $2.31 per sf per month across all units. Market units are at $2.50 ($8,000,790 &#xF7; 266,693 &#xF7; 12), and affordable units average about $1.58 ($1,360,824 &#xF7; 71,682 &#xF7; 12).</li>
+<li>No vacancy or collection loss is deducted. The affordable rents are gross caps, which include the tenant utility allowance, so the rent actually collected would be lower.</li>
+<li>At the higher 60% caps ($1,968, $2,362 and $2,728), affordable income would be $2,721,648 a year. Gross income would then be $10,722,438, and net income at 35% expenses would be $6,969,585 (derived). The entitled affordable mix is actually 28 units at 80%, 22 at 60% and 11 at 30% of area median income, plus 1 manager unit (staff report p. 7).</li>
+</ul>
+</section>
+
 <section class="block loc-lead" id="location-costs">
   <div class="loc-banner">
     <p class="loc-kicker">Why the land is unbuyable</p>
@@ -2292,43 +2329,6 @@ section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
 </ul>
 </section>
 
-
-<section class="block" id="unit-income">
-<h2>Rent and Income by Unit Type</h2>
-<p>This table works up a simple yearly income from the approved unit mix. Unit counts and sizes are from the Planning Commission staff report PC-25-032, pp. 5&#x2013;6. Market-rate rent is $2.50 per square foot per month. Affordable rents are the 2026 CTCAC (California Tax Credit Allocation Committee) maximum gross rents for San Diego County at 30% of area median income: $984 (1 BR), $1,181 (2 BR) and $1,364 (3 BR). Every number below is derived from those inputs. This is an illustration, separate from the valuation model on this page.</p>
-<div style="overflow-x:auto">
-<table class="data compact">
-<thead><tr><th>Unit type</th><th>Units</th><th>Size (sf)</th><th>Total sf</th><th>Rent per unit per month</th><th>Monthly rent, all units</th><th>Annual rent</th></tr></thead>
-<tbody>
-<tr><td>Market 1 BR</td><td>85</td><td>647</td><td>85 &#xD7; 647 = 54,995</td><td>647 &#xD7; $2.50 = $1,617.50</td><td>85 &#xD7; $1,617.50 = $137,487.50</td><td>&#xD7; 12 = $1,649,850</td></tr>
-<tr><td>Market 2 BR</td><td>129</td><td>1,000</td><td>129 &#xD7; 1,000 = 129,000</td><td>1,000 &#xD7; $2.50 = $2,500.00</td><td>129 &#xD7; $2,500.00 = $322,500.00</td><td>&#xD7; 12 = $3,870,000</td></tr>
-<tr><td>Market 3 BR</td><td>66</td><td>1,253</td><td>66 &#xD7; 1,253 = 82,698</td><td>1,253 &#xD7; $2.50 = $3,132.50</td><td>66 &#xD7; $3,132.50 = $206,745.00</td><td>&#xD7; 12 = $2,480,940</td></tr>
-<tr><td><b>Market subtotal</b></td><td><b>280</b></td><td></td><td><b>266,693</b></td><td></td><td><b>$666,732.50</b></td><td><b>$8,000,790</b></td></tr>
-<tr><td>Affordable 1 BR</td><td>48</td><td>572</td><td>48 &#xD7; 572 = 27,456</td><td>$984</td><td>48 &#xD7; $984 = $47,232</td><td>&#xD7; 12 = $566,784</td></tr>
-<tr><td>Affordable 2 BR</td><td>26</td><td>738</td><td>26 &#xD7; 738 = 19,188</td><td>$1,181</td><td>26 &#xD7; $1,181 = $30,706</td><td>&#xD7; 12 = $368,472</td></tr>
-<tr><td>Affordable 3 BR</td><td>26</td><td>963</td><td>26 &#xD7; 963 = 25,038</td><td>$1,364</td><td>26 &#xD7; $1,364 = $35,464</td><td>&#xD7; 12 = $425,568</td></tr>
-<tr><td><b>Affordable subtotal</b></td><td><b>100</b></td><td></td><td><b>71,682</b></td><td></td><td><b>$113,402</b></td><td><b>$1,360,824</b></td></tr>
-<tr><td><b>All units</b></td><td><b>380</b></td><td></td><td><b>338,375</b></td><td></td><td><b>$780,134.50</b></td><td><b>$9,361,614</b></td></tr>
-</tbody>
-</table>
-</div>
-<h3>From Gross Income to Net Income</h3>
-<table class="data compact">
-<thead><tr><th>Step</th><th>Math</th><th>Annual amount</th></tr></thead>
-<tbody>
-<tr><td>Gross annual income</td><td>$8,000,790 market + $1,360,824 affordable</td><td>$9,361,614</td></tr>
-<tr><td>Less operating expenses at 35% (management, taxes, insurance and the rest)</td><td>$9,361,614 &#xD7; 35%</td><td>&#x2212;$3,276,565</td></tr>
-<tr><td><b>Net annual income</b></td><td>$9,361,614 &#x2212; $3,276,565 (equal to $9,361,614 &#xD7; 65%)</td><td><b>$6,085,049</b></td></tr>
-</tbody>
-</table>
-<h3>Cross-Check Against Net Rentable Area</h3>
-<ul class="exec">
-<li>The unit-size total is 266,693 + 71,682 = 338,375 sf, which matches the 338,375 sf net rentable area used on this page.</li>
-<li>Gross income per square foot: $9,361,614 &#xF7; 338,375 sf &#xF7; 12 = about $2.31 per sf per month across all units. Market units are at $2.50 ($8,000,790 &#xF7; 266,693 &#xF7; 12), and affordable units average about $1.58 ($1,360,824 &#xF7; 71,682 &#xF7; 12).</li>
-<li>No vacancy or collection loss is deducted. The affordable rents are gross caps, which include the tenant utility allowance, so the rent actually collected would be lower.</li>
-<li>At the higher 60% caps ($1,968, $2,362 and $2,728), affordable income would be $2,721,648 a year. Gross income would then be $10,722,438, and net income at 35% expenses would be $6,969,585 (derived). The entitled affordable mix is actually 28 units at 80%, 22 at 60% and 11 at 30% of area median income, plus 1 manager unit (staff report p. 7).</li>
-</ul>
-</section>
 
 <section class="block" id="opex">
 <h2>Operating Expenses: About 35% of Rent Is Typical After a Tax Reassessment</h2>
