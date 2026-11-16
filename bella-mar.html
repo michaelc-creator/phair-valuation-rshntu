@@ -575,6 +575,100 @@ table.cat-table .lc-calc li { margin: 0.2rem 0; }
   table.cat-table .lc-expl, table.cat-table .lc-id, table.cat-table .lc-cost { max-width: none; min-width: 0; }
   table.cat-table tr.lc-row td:last-child::before { display: none; }
 }
+
+/* Ownership: property is nested inside the LLC card. Page-only; shared css/styles.css is unchanged. */
+#ownership .own-box {
+  border-radius: 12px;
+  border-width: 1px;
+  box-shadow: 0 2px 10px rgba(45, 49, 66, 0.12);
+}
+#ownership .own-box--entity {
+  background: #FFFFFF;
+  border-color: #4F5D75;
+}
+#ownership .own-box--llc {
+  max-width: 36rem;
+  width: 100%;
+  padding: 0.85rem 1rem 1rem;
+  text-align: center;
+}
+#ownership .own-llc-hold {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 0.75rem;
+  padding-top: 0.15rem;
+}
+#ownership .own-tier--inner {
+  margin: 0 0 0.15rem;
+  width: 100%;
+  text-align: center;
+}
+#ownership .own-box--asset {
+  background: #BFC0C0;
+  border: 1px solid #4F5D75;
+  box-shadow: none;
+  width: 100%;
+  text-align: left;
+}
+#ownership .own-box--asset .own-box__role,
+#ownership .own-box--asset .own-box__name,
+#ownership .own-box--asset .own-box__meta {
+  color: #2D3142;
+}
+#ownership .own-edge__line,
+#ownership .own-fork__bar,
+#ownership .own-fork__stem {
+  background: #4F5D75;
+}
+#ownership .own-edge__line {
+  width: 1px;
+  height: 1.7rem;
+  flex-basis: 1.7rem;
+}
+#ownership .own-fork__bar {
+  height: 1px;
+  flex-basis: 1px;
+}
+#ownership .own-fork__stem {
+  width: 1px;
+  height: 1.05rem;
+  flex-basis: 1.05rem;
+}
+#ownership .own-pct {
+  background: #EF8354;
+  color: #2D3142;
+  border: 1px solid #2D3142;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+#ownership .own-pct--label {
+  background: #4F5D75;
+  color: #FFFFFF;
+  border-color: #4F5D75;
+}
+#ownership .own-edge__note {
+  color: #4F5D75;
+}
+@media (max-width: 700px) {
+  #ownership .own-box--llc { max-width: 100%; }
+  #ownership .own-edge__line,
+  #ownership .own-edge--inner .own-edge__line {
+    width: auto;
+    height: auto;
+    flex-basis: auto;
+    background: none;
+  }
+  #ownership .own-edge__line::before {
+    background: #4F5D75;
+    width: 1px;
+  }
+  #ownership .own-edge__line::after {
+    border-top-color: #4F5D75;
+  }
+}
 </style>
 </head>
 <body data-page="company" data-company="bella">
@@ -1555,18 +1649,21 @@ table.cat-table .lc-calc li { margin: 0.2rem 0; }
       </div>
       <div class="own-fork__bar" aria-hidden="true"></div>
       <div class="own-fork__stem" aria-hidden="true"></div>
-      <article class="own-box own-box--entity own-child"><h3 class="own-box__name">Bella Mar Land Investors LLC</h3><p class="own-box__pct">100%</p></article>
-    </div>
-    <div class="own-tier">Property</div>
-    <div class="own-stack">
-      <div class="own-edge">
-        <div class="own-edge__line"><span class="own-pct">Title</span></div>
-        <p class="own-edge__note">Title remains in Bella Mar Land Investors LLC</p>
-      </div>
-      <article class="own-box own-box--asset own-child">
-        <p class="own-box__role">Owner of record</p>
-        <h3 class="own-box__name">408 Hollister St, San Diego</h3>
-        <p class="own-box__meta">APN 627-100-09-00 · 14.62 ac</p>
+      <article class="own-box own-box--entity own-child own-box--llc">
+        <h3 class="own-box__name">Bella Mar Land Investors LLC</h3>
+        <p class="own-box__pct">100%</p>
+        <div class="own-llc-hold">
+          <div class="own-tier own-tier--inner">Property</div>
+          <div class="own-edge own-edge--inner">
+            <div class="own-edge__line"><span class="own-pct own-pct--label">Title</span></div>
+            <p class="own-edge__note">Title remains in Bella Mar Land Investors LLC</p>
+          </div>
+          <article class="own-box own-box--asset">
+            <p class="own-box__role">Owner of record</p>
+            <h3 class="own-box__name">408 Hollister St, San Diego</h3>
+            <p class="own-box__meta">APN 627-100-09-00 · 14.62 ac</p>
+          </article>
+        </div>
       </article>
     </div>
     <div class="own-tier">Related entity</div>
