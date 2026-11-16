@@ -16,7 +16,7 @@
     .page-jump { display: flex; flex-wrap: wrap; gap: 0.4rem 0.85rem; list-style: none; margin: 0.6rem 0 0; padding: 0; }
     .page-jump li { margin: 0; }
     .page-jump a { font-size: 0.92rem; }
-    #public-plans, #zoning-density, #conventional-rerun, #fill-costs, #affordable-subsidy, #market-interest, #on-this-page, #dev-cost-model, #discount-case, #ownership, #evidence { scroll-margin-top: 4.25rem; }
+    #public-plans, #zoning-density, #conventional-rerun, #fill-costs, #affordable-subsidy, #market-interest, #mosaic-valuation, #on-this-page, #dev-cost-model, #discount-case, #ownership, #evidence { scroll-margin-top: 4.25rem; }
     .plan-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.9rem; margin: 1rem 0 1.2rem; }
     .plan-gallery figure { margin: 0; background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
     .plan-gallery img { display: block; width: 100%; height: 180px; object-fit: cover; background: var(--paper-2); }
@@ -133,6 +133,7 @@
     <li><a href="#fill-costs">Imported fill and sitework</a></li>
     <li><a href="#affordable-subsidy">Affordable subsidy</a></li>
     <li><a href="#market-interest">Market interest and land comps</a></li>
+    <li><a href="#mosaic-valuation">Mosaic Valuation</a></li>
     <li><a href="#evidence">Evidence required</a></li>
   </ul>
 </section>
@@ -656,6 +657,81 @@
         <li>PropertyShark, SDBJ/Northmarq, MLS, and brokerage sale write-ups cited in the Nov. 16 market-interest memo. Conflicts at 555 Hollister are left unreconciled.</li>
         <li>Lee &amp; Associates 2020 brochure (historical): <a href="https://www.lee-associates.com/elee/sandiego/LeeLandTeam/408Hollister/408Hollister-Brochure.pdf">408Hollister-Brochure.pdf</a>.</li>
         <li>BuildSD, Oct. 18, 2026: <a href="https://buildsd.org/projects/bella-mar">buildsd.org/projects/bella-mar</a>.</li>
+      </ul>
+    </div>
+  </details>
+</section>
+<section class="block" id="mosaic-valuation">
+  <h2>Mosaic Valuation</h2>
+  <p class="caption">An addition of November 16, 2026. This is a comparison of sourced indications, not a valuation opinion and not a concluded value for the court. Residual land figures are engine calculations, labeled as such. No liquidation discount is applied, because none was sourced.</p>
+
+  <h3>1. The point</h3>
+  <p>A single number is a poor description of this asset. Bella Mar is undeveloped, entitled land in a bankruptcy, with non-binding letters of intent and no signed purchase agreement. Different methods answer different questions: what a rental developer would pay if the apartments were built at today’s model rents and costs; what the assessor carries on the roll; what a particular homebuilder said it might pay; and what might be realized in a Chapter 7 sale. Those answers do not have to agree, and forcing them into one point would hide the disagreement. The comparison matters because Jeffrey D. Phair’s scheduled 75% interest is what the court will be asked to value. Nothing below applies a DLOC or DLOM; those discounts remain an open item on this page.</p>
+
+  <h3>2. DCF — the analysis a developer would run</h3>
+  <p>This is the November 16 conventional underwriting rerun: a build-and-hold apartment development, year-5 exit at a 5% cap, present value of that exit discounted five years at 8% and 10%. The primary cost basis prices construction at $316.50 on the plans’ 478,005 sf of building area; the comparison basis uses 338,375 net rentable square feet. Parking is the plans’ 437 spaces. The DCF treats the property as already stabilized, which flatters value, while the cost stack still carries a 2028 start and a 26-month build. Details and flags are in <a href="#conventional-rerun">Conventional underwriting rerun</a>.</p>
+  <div class="callout danger">
+    <span class="lead">The implied residual land value is negative in every case.</span>
+    Even if the land were free, all-in development cost would still exceed the present value of the net exit. A rental developer running this analysis would not pay a positive price for the land to build this project at today’s model rents and $316.50 construction cost. No scenario in the rerun has NPV ≥ 0.
+  </div>
+  <div class="table-wrap">
+    <table class="data">
+      <thead>
+        <tr><th>Item</th><th class="end">GFA basis (primary)</th><th class="end">NRSF basis</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Year-5 NOI</td><td class="end">8,843,357</td><td class="end">8,843,357</td><td>Year-1 NOI $7,857,209 × 1.03⁴</td></tr>
+        <tr><td>Exit at 5% cap — gross / net of 5% selling costs</td><td class="end">176,867,150 / 168,023,792</td><td class="end">176,867,150 / 168,023,792</td><td>Same in every cost scenario</td></tr>
+        <tr><td>PV of net exit at 8% / 10%</td><td class="end">114,354,170 / 104,329,555</td><td class="end">114,354,170 / 104,329,555</td><td>Discounted five years</td></tr>
+        <tr><td>All-in cost at $19M land</td><td class="end">270,945,905</td><td class="end">203,793,788</td><td>Engine output</td></tr>
+        <tr><td>All-in cost at assessed land ($2,468,072)</td><td class="end">250,980,371</td><td class="end">183,905,538</td><td>Engine output</td></tr>
+        <tr><td>All-in cost at $0 land</td><td class="end">248,003,335</td><td class="end">181,000,097</td><td>Calculation — same engine, land price set to zero</td></tr>
+        <tr><td>NPV at $19M land, 8%</td><td class="end emph">−156.59M</td><td class="end">−89.44M</td><td>PV of net exit − all-in</td></tr>
+        <tr><td>NPV at assessed land, 8%</td><td class="end">−136.63M</td><td class="end">−69.55M</td><td>Still deeply negative</td></tr>
+        <tr><td>Shortfall even at $0 land, 8%</td><td class="end">133,649,165</td><td class="end">66,645,927</td><td>Calculation — all-in at $0 land minus $114,354,170</td></tr>
+        <tr class="total"><td>Residual land value at NPV = 0, 8%</td><td class="end emph">−114,371,427</td><td class="end">−58,192,446</td><td>Calculation — land price at which engine all-in equals the 8% PV</td></tr>
+        <tr><td>Residual land value at NPV = 0, 10%</td><td class="end">−123,296,355</td><td class="end">−67,067,801</td><td>Calculation — same method at a 10% discount rate</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">The residual is not “present value minus (all-in minus the stated land line).” Development fee and the interest reserve move with land price, so land was solved in the same engine until all-in equaled the PV of the net exit. Because those items fall when land falls, the solved residual (−$114.4M on the primary 8% GFA case) is less negative than the $0-land shortfall (−$133.6M). A negative residual is an economic result for this use and these assumptions. It is not a quoted offer, and it does not mean a buyer would be paid $114 million to take the parcel.</p>
+
+  <h3>3. Assessed value</h3>
+  <div class="metrics">
+    <div class="metric"><span class="val">$2,468,072</span><span class="lbl">2026 assessed land value</span><span class="det">Improvements $0 · APN 627-100-09-00</span></div>
+    <div class="metric"><span class="val">$2,044,000</span><span class="lbl">2016 purchase</span><span class="det">Doc 362, Pg. 13, Exh. M</span></div>
+    <div class="metric"><span class="val">No CIO flag</span><span class="lbl">2026 roll</span><span class="det">Prop 13 inflation from the 2016 base, not a change-in-ownership reassessment</span></div>
+  </div>
+  <p>The official 2026 county roll for APN 627-100-09-00 lists land at <strong>$2,468,072</strong> and improvements at $0. That figure is consistent with the 2016 purchase of $2,044,000 plus the 2% annual inflation factor, and the roll text is a standard Prop 13 adjustment, not a change-in-ownership reassessment. Source: <a href="https://www.sdarcc.gov/bin/cosd/parcel-request?parcelNumber=6271000900">San Diego County roll, parcel 6271000900</a>, already cited in <a href="#market-interest">Market interest and land comps</a>. This is a tax-roll carrying value, not a market sale.</p>
+
+  <h3>4. Conclusion — between the DCF residual and the assessment</h3>
+  <div class="callout">
+    <span class="lead">Of these two figures, only the assessment is a positive number.</span>
+    The DCF residual is the low bound of this comparison, and it is negative: about −$114.4 million on the primary GFA basis at 8%, or about −$58.2 million on the more generous NRSF basis. The assessed value, $2,468,072, sits well above that residual. The DCF therefore does not support valuing the land at or above the assessment for a conventional apartment development at today’s model rents and $316.50 construction cost. A mosaic that used only these two methods would run from a negative residual up to the $2.47 million roll — a range that is honest, and too wide to treat as a point estimate. The residual being negative means this use is not feasible on the DCF; it does not, by itself, set a market selling price below zero.
+  </div>
+
+  <h3>5. Liquidation value and investment value</h3>
+  <p>Two other methods belong in the same mosaic. No percentage liquidation discount is applied here, because none was sourced.</p>
+  <p><strong>Liquidation value</strong> is the relevant question after the case converted from Chapter 11 to Chapter 7 on <strong>August 14, 2026</strong> (official CM/ECF header; case style 25-00667-JBM7). WhoFiled lists Doc 509, “Converting Case from Chapter 11 to 7 (Order)(BNC),” on August 15, 2026; the conversion-order PDF was not opened, so the one-day difference is noted, not resolved. Ronald E. Stadtmueller is the current Chapter 7 trustee (successor appointment August 19, 2026, Doc 514). A Chapter 7 § 341 meeting is continued to December 2, 2026. No 11 U.S.C. § 363 sale motion was found in the public docket entries reviewed through November 12, 2026. In that setting, a sale could be quicker and more constrained than an ordinary marketed sale, but this page does not invent a discount or a forced-sale price. The sourced indications that would bound a liquidation discussion are the same facts already on the page:</p>
+  <ul>
+    <li>Assessed land value of $2,468,072 (the only closed, official carrying value).</li>
+    <li>Non-binding letters of intent: KB Home, July 17, 2025, at $19.27 million; Lennar, September 15, 2025, at $19.5 million, later described as expired, with no signed purchase agreement in the record.</li>
+    <li>A Colliers listing at $22 million, stated in Bella Mar Land Investors LLC’s periodic report as of March 31, 2025 (Case 25-00661, Doc 62). A current public listing page was not found as of November 16, 2026.</li>
+  </ul>
+  <p>Those LOI and listing figures are not liquidation sales, and they are not adjusted here.</p>
+  <p><strong>Investment value</strong> is value to a particular buyer, not value in exchange generally. The KB Home and Lennar letters are indications of what two national homebuilders said they might pay for this site as a for-sale housing deal (Lennar’s letter was for 166 homes, which is below the community-plan density floor — see <a href="#discount-case">Discount case</a>). That is a different use, and a different buyer, from the rental apartment DCF above. Against that DCF, which does not support a positive land price for the entitled 380-unit rental project, the LOIs are much higher and remain non-binding, expired or unconsummated, and unsupported by a signed PSA. They can sit in the mosaic as investment-value indications to those builders. They should not be averaged with the negative residual or treated as confirmed market value.</p>
+  <p class="note">For orientation only, 75% of the assessed $2,468,072 is $1,851,054, and 75% of the $19.27 million / $19.5 million / $22 million figures is $14,452,500 / $14,625,000 / $16,500,000. Those are pro-rata arithmetic, not a concluded value of Phair’s interest. They ignore debt, the RTA/Phair Hollister questions, and any DLOC or DLOM. Phair scheduled his 75% interest at $11.25 million, which implies a $15.0 million entity value; the examiner stated he was unable to determine a value. Those scheduled figures are already on this page and are not adopted here.</p>
+  <details class="own-sources" id="bella-mosaic-sources">
+    <summary>Sources</summary>
+    <div class="own-sources-body">
+      <ul>
+        <li>DCF costs, NOI, exit, and NPVs: November 16 conventional rerun of the Bespoke apartment engine, reported in <a href="#conventional-rerun">Conventional underwriting rerun</a> and the Nov. 16 full-rerun workpaper. Residual land values and the $0-land all-in totals are calculations from that same engine, solving for the land price at which all-in equals the PV of the net year-5 exit (or setting land to zero).</li>
+        <li>Assessed value: <a href="https://www.sdarcc.gov/bin/cosd/parcel-request?parcelNumber=6271000900">San Diego County roll, APN 627-100-09-00</a>, 2026 land $2,468,072, improvements $0.</li>
+        <li>2016 purchase of $2,044,000: Examiner’s Supplemental Report, Doc 362, Pg. 13, Exh. M.</li>
+        <li>KB Home LOI $19.27 million (July 17, 2025) and Lennar LOI $19.5 million (September 15, 2025): bankruptcy record, as already discussed on this page from Doc 362 and the public docket. Confidential examiner-eyes-only letter-of-intent pages are not posted here.</li>
+        <li>Colliers listing at $22 million: Bella Mar Land Investors LLC periodic report as of March 31, 2025, Case 25-00661, Doc 62.</li>
+        <li>Chapter 7 conversion: official CM/ECF header, date converted August 14, 2026; WhoFiled Doc 509 (August 15, 2026) and Doc 514 (successor trustee, August 19, 2026); case timeline workpaper. No § 363 sale motion found through public docket review to November 12, 2026.</li>
+        <li>Phair’s scheduled 75% at $11.25 million and the examiner’s “unable to determine”: Doc 362, as already sourced in <a href="#ownership">Ownership</a>.</li>
       </ul>
     </div>
   </details>
