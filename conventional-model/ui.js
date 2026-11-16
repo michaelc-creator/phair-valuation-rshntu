@@ -16,9 +16,9 @@
     '36': 'Client call 11/13/2026: $800–850K sale price; 1,500–2,000 sf (v1 166 TH tab Mid = $800K, 1,750 sf).',
     'D': 'Bespoke Underwriting core demo (core-model.js DEFAULTS): 3% land closing, 80% LTC, 10% construction rate.',
     'V': 'Property 1 Underwriting Model v1: A-1 margin 12% Mid; A-2 selling 5%; A-3 vertical soft 15% Mid; A-4 affordable = 50% of market; A-6 same-footprint site work; A-9 in-tract scaling; A-16 DLOC/DLOM picks.',
-    'M1': 'Property 1 Model 1 (300/380 dev-cost workbook): 24-month construction (Mid, assumption); 1% loan fee (assumption); 300 units = 221 market + 79 affordable pro-rata (hypothetical).',
+    'M1': 'Property 1 Model 1 (companion dev-cost workbook): 24-month construction (Mid, assumption); 1% loan fee (assumption).',
     'X': 'Examiner report, case document (tax-return table): Property 1 LLC owned by the Sponsor 75% and a minority member 25%. Claims in case document: secured lender $2,272,710, NOD lien $31,606, development-partner claim $2,559,917.',
-    'U': 'User voice requests 11/14/2026: 166/300/380 presets; release price 110–120% of allocated loan; cap table.',
+    'U': 'User voice requests 11/14/2026: 166/380 presets; release price 110–120% of allocated loan; cap table.',
     'P': 'USPAP land appraisal checklist (analysis file).',
     'A': 'ASSUMPTION: no source in the file; editable.'
   };
@@ -42,8 +42,7 @@
   };
   var PRESET_NOTE = {
     '166': 'Homebuilder plan: 166 for-sale townhomes at the v1 Mid case ($800K, 1,750 sf, which is the user\'s range [36]; the market-area comps median is $650K [14]), with land at the $19.5M homebuilder LOI [1]. The LOI requires the buyer to re-entitle.',
-    '300': '300 units is a HYPOTHETICAL CONDITION. No 300-unit plan is in the record. The mix is pro-rata to the entitled 280/100 program: 221 condo/flats + 79 affordable [M1].',
-    '380': '380 units matches the entitled count (280 market + 100 affordable [6][7]), but as a hypothetical for-sale build. Flats are 1,028 sf [8] at $400/sf [14]. Affordable units are 758 sf at 50% of market $/sf (assumption adapted from v1 A-4).'
+    '380': '380 units matches the entitled count (280 market + 100 affordable [6][7]), but as a hypothetical for-sale build. Flats are 1,028 sf [8] at $400/sf [14]. Affordable units are 758 sf at 50% of market $/sf (assumption adapted from v1 A-4). No 300-unit plan exists in the record.'
   };
 
   var $ = function (id) { return document.getElementById(id); };

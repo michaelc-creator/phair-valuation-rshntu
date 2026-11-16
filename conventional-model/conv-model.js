@@ -63,9 +63,7 @@
     S.land = 19500000;
     if (name === '166') {
       c[0].units = 166; c[0].sf = 1750; c[0].price = 800000;   // v1 166 TH tab Mid: 1,750 sf, $800K [36][V]
-    } else if (name === '300') {
-      c[2].units = 221; c[3].units = 79;                        // pro-rata to 280/100 (Model 1)
-    } else { // '380'
+    } else { // '380' (the only unit count used for valuation; unknown names also land here)
       S.preset = '380';
       c[2].units = 280; c[3].units = 100;                       // 280 market + 100 affordable [6][7]
     }
