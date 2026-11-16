@@ -45,9 +45,9 @@ blockquote{border-left:4px solid #1d2a33;margin:.6rem 0;padding:.4rem 1rem;backg
 blockquote .cmt{font-size:.88rem;color:#444}
 blockquote footer{font-size:.8rem;margin-top:.3rem}
 .std{margin:1rem 0 1.4rem}.how{margin:.3rem 0 0}
-.mc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.mc-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1rem}
 @media(max-width:820px){.mc-grid{grid-template-columns:1fr}}
-.mc-card{border:1px solid #ccd;border-radius:8px;padding:.7rem;background:#fff}
+.mc-card{border:1px solid #ccd;border-radius:8px;padding:.7rem;background:#fff;min-width:0;overflow-x:auto}
 .mc-card svg{width:100%;height:auto;display:block}
 tr.grp td{background:#e9eef1;font-weight:700}
 details.legacy>summary{cursor:pointer;font-weight:700;padding:.6rem 0}
@@ -152,8 +152,8 @@ span.ref{font-size:.75rem;white-space:nowrap;color:#4a5560}
 <a class="more" href="#approach">Valuation approach →</a></article>
 
 <article class="kf neg"><span class="n">3 · Required costs</span><h3>A long stack of required site costs</h3>
-<span class="kv">7 groups</span><span class="ksrc">from the technical studies and conditions of approval</span>
-<ul><li>Flood-rated retaining walls: <b>$1.4M–$5.6M</b></li><li>Construction dewatering: <b>$0.15M–$2.5M</b></li><li>Stormwater system: <b>$0.3M–$1.5M</b></li><li>Freeway ramp fair share: <b>unpriced</b></li></ul>
+<span class="kv">$6.1M–$19.4M</span><span class="ksrc">six study/condition groups, direct capital (derived), plus Site Amenities $0.2M–$0.6M (partial)</span>
+<ul><li>Flood-rated retaining walls: <b>$1.4M–$5.6M</b></li><li>Geotechnical (dewatering, ground improvement, fill): <b>$3.2M–$9.2M</b></li><li>Stormwater system: <b>$0.3M–$1.5M</b></li><li>Freeway ramp fair share: <b>unpriced</b></li></ul>
 <span class="ksrc">Derived planning ballparks (Oct 2026 $), not bids.</span>
 <a class="more" href="#cost-stack">Cost stack →</a></article>
 
@@ -192,14 +192,18 @@ span.ref{font-size:.75rem;white-space:nowrap;color:#4a5560}
 <ul class="exec">
 <li>Every item below is required by a technical study or a condition of approval for the 380-unit project.</li>
 <li>Ranges are derived planning ballparks in October 2026 dollars, not bids or takeoffs.</li>
-<li>They are <b>not added</b> to the headline NPV; several are carried in the model at lower County-list figures (e.g., walls row A15, basin row A12a).</li>
+<li>Group ranges are direct capital costs with overlaps removed (derived from the line-item schedule).</li>
 </ul>
-<h3>Largest priced items (low – high, ▮ = mid)</h3>
-<div class="rng"><div class="rt"><b>Flood-rated retaining walls, both permanent walls, all-in</b><span>$1.38M – $5.61M · mid $3.08M</span></div><div class="bar" aria-hidden="true"><i class="r" style="left:23.0%;width:70.5%"></i><i class="m" style="left:51.3%"></i></div></div>
-<div class="rng"><div class="rt"><b>Construction dewatering (surface or sewer discharge)</b><span>$0.15M – $2.5M</span></div><div class="bar" aria-hidden="true"><i class="r" style="left:2.5%;width:39.2%"></i></div></div>
-<div class="rng"><div class="rt"><b>Stormwater: biofiltration basin + Hollister storm drain / green street + treatment unit</b><span>$0.30M – $1.5M · mid $0.75M</span></div><div class="bar" aria-hidden="true"><i class="r" style="left:5.0%;width:20.0%"></i><i class="m" style="left:12.5%"></i></div></div>
-<div class="bar-lbl"><span>$0</span><span>$2M</span><span>$4M</span><span>$6M</span></div>
-<p class="note">Walls: north habitat (MHPA) wall plus 3-ft-max Hollister wall with 42" guardrail; construction, design, City permits and contingency. Dewatering: no pump test or design exists; range depends on flow and disposal path. Stormwater: the detention basin and BF-1 biofiltration basin are one facility, counted once. All derived from County unit prices, the CCCI and published references.</p>
+<h3>Capital cost by group (low – high, derived)</h3>
+<div class="kf-grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));margin-bottom:.6rem"><article class="kf neg"><span class="n">Total, six groups</span><span class="kv">$6.06M – $19.35M</span><span class="ksrc">direct, overlaps removed; before soft/financing load</span></article><article class="kf"><span class="n">Plus Site Amenities</span><span class="kv dk">$202k – $572k</span><span class="ksrc">partial: quantified lines only; many items priced per unit</span></article><article class="kf"><span class="n">Not priced</span><span class="kv dk">Freeway ramp</span><span class="ksrc">potential fair-share cost; no amount in the record</span></article></div>
+<div class="rng"><div class="rt"><b>1 · Geotechnical <span style="font-family:inherit;font-weight:400;color:#5a6670">— dewatering, ground improvement, fill</span></b><span>$3.24M – $9.22M</span></div><div class="bar" aria-hidden="true"><i class="r" style="left:32.4%;width:59.8%"></i></div></div>
+<div class="rng"><div class="rt"><b>2 · Flood / Hydraulic <span style="font-family:inherit;font-weight:400;color:#5a6670">— fill, flood-rated walls ($1.4M–$5.6M all-in)</span></b><span>$1.44M – $5.99M</span></div><div class="bar" aria-hidden="true"><i class="r" style="left:14.4%;width:45.5%"></i></div></div>
+<div class="rng"><div class="rt"><b>3 · Stormwater <span style="font-family:inherit;font-weight:400;color:#5a6670">— basin, storm drain, treatment unit</span></b><span>$0.30M – $1.48M</span></div><div class="bar" aria-hidden="true"><i class="r" style="left:3.0%;width:11.8%"></i></div></div>
+<div class="rng"><div class="rt"><b>4 · Traffic <span style="font-family:inherit;font-weight:400;color:#5a6670">— Hollister frontage, bus stops, crossing; ramp share unpriced</span></b><span>$0.23M – $0.34M</span></div><div class="bar" aria-hidden="true"><i class="r" style="left:2.3%;width:1.1%"></i></div></div>
+<div class="rng"><div class="rt"><b>5 · Environmental <span style="font-family:inherit;font-weight:400;color:#5a6670">— habitat covenant, surveys, monitoring</span></b><span>$0.47M – $0.62M</span></div><div class="bar" aria-hidden="true"><i class="r" style="left:4.7%;width:1.5%"></i></div></div>
+<div class="rng"><div class="rt"><b>6 · Conditions / other <span style="font-family:inherit;font-weight:400;color:#5a6670">— undergrounding, noise, MERV-13, railings, glazing</span></b><span>$0.37M – $1.70M</span></div><div class="bar" aria-hidden="true"><i class="r" style="left:3.7%;width:13.3%"></i></div></div>
+<div class="bar-lbl"><span>$0</span><span>$2.5M</span><span>$5M</span><span>$7.5M</span><span>$10M</span></div>
+<p class="note">Derived planning ballparks, Oct 2026 dollars, not bids. Walls: north habitat (MHPA) wall plus the 3-ft-max Hollister wall with 42" guardrail. Dewatering has no pump test or design yet. The detention and biofiltration basins are one facility, counted once.</p>
 <h3>The seven groups</h3>
 <div class="grp-grid">
 <div class="grp"><h3>1 · Geotechnical</h3><p class="gs">Geocon 2019</p><ul><li>Dewatering</li><li>Ground improvement / stone columns</li><li>Imported fill</li></ul></div>
@@ -210,7 +214,7 @@ span.ref{font-size:.75rem;white-space:nowrap;color:#4a5560}
 <div class="grp"><h3>6 · Conditions / other</h3><p class="gs">Conditions of approval</p><ul><li>Undergrounding utilities</li><li>Building noise upgrades · glazing</li><li>MERV-13 filtration</li><li>Balcony railings</li></ul></div>
 <div class="grp"><h3>7 · Site Amenities</h3><p class="gs">Site plan legend</p><ul><li>Pool · spa · courtyard</li><li>Play field · play area</li><li>Trash enclosures</li><li>Observation point · trail · signs</li></ul></div>
 </div>
-<div id="cost-lines-slot"><p class="slot-note">Detailed line items (low / high / source report / CEQAnet link) for every item in the seven groups appear below.</p></div>
+<p class="slot-note"><a href="#cost-lines">Every line item, with low / high, source report and CEQAnet link →</a></p>
 </section>
 
 <section class="block" id="approach">
