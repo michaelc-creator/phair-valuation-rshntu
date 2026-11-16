@@ -728,6 +728,195 @@ table.cat-table .lc-calc li { margin: 0.2rem 0; }
   .hs-pin { width: 1.85rem; height: 1.85rem; font-size: 0.72rem; }
   .hs-dialog { margin: auto 0.6rem; width: calc(100% - 1.2rem); }
 }
+
+/* Opening lead: floodplain and location-driven costs */
+section.block.loc-lead {
+  margin-top: 0.85rem;
+  overflow-x: hidden;
+}
+#summary + section.block.loc-lead { margin-top: 0.85rem; }
+#summary { margin-bottom: 0.85rem; }
+.loc-banner {
+  background: #2D3142;
+  color: #FFFFFF;
+  padding: 1.15rem 1.2rem 1.2rem;
+  border-radius: 8px;
+  border-bottom: 3px solid #EF8354;
+  margin: 0 0 1rem;
+}
+.loc-kicker {
+  margin: 0 0 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #EF8354;
+}
+section.block.loc-lead .loc-banner h2 {
+  margin: 0 0 0.7rem;
+  color: #FFFFFF;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(1.22rem, 3.1vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.25;
+  max-width: none;
+  letter-spacing: -0.01em;
+}
+section.block.loc-lead .loc-banner,
+section.block.loc-lead .loc-banner p,
+section.block.loc-lead .loc-banner .loc-zero,
+section.block.loc-lead .loc-banner .loc-big,
+section.block.loc-lead .loc-banner .loc-sum-parts,
+section.block.loc-lead .loc-banner .loc-sum-parts b {
+  color: #FFFFFF;
+}
+section.block.loc-lead .loc-banner .loc-kicker { color: #EF8354; }
+section.block.loc-lead .loc-banner .loc-big-lbl { color: #BFC0C0; }
+.loc-zero {
+  margin: 0 0 0.95rem;
+  color: #FFFFFF;
+  font-size: clamp(0.98rem, 2.2vw, 1.12rem);
+  font-weight: 500;
+  line-height: 1.45;
+  max-width: 46rem;
+}
+.loc-sum {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1.25rem;
+  align-items: flex-end;
+  border-top: 1px solid #4F5D75;
+  padding-top: 0.85rem;
+}
+.loc-sum .loc-big {
+  margin: 0;
+  font-size: clamp(1.55rem, 4.2vw, 2.15rem);
+  font-weight: 700;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  color: #FFFFFF;
+}
+.loc-sum .loc-big-lbl {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: #BFC0C0;
+  line-height: 1.3;
+}
+.loc-sum-parts {
+  margin: 0;
+  color: #FFFFFF;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  max-width: 22rem;
+}
+.loc-sum-parts b { color: #FFFFFF; font-variant-numeric: tabular-nums; }
+.loc-frame, .loc-note, .loc-unpriced {
+  max-width: 46rem;
+}
+.loc-frame { margin: 0 0 0.85rem; line-height: 1.5; }
+.loc-caveat {
+  margin: 0 0 0.9rem;
+  font-size: 0.82rem;
+  color: #4F5D75;
+  line-height: 1.4;
+  max-width: 46rem;
+}
+.loc-table-wrap { overflow-x: auto; margin: 0.2rem 0 0.55rem; -webkit-overflow-scrolling: touch; }
+.loc-table {
+  width: 100%;
+  min-width: 0;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+  color: #2D3142;
+  background: #FFFFFF;
+}
+.loc-table caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #2D3142;
+  padding: 0 0 0.4rem;
+}
+.loc-table th {
+  background: #2D3142;
+  color: #FFFFFF;
+  font-weight: 700;
+  text-align: left;
+  padding: 0.4rem 0.55rem;
+}
+.loc-table th.amt, .loc-table td.amt {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  width: 8.2rem;
+}
+.loc-table td {
+  border-bottom: 1px solid #BFC0C0;
+  padding: 0.4rem 0.55rem;
+  vertical-align: top;
+  color: #2D3142;
+  overflow-wrap: anywhere;
+}
+.loc-table tbody tr:nth-child(even):not(.grp):not(.total):not(.combo) td { background: #FFFFFF; }
+.loc-table tr.grp td {
+  background: #2D3142;
+  color: #FFFFFF;
+  font-weight: 700;
+  border-bottom-color: #2D3142;
+}
+.loc-table tr.grp .amt { color: #FFFFFF; font-weight: 700; }
+.loc-table tr.total td {
+  background: #BFC0C0;
+  color: #2D3142;
+  font-weight: 700;
+  border-bottom-color: #4F5D75;
+}
+.loc-table tr.combo td {
+  background: #2D3142;
+  color: #FFFFFF;
+  font-weight: 700;
+  border-bottom-color: #2D3142;
+}
+.loc-table tr.combo .amt { color: #FFFFFF; }
+.loc-cite {
+  display: block;
+  margin-top: 0.18rem;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: #4F5D75;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.loc-table tr.grp .loc-cite { color: #BFC0C0; font-weight: 400; }
+.loc-flag {
+  display: inline-block;
+  margin-left: 0.2rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #4F5D75;
+  white-space: nowrap;
+}
+.loc-note, .loc-unpriced {
+  margin: 0.45rem 0 0;
+  font-size: 0.82rem;
+  color: #2D3142;
+  line-height: 1.45;
+}
+.loc-unpriced { margin-top: 0.7rem; }
+@media (max-width: 600px) {
+  .loc-banner { padding: 0.9rem 0.85rem 1rem; }
+  .loc-banner h2 { font-size: 1.18rem; line-height: 1.3; }
+  .loc-sum { gap: 0.45rem 0.8rem; }
+  .loc-sum .loc-big { font-size: 1.55rem; }
+  .loc-table { font-size: 0.82rem; }
+  .loc-table th, .loc-table td { padding: 0.38rem 0.4rem; }
+  .loc-table th.amt, .loc-table td.amt { width: 6.6rem; }
+  .loc-cite { font-size: 0.7rem; }
+}
+
+.zero-lead p + p { margin-top: 0.55rem; }
 </style>
 </head>
 <body data-page="company" data-company="bella">
@@ -736,6 +925,50 @@ table.cat-table .lc-calc li { margin: 0.2rem 0; }
 <section class="block" id="summary">
 <h2>Bella Mar Land Investors LLC</h2>
 <p>408 Hollister Street, San Diego, CA 92154 · Assessor parcel 627-100-09-00</p>
+</section>
+
+<section class="block loc-lead" id="location-costs">
+  <div class="loc-banner">
+    <p class="loc-kicker">Why the land is unbuyable</p>
+    <h2>The cost to unlock the value of the land exceeds any value that the land could produce, especially with the existing conditions.</h2>
+    <p class="loc-zero">The land can&#39;t carry the cost of making it usable. It&#39;s not that it&#39;s worth a little &#x2014; it&#39;s that the cost to unlock it exceeds any value it could return. That&#39;s your zero.</p>
+    <div class="loc-sum">
+      <p class="loc-big">$4,229,267<span class="loc-big-lbl">Floodplain and location costs, at midpoints. Derived from the catalog lines below.</span></p>
+      <p class="loc-sum-parts"><b>$3,533,475</b> floodplain<br><b>$695,792</b> habitat and environmental<br>About <b>$7,487,187</b> if the liquefaction and groundwater lines are added at midpoints.</p>
+    </div>
+  </div>
+  <p class="loc-frame">The site sits in the 100-year floodplain (FEMA Zone AE, about 94% of the parcel) in the Otay River Valley, next to the Multi-Habitat Planning Area (MHPA) habitat preserve, on liquefiable soil. Before any vertical construction, the buyer has to do floodplain work and habitat and environmental work required by this location and by the permit conditions. This is not optional sitework any development would do. Some of it must be designed, bonded, or recorded before a grading, building, or retaining-wall permit; some before the final map; and some before occupancy. That is why there is no market for the land and no expectation of an exit.</p>
+  <p class="loc-caveat">A reading of the official flood map used in earlier site work showed about 94% in Zone AE, about 1% in the floodway, and about 5% in a lower-risk shaded Zone X. City staff have described the site as lying in the flood fringe and outside the floodway; those two accounts have not been reconciled by a survey.<a class="fn" href="#src-CCC" title="California Coastal Commission staff report W13b">[44]</a> <a class="fn" href="#src-SR" title="Planning Commission Staff Report PC-25-032, pp. 13&#x2013;14">[1]</a> The City&#39;s Seismic Safety Study places the site in Category 31 of 2, high liquefaction potential.<a class="fn" href="#src-GEO" title="Geocon Geotechnical Investigation, &#xA7;6.1">[10]</a> <a class="fn" href="#src-GEO5" title="City of San Diego Seismic Safety Study, Map Sheet 6">[59]</a></p>
+  <div class="loc-table-wrap">
+    <table class="loc-table">
+      <caption>Floodplain and location-driven costs already in this page&#39;s catalog</caption>
+      <thead>
+        <tr><th scope="col">Item</th><th class="amt" scope="col">Midpoint</th></tr>
+      </thead>
+      <tbody>
+        <tr class="grp"><td>Floodplain<span class="loc-cite">Required because the site sits in the FEMA Zone AE floodplain.</span></td><td class="amt">$3,533,475</td></tr>
+        <tr><td>A2 &#x2014; Imported fill, 81,350 CY (78,200 on site plus 3,150 off site). This is the dirt that raises the pads so finished floors sit 2 feet above the 100-year flood level. In the headline total.<span class="loc-cite">Tentative Parcel Map Sheet 1.<a class="fn" href="#src-TPM" title="Tentative Parcel Map No. 2361780, Sheet 1">[5]</a> Attachment 8, Sheet 3: finished floors shall be 2 feet above the 100-year water-surface elevation.<a class="fn" href="#src-ATT" title="PC-25-032 Attachment 8, Sheet 3">[4]</a> Staff report p. 14: the project is conditioned so the lowest finished floor is two feet or more above the base flood elevation.<a class="fn" href="#src-SR" title="Planning Commission Staff Report PC-25-032, p. 14">[1]</a> Attachment 6, condition 25: fill used to create a building pad in the Special Flood Hazard Area must be compacted to 95% of Standard Proctor (ASTM D-698).<a class="fn" href="#src-ATT" title="Attachment 6, condition 25">[4]</a></span></td><td class="amt">$2,453,066</td></tr>
+        <tr><td>A5 &#x2014; Remedial grading, 56,860 CY. In the headline total.<span class="loc-cite">Required by Tentative Parcel Map Sheet 1 and by Geocon &#xA7;7, which calls for remedial removals. No separate permit-timing sentence is stated for this quantity, so it is listed as required by the map and the geotechnical report.<a class="fn" href="#src-TPM" title="Tentative Parcel Map No. 2361780, Sheet 1">[5]</a> <a class="fn" href="#src-GEO" title="Geocon Geotechnical Investigation, &#xA7;7">[10]</a></span></td><td class="amt">$640,191</td></tr>
+        <tr><td>A7 &#x2014; FEMA review fees for the flood-map revision (CLOMR and LOMR). In the headline total.<span class="loc-cite">FEMA fee schedule: CLOMR $6,750 plus a follow-up LOMR $8,250.<a class="fn" href="#src-FEMA" title="FEMA flood-map-related fee schedule">[13]</a> Staff report p. 14: a CLOMR has already been received.<a class="fn" href="#src-SR" title="Planning Commission Staff Report PC-25-032, p. 14">[1]</a> Attachment 6, condition 27: an approved LOMR is required before bonds are released.<a class="fn" href="#src-ATT" title="Attachment 6, condition 27">[4]</a> Attachment 6, condition 29: Elevation Certificates are required before a building permit unless the LOMR is already effective.<a class="fn" href="#src-ATT" title="Attachment 6, condition 29">[4]</a></span></td><td class="amt">$15,000</td></tr>
+        <tr><td>A8 &#x2014; Remaining flood-map engineering after the studies already done. In the headline total.<span class="loc-cite">The CLOMR and no-rise study are done. This line is the remaining as-built LOMR engineering. Same timing as A7: LOMR before bond release (condition 27); Elevation Certificates before a building permit unless the LOMR is effective (condition 29).<a class="fn" href="#src-SR" title="Planning Commission Staff Report PC-25-032, p. 14">[1]</a> <a class="fn" href="#src-HYD" title="Fuscoe Hydraulic Study and No-Rise Certification">[14]</a> <a class="fn" href="#src-ATT" title="Attachment 6, conditions 27 and 29">[4]</a></span></td><td class="amt">$47,242</td></tr>
+        <tr><td>A15 &#x2014; Flood-rated retaining walls, including the north habitat wall. Midpoint of $167,989&#x2013;$587,962. <span class="loc-flag">Derived. Not in the headline total (carried at $0).</span> Wall lengths are assumed.<span class="loc-cite">Attachment 6, conditions 30 and 31: prior to the issuance of any retaining-wall permit, the walls must be shown to withstand inundated conditions, with the top of wall at least 2 feet above the base flood elevation at all locations, and a private maintenance agreement must be drafted.<a class="fn" href="#src-ATT" title="Attachment 6, conditions 30 and 31">[4]</a></span></td><td class="amt">$377,976</td></tr>
+        <tr class="grp"><td>Habitat and environmental<span class="loc-cite">Required because the site sits next to the MHPA preserve and in environmentally sensitive lands.</span></td><td class="amt">$695,792</td></tr>
+        <tr><td>A16 &#x2014; Habitat restoration, 2.3 acres plus the 5-year program. In the headline total.<span class="loc-cite">Required by the staff report and the project&#39;s Native Plant Restoration Plan: the remaining 2.3 acres of on-site MHPA land are to be preserved and restored to coastal sage scrub.<a class="fn" href="#src-SR" title="Planning Commission Staff Report PC-25-032, pp. 7 and 15">[1]</a> <a class="fn" href="#src-NPR" title="RECON, Native Plant Restoration Plan, March 26, 2021">[53]</a> The Covenant of Easement that protects this land is required before the final map; see the unpriced row below.</span></td><td class="amt">$450,717</td></tr>
+        <tr><td>H1 &#x2014; Perpetual habitat care after year 5. This is already the midpoint of $5,939&#x2013;$35,247. In the headline total. <span class="loc-flag">Derived.</span><span class="loc-cite">Required under the recorded Covenant of Easement that must be executed before the final map (Attachment 5, condition 30, and San Diego Municipal Code &#xA7;143.0152).<a class="fn" href="#src-ATT" title="Attachment 5, condition 30">[4]</a> <a class="fn" href="#src-SDMC" title="San Diego Municipal Code section 143.0152">[56]</a> <a class="fn" href="#src-NPR" title="RECON, Native Plant Restoration Plan">[53]</a></span></td><td class="amt">$20,593</td></tr>
+        <tr><td>A12a &#x2014; Biofiltration basin BF-1. Midpoint of $141,377&#x2013;$282,754. <span class="loc-flag">Derived.</span> The headline total uses the low end, $141,377, not this midpoint.<span class="loc-cite">The basin is shown on the stormwater plan.<a class="fn" href="#src-SWQMP" title="Fuscoe, PDP Storm Water Quality Management Plan">[3]</a> Attachment 5, conditions 13 and 14: prior to the issuance of any construction permit, a stormwater Technical Report must be submitted and a Maintenance Agreement for ongoing permanent BMP maintenance must be entered.<a class="fn" href="#src-ATT" title="Attachment 5, conditions 13 and 14">[4]</a></span></td><td class="amt">$212,066</td></tr>
+        <tr><td>A17k &#x2014; Path to the Otay Valley Regional Park trailhead. Midpoint of $0&#x2013;$24,832. <span class="loc-flag">Derived. Not in the headline total (carried at $0).</span> Path length is assumed.<span class="loc-cite">Attachment 6, condition 65: prior to the issuance of any building permit, the owner must assure by permit and bond the construction of a four-foot-wide multi-use pedestrian path on the east side of Hollister Street; it must be complete before first occupancy.<a class="fn" href="#src-ATT" title="Attachment 6, condition 65">[4]</a> Attachment 6, condition 18: an encroachment maintenance agreement for that Otay Valley Regional Park path connection is required before a building permit.<a class="fn" href="#src-ATT" title="Attachment 6, condition 18">[4]</a></span></td><td class="amt">$12,416</td></tr>
+        <tr class="total"><td>Total at midpoints<span class="loc-cite">Derived sum of the midpoints above. Of this, $3,768,186 is in today&#39;s headline total. The difference is A15 and A17k, which are carried at $0, and A12a counted here at its midpoint instead of its low end.</span></td><td class="amt">$4,229,267</td></tr>
+        <tr class="grp"><td>Liquefaction and groundwater, if added<span class="loc-cite">Not in the $4,229,267 total above. Each line is carried at $0 in the headline total.</span></td><td class="amt">$3,257,920</td></tr>
+        <tr><td>A6 &#x2014; Liquefaction ground improvement. Midpoint of $0&#x2013;$3,275,919. <span class="loc-flag">Derived. Not in the headline total (carried at $0).</span><span class="loc-cite">Required if a heavy slab is not accepted. Geocon finds liquefiable soils 10 to 15 feet down; the City rates the site Category 31 of 2, high liquefaction potential. No separate permit-timing sentence is stated for ground improvement, so it is listed as required by the geotechnical report if that work is the chosen method.<a class="fn" href="#src-GEO" title="Geocon Geotechnical Investigation, &#xA7;&#xA7;6.1, 6.4, 7.8&#x2013;7.9">[10]</a> <a class="fn" href="#src-GEO5" title="City of San Diego Seismic Safety Study, Map Sheet 6">[59]</a></span></td><td class="amt">$1,637,960</td></tr>
+        <tr><td>A6b &#x2014; Dewatering. Midpoint of this page&#39;s $150,000&#x2013;$2,500,000 range. <span class="loc-flag">Derived. Not in the headline total (carried at $0).</span> This is the midpoint of that published range, not a bid.<span class="loc-cite">Geocon &#xA7;7.1.4: dewatering will likely be required for excavations below the groundwater, measured at 13.5 to 16 feet. No dewatering design, pump test, or quote is in the record.<a class="fn" href="#src-GEO" title="Geocon Geotechnical Investigation, &#xA7;7.1.4">[10]</a></span></td><td class="amt">$1,325,000</td></tr>
+        <tr><td>A22 &#x2014; Slope protection for a 5-feet-per-second flood velocity. Midpoint of $0&#x2013;$236,208. <span class="loc-flag">Derived. Not in the headline total (carried at $0).</span> Quantity is assumed.<span class="loc-cite">Required by Attachment 6, condition 25: granular fill slopes must have adequate protection for a minimum flood-water velocity of five feet per second. The condition states the standard; it does not add a separate permit-issuance date.<a class="fn" href="#src-ATT" title="Attachment 6, condition 25">[4]</a></span></td><td class="amt">$118,104</td></tr>
+        <tr><td>A23 &#x2014; Extra fill to make up for compaction. Midpoint of $0&#x2013;$353,712. <span class="loc-flag">Derived. Not in the headline total (carried at $0).</span> The shrink factor is an assumption; none is in the record.<span class="loc-cite">Tied to the same floodplain fill as A2 (Tentative Parcel Map Sheet 1).<a class="fn" href="#src-TPM" title="Tentative Parcel Map No. 2361780, Sheet 1">[5]</a></span></td><td class="amt">$176,856</td></tr>
+        <tr class="combo"><td>Total at midpoints, including liquefaction and groundwater items<span class="loc-cite">Derived. $4,229,267 plus $3,257,920.</span></td><td class="amt">$7,487,187</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="loc-unpriced"><b>Required in the approvals, but not priced as its own line here:</b> the public trail and overlook amenities (A18), required by Attachment 6, conditions 12 and 13 &#x2014; the trail must be built and maintained in perpetuity, and a recreation easement must be recorded before a certificate of occupancy. Attachment 5, condition 29, requires that easement before the final map.<a class="fn" href="#src-ATT" title="Attachment 6, conditions 12 and 13; Attachment 5, condition 29">[4]</a> The brush management zone of 47 to 67 feet (Attachment 6, conditions 49&#x2013;53): complete brush-management plans are required before any building permit (condition 51), and the program must be maintained at all times (condition 53).<a class="fn" href="#src-ATT" title="Attachment 6, conditions 49&#x2013;53">[4]</a> The Covenant of Easement over the remaining environmentally sensitive land, required before the final map (Attachment 5, condition 30, and San Diego Municipal Code &#xA7;143.0152); the restoration and perpetual-care costs of that covenant are already in A16 and H1.<a class="fn" href="#src-ATT" title="Attachment 5, condition 30">[4]</a> <a class="fn" href="#src-SDMC" title="San Diego Municipal Code section 143.0152">[56]</a></p>
+  <p class="loc-note">Midpoints of a range are labeled derived. None of the figures in this section is a new model input. They do not change this page&#39;s net present value of &#x2212;$61,209,294, residual land value of &#x2212;$42,209,294, or all-in cost of $206,339,300.</p>
 </section>
 
 <section class="block" id="problems">
@@ -1843,7 +2076,7 @@ table.cat-table .lc-calc li { margin: 0.2rem 0; }
 
 <section class="block" id="summary-exec">
 <h2>Executive Summary</h2>
-<div class="zero-lead"><p>The land can&#39;t carry the cost of making it usable. It&#39;s not that it&#39;s worth a little — it&#39;s that the cost to unlock it exceeds any value it could return. That&#39;s your zero.</p></div>
+<div class="zero-lead"><p>The cost to unlock the value of the land exceeds any value that the land could produce, especially with the existing conditions.</p><p>The land can&#39;t carry the cost of making it usable. It&#39;s not that it&#39;s worth a little — it&#39;s that the cost to unlock it exceeds any value it could return. That&#39;s your zero.</p><p class="note-below">The floodplain and location-driven costs that sit behind that statement are at the <a href="#location-costs">top of this page</a>.</p></div>
 <ul class="exec">
 <li>This is a 14.13-acre parcel at 408 Hollister Street, San Diego (the County assessor’s acreage; the City staff report uses 14.62 acres). On August 14, 2025, the Planning Commission approved a 380-unit apartment project on the site.</li>
 <li>Almost the entire site is in a federal floodplain (FEMA Zone AE). That means federal maps show it as land that would flood in a 100-year storm. The plans call for 81,350 cubic yards of imported fill, plus 56,860 cubic yards of digging up and recompacting existing soil.</li>
