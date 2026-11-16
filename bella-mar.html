@@ -463,6 +463,118 @@ details.how-calc[open] > div { margin-top: 0.35rem; font-size: 0.8rem; line-heig
 @media (max-width: 640px) {
   .problem-card { padding: 0.9rem 0.9rem 1rem; }
 }
+
+/* Line-item catalog */
+#line-catalog { margin: 2.2rem 0 2.8rem; }
+#line-catalog .lc-intro { max-width: 46rem; margin: 0 0 1rem; line-height: 1.5; }
+table.cat-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  min-width: 0;
+}
+table.cat-table thead th {
+  background: #FFFFFF !important;
+  color: #2D3142 !important;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-bottom: 2px solid #2D3142;
+  padding: 0.45rem 0.7rem 0.5rem;
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+table.cat-table td {
+  border-bottom: 1px solid #BFC0C0;
+  vertical-align: top;
+  padding: 0.65rem 0.7rem;
+  color: #2D3142;
+  background: #FFFFFF;
+}
+table.cat-table tbody tr.lc-row td,
+table.cat-table tbody tr.lc-row:nth-child(even) td,
+table.cat-table tbody tr.lc-row:hover td {
+  background: #FFFFFF !important;
+}
+
+table.cat-table tr.lc-group td {
+  background: #2D3142 !important;
+  color: #FFFFFF !important;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  border-bottom: 3px solid #EF8354;
+  padding: 0.5rem 0.7rem;
+}
+table.cat-table .lc-id { font-weight: 700; color: #2D3142; max-width: 16rem; }
+table.cat-table .lc-id .lc-code { white-space: nowrap; }
+table.cat-table .lc-expl { max-width: 28rem; line-height: 1.4; font-size: 0.9rem; }
+table.cat-table .lc-cost { font-variant-numeric: tabular-nums; white-space: normal; min-width: 11rem; }
+table.cat-table .lc-range { font-weight: 700; }
+table.cat-table .lc-hl { font-size: 0.82rem; color: #4F5D75; margin-top: 0.15rem; }
+table.cat-table .lc-head { font-weight: 700; }
+table.cat-table .lc-note { font-size: 0.78rem; color: #4F5D75; margin-top: 0.15rem; line-height: 1.35; }
+table.cat-table details.lc-src { margin: 0; }
+table.cat-table details.lc-src > summary {
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #2D3142;
+  list-style: none;
+  white-space: nowrap;
+}
+table.cat-table details.lc-src > summary::-webkit-details-marker { display: none; }
+table.cat-table details.lc-src > summary::after { content: " ▾"; color: #4F5D75; }
+table.cat-table details.lc-src[open] > summary::after { content: " ▴"; }
+table.cat-table details.lc-src[open] > div {
+  margin-top: 0.4rem;
+  background: #BFC0C0;
+  color: #2D3142;
+  padding: 0.55rem 0.65rem;
+  border-radius: 4px;
+  max-width: 36rem;
+}
+table.cat-table .lc-cite, table.cat-table .lc-stat, table.cat-table .lc-calc {
+  color: #2D3142;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+table.cat-table .lc-cite { margin: 0 0 0.4rem; }
+table.cat-table .lc-stat { margin: 0.4rem 0 0; }
+table.cat-table .lc-calc { margin: 0; padding-left: 1.1rem; }
+table.cat-table .lc-calc li { margin: 0.2rem 0; }
+@media (max-width: 700px) {
+  table.cat-table { font-size: 0.9rem; }
+  table.cat-table thead { display: none; }
+  table.cat-table, table.cat-table tbody, table.cat-table tr.lc-row, table.cat-table tr.lc-group { display: block; width: 100%; }
+  table.cat-table tr.lc-group td { display: block; width: 100%; box-sizing: border-box; }
+  table.cat-table tr.lc-row {
+    border: 1px solid #4F5D75;
+    border-radius: 6px;
+    margin: 0 0 0.75rem;
+    padding: 0.35rem 0 0.2rem;
+    background: #FFFFFF;
+  }
+  table.cat-table tr.lc-row td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 0;
+    padding: 0.25rem 0.75rem 0.45rem;
+    max-width: none;
+  }
+  table.cat-table tr.lc-row td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #4F5D75;
+    margin: 0 0 0.15rem;
+  }
+  table.cat-table .lc-expl, table.cat-table .lc-id, table.cat-table .lc-cost { max-width: none; min-width: 0; }
+  table.cat-table tr.lc-row td:last-child::before { display: none; }
+}
 </style>
 </head>
 <body data-page="company" data-company="bella">
@@ -644,6 +756,734 @@ details.how-calc[open] > div { margin-top: 0.35rem; font-size: 0.8rem; line-heig
 <h3>Why It Matters</h3>
 <p class="why">The cost of making this land usable is greater than what it could return, so the plan is not financeable and the land is worth about $0.</p>
 </article>
+</section>
+
+<section class="block" id="line-catalog">
+<h2>Cost Lines, One by One</h2>
+<p class="lc-intro">Every cost line and income adjustment on this page is listed below, grouped by category. The low and high, and the amount in the headline total, are the figures already used on this page and in the supporting memos. Open Sources &amp; Methods for the citation and the calculation. Support lines are marked so they are not added twice. Where the record has no price, the line says so.</p>
+<div class="table-wrap">
+<table class="data cat-table" id="line-catalog-table">
+<thead>
+<tr>
+<th>Identification</th>
+<th>Explanation</th>
+<th>Estimated Cost</th>
+<th>Sources &amp; Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr class="lc-group"><td colspan="4">Liquefaction / Ground</td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A6</span> — Liquefaction ground improvement</td><td class="lc-expl" data-label="Explanation">The site is in the City&#x27;s high liquefaction category (Category 31 of 2). A strong earthquake could make the buildings settle unevenly and be damaged unless stone columns or a heavy slab are used.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$0 – $3,275,919</div>
+<div class="lc-hl">Headline $0</div>
+<div class="lc-note">Stone-column path, derived, 2017 dollars not escalated.</div>
+<div class="lc-note">Heavy slab not priced as a total; extra concrete (derived) is in Sources &amp; Methods.</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Geocon&#x27;s geotechnical investigation, Project G2129-52-03, April 24, 2019, §6.1 and §6.4, the City of San Diego Seismic Safety Study, Map Sheet 6, defines the site with Hazard Category 31: High Liquefaction Potential — shallow groundwater, major drainages, hydraulic fills. Per Geocon §§7.8–7.9, estimated settlement is up to 1 inch from liquefaction plus up to 1¾ inches of static settlement in soils left in place; buildings may be supported on a mat or post-tensioned foundation if those settlements are within tolerance, or the ground may be improved with stone columns about 30 feet deep, 8 to 10 feet apart, 30 inches in diameter. Per Geocon §7.9.7, that ground improvement should extend at least 15 feet past the edge of the buildings. The 150,964 square foot footprint is the page&#x27;s approximation from Sheet T.2. The dollar range uses Oakridge Geotechnical&#x27;s July 10, 2017 conceptual ground-improvement plan for the City of Moorpark as a unit-price reference, not a Bella Mar bid.</p>
+<ul class="lc-calc"><li>Footprint used on the page: about 150,964 square feet. Approximation.</li><li>High end of the stone-column range: 150,964 square feet times $21.70 per square foot equals $3,275,919. Derived. Not brought forward from 2017 with the cost index. The 15-foot perimeter is not in this high end.</li><li>Cross-check, footprint only: 1,510 to 2,359 columns times 30 feet times $30 per foot, plus $60,000 mobilization, equals about $1.36 million to $2.12 million in 2017 dollars. Derived.</li><li>Heavy-slab guide only: $969.10 per cubic yard times 10,769 divided by 10,196 equals $1,023.56 per cubic yard, which is about $3.16 per square foot per inch. Times 150,964 square feet equals about $477,000 per extra inch. Derived. No thickness is in the record, so no total is stated.</li><li>Heavy-slab extra concrete alone, derived from the mat-foundation memo §7.6: 1 extra inch $476,917; 6 extra inches $2,861,502 (County structural-concrete proxy on 150,964 sf, October 2026 dollars, concrete only; not a total and not in the headline).</li></ul>
+<p class="lc-stat">Needs a quantity or price. Derived estimate. The headline total carries this line at $0. The stress-test range is not in the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A5</span> — Remedial grading, remove and recompact</td><td class="lc-expl" data-label="Explanation">Existing loose or unsuitable soil has to be dug up and packed back down so the new fill and buildings have a sound base. This is separate from the imported dirt in A2.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$640,191 – $640,191</div>
+<div class="lc-hl">Headline $640,191</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per the Tentative Parcel Map No. 2361780, Sheet 1, the remedial quantity is 56,860 cubic yards. Per Geocon&#x27;s geotechnical investigation §7, remedial removals are required. Per the County of San Diego unit price list, the “Embankment/Excavation over 20,001 cubic yards” price is $10.66 per cubic yard. Prices are brought to October 2026 with the California Construction Cost Index.</p>
+<ul class="lc-calc"><li>56,860 cubic yards times $10.66 per cubic yard times 10,769 divided by 10,196 equals $640,191.</li></ul>
+<p class="lc-stat">Sourced. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A6b</span> — Dewatering for excavations and remedial removals</td><td class="lc-expl" data-label="Explanation">Brackish groundwater was found 13.5 to 16 feet down. Water must be pumped from excavations so workers can dig, and then disposed of where that is allowed.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$150,000 – $2,500,000</div>
+<div class="lc-hl">Headline $0</div>
+<div class="lc-note">Derived planning range, not a bid. Not in the headline total.</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Geocon&#x27;s geotechnical investigation §7.1.4, groundwater was encountered at depths of 13.5 and 16 feet in borings B-1 and B-2, and “Dewatering will likely be required for excavations below the fluctuating groundwater elevation.” Per Geocon §7, the water should be considered brackish because of the site&#x27;s proximity to San Diego Bay. Per the permit resolution, Attachment 7, pp. 62 and 64, excavation is described to 14 feet. There is no dewatering design, pump test, or contractor quote in the record. The dollar range is from the November 16, 2026 dewatering ballpark memo.</p>
+<ul class="lc-calc"><li>No design flow, duration, or bid is in the record.</li><li>The low end uses the memo&#x27;s about $150,000 to $250,000 storm-drain case. The page uses $150,000.</li><li>The middle of the page&#x27;s range, $500,000, is the memo&#x27;s storm-drain midpoint. Assumption.</li><li>The high end, $2,500,000, is the memo&#x27;s sewer-disposal high. Derived.</li><li>Duration, flow, and the disposal path drive the swing, not pump rental. All three are assumptions because they are not in the record.</li></ul>
+<p class="lc-stat">Needs a quantity or price. Derived estimate. The headline total carries this line at $0.</p>
+</div>
+</details></td></tr>
+<tr class="lc-group"><td colspan="4">Flood plain &amp; fill</td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A2</span> — Import fill</td><td class="lc-expl" data-label="Explanation">The site sits in the flood plain (about 94% Zone AE, not the entire parcel). Buildings must be raised at least two feet above the flood level, so dirt has to be trucked in.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$2,453,066 – $2,453,066</div>
+<div class="lc-hl">Headline $2,453,066</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per the Tentative Parcel Map No. 2361780, Sheet 1, the import quantity is 81,350 cubic yards, made up of 78,200 cubic yards on the site and 3,150 cubic yards off the site. Per the County of San Diego unit price list, effective July 2025, imported fill is $28.55 per cubic yard. The Caltrans contract cost data item for imported borrow is cited as a cross-check, not as the price used. Prices are brought to October 2026 with the California Construction Cost Index. Per Geocon&#x27;s geotechnical investigation, Project G2129-52-03, April 24, 2019, §7, fill is part of the earthwork program.</p>
+<ul class="lc-calc"><li>78,200 cubic yards on the site plus 3,150 cubic yards off the site equals 81,350 cubic yards.</li><li>81,350 cubic yards times $28.55 per cubic yard times 10,769 divided by 10,196 equals $2,453,066.</li><li>81,350 cubic yards divided by 10 cubic yards per truck equals about 8,135 truckloads. Derived. Trucking is inside the $28.55 price.</li></ul>
+<p class="lc-stat">Sourced. In the headline total. This is the merged A2 and A3 line. Trucking the dirt to the site is included in the County import price and is not added separately.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A23</span> — Extra fill to make up for soil compaction</td><td class="lc-expl" data-label="Explanation">Dirt shrinks when it is compacted. The tentative-map import quantity has no shrink factor, so more trucked-in dirt may be needed than the 81,350 cubic yards already counted.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$0 – $353,712</div>
+<div class="lc-hl">Headline $0</div>
+<div class="lc-note">Derived. Not in the headline total.</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per the Tentative Parcel Map No. 2361780, Sheet 1 footnote, and Attachment 7, pp. 62 and 64. The range is 0 to 15 percent of the 78,200 cubic yards of on-site import, times the same A2 unit cost of $28.55 per cubic yard, times the July 2025-to-October 2026 cost index. The 15 percent shrink factor is an assumption, because no factor is in the record.</p>
+<ul class="lc-calc"><li>High: 15 percent times 78,200 cubic yards times $28.55 per cubic yard times 10,769 divided by 10,196 equals $353,712. Derived.</li><li>The low end is $0 because the shrink factor is not in the record and could be negligible.</li></ul>
+<p class="lc-stat">Needs a quantity or price. Derived estimate. The headline total carries this line at $0. The shrink factor is not in the record.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A21</span> — Extra compaction testing so pad fill meets the 95 percent Standard Proctor standard</td><td class="lc-expl" data-label="Explanation">The flood-fringe fill has to be compacted to 95 percent of the Standard Proctor test (ASTM D-698). Geocon&#x27;s own earthwork standard is different: 90 percent of a modified Proctor test.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div>
+<div class="lc-note">Placeholder, stress test, $0 – $200,000</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, conditions 24–26. No test price is in the record or on the County list.</p>
+<ul class="lc-calc"><li>No test price is in the record, so no sourced amount is calculated.</li><li>The $200,000 high end is a placeholder assumption, not a bid or a list price.</li></ul>
+<p class="lc-stat">Needs a quantity or price. Unpriced. The headline total carries this line at $0. The stress-test high is a placeholder, not a sourced price.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A22</span> — Slope protection for a 5-feet-per-second flood velocity on granular fill slopes</td><td class="lc-expl" data-label="Explanation">Fill slopes in the floodplain have to be protected against floodwater moving at 5 feet per second. The usual protection is rip rap, which is loose rock placed on the slope.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$0 – $236,208</div>
+<div class="lc-hl">Headline $0</div>
+<div class="lc-note">Derived. Not in the headline total.</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, conditions 24–26. Per the County of San Diego unit price list, rip rap of 0.25 ton is $223.64 per cubic yard. The range assumes 0 to 1,000 cubic yards, which is an assumption. Prices are brought to October 2026 with the California Construction Cost Index.</p>
+<ul class="lc-calc"><li>High: 1,000 cubic yards times $223.64 per cubic yard times 10,769 divided by 10,196 equals $236,208. Derived.</li><li>The low end is $0 because no quantity is stated.</li></ul>
+<p class="lc-stat">Needs a quantity or price. Derived estimate. The headline total carries this line at $0. The quantity of protection is not stated.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A15</span> — Flood-rated retaining walls</td><td class="lc-expl" data-label="Explanation">The project has to build flood-rated retaining walls at least two feet above the base flood elevation. The wall at the habitat edge is described as up to 7 feet 6 inches high.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$167,989 – $587,962</div>
+<div class="lc-hl">Headline $0</div>
+<div class="lc-note">Derived. Not in the headline total.</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, conditions 30–31 and item (f); the City&#x27;s staff report, p. 16; and Attachment 8, landscape sheet L-2. Per the County of San Diego unit price list, a masonry wall is $67.11 per square foot. Prices are brought to October 2026 with the California Construction Cost Index. The wall lengths used for the range are assumptions, not measured takeoffs. The page notes that this County masonry price is likely low for walls designed to stand in floodwater.</p>
+<ul class="lc-calc"><li>Low area: 790 linear feet times 3 feet equals 2,370 square feet, a Hollister-only assumption.</li><li>High area: 2,370 plus 790 linear feet times 7.5 feet equals 8,295 square feet, a rectangular-parcel assumption for the north edge plus Hollister.</li><li>2,370 square feet times $67.11 per square foot times 10,769 divided by 10,196 equals $167,989. Derived.</li><li>8,295 square feet times $67.11 per square foot times 10,769 divided by 10,196 equals $587,962. Derived.</li></ul>
+<p class="lc-stat">Needs a quantity or price. Derived estimate. The headline total carries this line at $0. Wall lengths are not public, and the descriptions in the record conflict, which the page flags.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A7</span> — FEMA review fees for the flood-map revisions</td><td class="lc-expl" data-label="Explanation">Because the site is in federal flood zone AE and buildings must sit at least two feet above the flood level, the Federal Emergency Management Agency has to review a Conditional Letter of Map Revision.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$15,000 – $15,000</div>
+<div class="lc-hl">Headline $15,000</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per FEMA&#x27;s published flood-map-related fee schedule: a Conditional Letter of Map Revision is $6,750 and a Letter of Map Revision that follows a Conditional Letter is $8,250, as paper fees. Per Attachment 6, condition 27, a Letter of Map Revision is required. The City&#x27;s staff report, p. 14, states that a Conditional Letter of Map Revision has already been received.</p>
+<ul class="lc-calc"><li>$6,750 plus $8,250 equals $15,000.</li><li>No cost-index factor is applied. These are posted federal fees.</li></ul>
+<p class="lc-stat">Sourced. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A8</span> — Remaining flood-map engineering after the studies already done</td><td class="lc-expl" data-label="Explanation">The hydraulic study, no-rise certification, and Conditional Letter of Map Revision are already done. What remains is residual as-built flood-map engineering after construction.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$47,242 – $47,242</div>
+<div class="lc-hl">Headline $47,242</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per the City&#x27;s staff report PC-25-032, p. 14, the Conditional Letter of Map Revision has been received and the no-rise work is done. Per Attachment 6, conditions 27 and 29, a Letter of Map Revision is required before bond release, and Elevation Certificates are required. Per the County of San Diego unit price list, “HEC-2 Study and FEMA revision” is $44,728.04. Prices are brought to October 2026 with the California Construction Cost Index. The underlying study is Fuscoe&#x27;s Hydraulic Study and No-Rise Certification, December 2019.</p>
+<ul class="lc-calc"><li>1 times $44,728.04 times 10,769 divided by 10,196 equals $47,242.</li><li>The earlier Conditional Letter and no-rise engineering costs are treated as already spent and are not added again.</li></ul>
+<p class="lc-stat">Sourced estimate. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-group"><td colspan="4">Stormwater</td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A12a</span> — Biofiltration basin BF-1, 11,220 square feet</td><td class="lc-expl" data-label="Explanation">Stormwater from the developed site cannot be allowed to soak into this ground, so it has to be cleaned in a planted basin with an underdrain.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$141,377 – $282,754</div>
+<div class="lc-hl">Headline $141,377</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Fuscoe&#x27;s Priority Development Project Storm Water Quality Management Plan, November 25, 2020, pp. 47 and 80–81, basin BF-1 is 11,220 square feet, underdrained, because infiltration is infeasible. Per Fuscoe&#x27;s Preliminary Drainage Study, p. 10, and Attachment 5, conditions 13–17. Per the County of San Diego unit price list, “Detention Basin, Large (subdivision)” is $11.93 per square foot. Prices are brought to October 2026 with the California Construction Cost Index.</p>
+<ul class="lc-calc"><li>11,220 square feet times $11.93 per square foot times 10,769 divided by 10,196 equals $141,377.</li><li>The stress-test high is $141,377 times 2 equals $282,754. Derived. The factor of 2 is an assumption.</li></ul>
+<p class="lc-stat">Sourced estimate. In the headline total. The stress test also uses a higher derived bound.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A12c</span> — Packaged stormwater treatment unit for drainage area 7</td><td class="lc-expl" data-label="Explanation">One drainage area is treated with a manufactured wetland-style unit, a Bioclean Modular Wetland system, instead of the large basin. It is a single packaged treatment device.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$12,598 – $37,793</div>
+<div class="lc-hl">Headline $12,598</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Fuscoe&#x27;s Storm Water Quality Management Plan, pp. 47 and 80–81. There is no Modular Wetland quote in the record. Per the County of San Diego unit price list, “Hydro-Dynamic separator, CDS or equal” is $11,927.48, used as a proxy, not as a quote for this product. Prices are brought to October 2026 with the California Construction Cost Index.</p>
+<ul class="lc-calc"><li>1 times $11,927.48 times 10,769 divided by 10,196 equals $12,598. Derived, because the County item is a proxy, not a Modular Wetland price.</li><li>The stress-test high is $12,598 times 3 equals $37,793. Derived. The factor of 3 is an assumption.</li></ul>
+<p class="lc-stat">Estimate, derived. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A12</span> — On-site storm drain pipe, inlets, permeable pavers, and green-street bioretention</td><td class="lc-expl" data-label="Explanation">The property still needs its on-site storm drain pipes, inlets, permeable pavers, and any green-street planting that treats runoff in the parkway. Those quantities are not in the record.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Fuscoe&#x27;s Preliminary Drainage Study, §3.3, and the Priority Development Project Storm Water Quality Management Plan, pp. 47 and 80–81, and Attachment 5, conditions 13–17. Per the County unit price list, unit prices exist, but pipe lengths and paver areas are not stated.</p>
+<ul class="lc-calc"><li>No on-site pipe length or paver area is stated, so no amount is calculated.</li><li>The basin is in A12a, the packaged unit is in A12c, and the public 18-inch line in Hollister is in A17m.</li></ul>
+<p class="lc-stat">Needs a quantity or price. The headline total carries this line at $0. Not priced in the record. This is the leftover on-site stormwater work after the basin and the packaged treatment unit were moved to A12a and A12c, and after the public 18-inch storm drain in Hollister was moved to A17m.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A20</span> — Erosion control and the stormwater pollution-prevention plan</td><td class="lc-expl" data-label="Explanation">A stormwater pollution-prevention plan, including a risk level and a notice of intent with a Waste Discharge Identification number, is required during construction, along with erosion controls such as silt fence.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 5, conditions 16–17, and Attachment 6, conditions 32–33. Per the County of San Diego unit price list, silt fence is $2.38 per linear foot, among other items. The scope and quantities are not stated.</p>
+<ul class="lc-calc"><li>No scope or quantity is stated, so no amount is calculated.</li></ul>
+<p class="lc-stat">Needs a quantity or price. The headline total carries this line at $0. Not priced in the record.</p>
+</div>
+</details></td></tr>
+<tr class="lc-group"><td colspan="4">Hollister &amp; off-site</td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17</span> — Off-site work that is still not itemized</td><td class="lc-expl" data-label="Explanation">Some required off-site work still has no quantity or price, including green-street bioretention in the Hollister parkway, a Caltrans encroachment at the Interstate 5 culvert, and signing plans.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 5, condition 10, and the California Department of Transportation comment letter dated May 31, 2022. Caltrans objected that the project would increase the drainage area to its 24-inch culvert and called that “a diversion of flow which is not allowed,” and asked for a redesign. Whether that was resolved is not shown in the record reviewed. The drainage study is also cited. The County unit price list is attached to the row, but no quantity is stated.</p>
+<ul class="lc-calc"><li>No quantity or price is in the record for these leftover items, so no amount is calculated.</li><li>Parkway planting in A17e does not include the green-street bioretention.</li></ul>
+<p class="lc-stat">Needs a quantity or price. The headline total carries this line at $0. Not priced in the record. The itemized off-site rows are A17a through A17s. This line is only what is left.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17a</span> — Six-foot right-of-way dedication on Hollister Street</td><td class="lc-expl" data-label="Explanation">The project must dedicate six feet of right-of-way so Hollister can be widened from 66 feet to 72 feet. There is no construction cost here; the land given up is not priced.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$0 – $0</div>
+<div class="lc-hl">Not part of the construction total</div>
+<div class="lc-note">No construction cost. The value of the land given up is not priced here. Not part of a construction total.</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 5, condition 31, and Attachment 6, Transportation condition 68. The area is a plan-scale calculation: 790 linear feet times 6 feet equals 4,740 square feet, about 0.11 acre. Derived.</p>
+<ul class="lc-calc"><li>790 linear feet times 6 feet equals 4,740 square feet, about 0.11 acre. Derived.</li><li>This is not added as a construction line.</li></ul>
+<p class="lc-stat">Memo. No construction cost. Land given up, not added.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17b</span> — Hollister Street widening, 16 feet of pavement along the frontage</td><td class="lc-expl" data-label="Explanation">Hollister Street has to be widened by 16 feet of pavement along the project frontage. That is 790 linear feet of new pavement, a derived area of 12,640 square feet.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$74,094 – $107,604</div>
+<div class="lc-hl">Headline $74,094</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per the Local Mobility Analysis, January 2021, pp. 3–4, the widening is 16 feet. Per Attachment 5, condition 31, and Attachment 6, Transportation condition 68. The frontage length used is 790 linear feet. Per the County of San Diego unit price list, the parking-lot section of 4-inch asphalt, 8-inch Class 2 base, and subgrade is $3.26 plus $1.70 plus $0.59, or $5.55 per square foot, used as the point estimate. The collector-street structural section is not in the record. The stress-test high uses County “Pavement Design, Schedule J” at $7.47 plus $0.59 subgrade. Prices are brought to October 2026 with the California Construction Cost Index.</p>
+<ul class="lc-calc"><li>790 linear feet times 16 feet equals 12,640 square feet.</li><li>Low: 12,640 square feet times $5.55 per square foot times 10,769 divided by 10,196 equals $74,094.</li><li>High: 12,640 square feet times $8.06 per square foot times 10,769 divided by 10,196 equals $107,604. Derived.</li></ul>
+<p class="lc-stat">Estimate, derived. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17c</span> — Off-site curb and gutter, 8-inch Type G, full frontage</td><td class="lc-expl" data-label="Explanation">New curb and gutter have to be built along the Hollister frontage. That work is 790 linear feet of 8-inch Type G curb and gutter, at the County unit price.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$32,333 – $32,333</div>
+<div class="lc-hl">Headline $32,333</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 5, condition 31, and Attachment 6, Transportation condition 68. The length used is 790 linear feet. Per the County of San Diego unit price list, 8-inch Type G curb and gutter is $38.75 per linear foot. Prices are brought to October 2026 with the California Construction Cost Index.</p>
+<ul class="lc-calc"><li>790 linear feet times $38.75 per linear foot times 10,769 divided by 10,196 equals $32,333.</li></ul>
+<p class="lc-stat">Sourced estimate. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17d</span> — Off-site 6-foot sidewalk, full frontage, set back from the curb</td><td class="lc-expl" data-label="Explanation">A 6-foot sidewalk, separated from the curb by a parkway, has to be built along the Hollister frontage. Build 4,740 square feet of sidewalk, which is 790 linear feet times 6 feet.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$41,002 – $41,002</div>
+<div class="lc-hl">Headline $41,002</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 5, condition 31; Attachment 6, Transportation condition 68; and the Local Mobility Analysis, pp. 3–4. Per the County of San Diego unit price list, sidewalk in the 1-to-5,000 square foot band is $8.19 per square foot. Prices are brought to October 2026 with the California Construction Cost Index.</p>
+<ul class="lc-calc"><li>790 linear feet times 6 feet equals 4,740 square feet.</li><li>4,740 square feet times $8.19 per square foot times 10,769 divided by 10,196 equals $41,002.</li></ul>
+<p class="lc-stat">Sourced estimate. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17e</span> — Off-site parkway planting and irrigation</td><td class="lc-expl" data-label="Explanation">The remaining parkway, after the 6-foot sidewalk, has to be planted and irrigated. Green-street bioretention in that parkway is not in this price; it stays in unpriced line A17.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$10,413 – $10,413</div>
+<div class="lc-hl">Headline $10,413</div>
+<div class="lc-note">Derived.</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 5, condition 31, and Attachment 6, conditions 43–48. The area is 790 linear feet times 6 feet, or 4,740 square feet. Per the County of San Diego unit price list, slope planting of ground cover plus trees and shrubs is $1.18 per square foot and slope irrigation is $0.90 per square foot, used as proxies, for $2.08 per square foot. Prices are brought to October 2026 with the California Construction Cost Index.</p>
+<ul class="lc-calc"><li>790 linear feet times 6 feet equals 4,740 square feet.</li><li>$1.18 plus $0.90 equals $2.08 per square foot, used as proxies.</li><li>4,740 square feet times $2.08 per square foot times 10,769 divided by 10,196 equals $10,413. Derived.</li></ul>
+<p class="lc-stat">Estimate, derived. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17f</span> — Temporary 4-foot asphalt sidewalk to Conifer Avenue</td><td class="lc-expl" data-label="Explanation">A temporary 4-foot-wide asphalt sidewalk has to be built from the site to Conifer Avenue. Build 2,780 square feet of temporary asphalt walk.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$6,548 – $11,304</div>
+<div class="lc-hl">Headline $6,548</div>
+<div class="lc-note">Derived.</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, Transportation condition 64 and item g.7, and Attachment 8, Sheet 4. The length used is 695 linear feet, from station 6+55 to 13+50, times 4 feet, or 2,780 square feet. Per the County of San Diego unit price list, 2-inch asphalt is $1.64 per square foot and subgrade is $0.59 per square foot, for $2.23 per square foot at the low end. The high end uses 4-inch asphalt at $3.26 plus $0.59, because thickness is not stated. Prices are brought to October 2026 with the California Construction Cost Index.</p>
+<ul class="lc-calc"><li>695 linear feet times 4 feet equals 2,780 square feet.</li><li>Low: 2,780 square feet times $2.23 per square foot times 10,769 divided by 10,196 equals $6,548.</li><li>High: 2,780 square feet times $3.85 per square foot times 10,769 divided by 10,196 equals $11,304. Derived.</li></ul>
+<p class="lc-stat">Sourced estimate. In the headline total. Thickness is not stated, so the stress test has a higher derived bound.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17g</span> — Asphalt berm with the temporary sidewalk</td><td class="lc-expl" data-label="Explanation">An asphalt berm, a low asphalt curb, has to be built with the temporary sidewalk to Conifer Avenue. That work is 695 linear feet of 4-inch asphalt berm.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$8,757 – $8,757</div>
+<div class="lc-hl">Headline $8,757</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, Transportation condition 64. The length used is 695 linear feet. Per the County of San Diego unit price list, a 4-inch asphalt berm, standard G-5, is $11.93 per linear foot. Prices are brought to October 2026 with the California Construction Cost Index.</p>
+<ul class="lc-calc"><li>695 linear feet times $11.93 per linear foot times 10,769 divided by 10,196 equals $8,757.</li></ul>
+<p class="lc-stat">Sourced estimate. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17h</span> — Two Route 932 bus stops, with City-standard slabs</td><td class="lc-expl" data-label="Explanation">The southbound bus stop has to be relocated and a new northbound stop has to be built, both with City-standard concrete slabs, for Route 932.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div>
+<div class="lc-note">Placeholder, stress test, $0 – $60,000</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, condition 28 and items g.2–3, and the Local Mobility Analysis, pp. 3–4. No unit price is in the County list or in the record.</p>
+<ul class="lc-calc"><li>No unit price is in the record, so no sourced amount is calculated.</li><li>The $60,000 high end is a placeholder assumption, not a bid or a list price.</li></ul>
+<p class="lc-stat">Needs a quantity or price. Unpriced. The headline total carries this line at $0. The stress-test high is a placeholder, not a sourced price.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17i</span> — Three curb ramps, two at the site and one at Conifer Avenue</td><td class="lc-expl" data-label="Explanation">Three pedestrian curb ramps are required: two at the site and one at Conifer Avenue. They must be built to the City&#x27;s standard for curb ramps.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$6,614 – $6,614</div>
+<div class="lc-hl">Headline $6,614</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 5, conditions 7–9, and Attachment 6, conditions 16–17. Per the County of San Diego unit price list, a pedestrian ramp, standards G-27 through G-30, in the 1-to-4 count band, is $2,087.30 each. Prices are brought to October 2026 with the California Construction Cost Index.</p>
+<ul class="lc-calc"><li>3 times $2,087.30 times 10,769 divided by 10,196 equals $6,614.</li></ul>
+<p class="lc-stat">Sourced estimate. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17j</span> — Mid-block crossing with rectangular rapid-flashing beacons at the south driveway</td><td class="lc-expl" data-label="Explanation">A mid-block pedestrian crossing, with rectangular rapid-flashing beacons, has to be installed at the south driveway. Install the mid-block crossing and the flashing-beacon assemblies the City requires at the south driveway.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$14,173 – $28,345</div>
+<div class="lc-hl">Headline $0</div>
+<div class="lc-note">Derived. Not in the headline total.</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, Transportation condition 67, and the Errata in Attachment 19. Rectangular rapid-flashing beacons are not in the County unit price list. The range uses 2 to 4 County “Signal Ahead Flasher” assemblies at $6,709.21 each as a proxy, not as a price for this beacon type. The count of assemblies is an assumption. Prices, when used, are brought to October 2026 with the California Construction Cost Index.</p>
+<ul class="lc-calc"><li>Low: 2 times $6,709.21 times 10,769 divided by 10,196 equals $14,173. Derived.</li><li>High: 4 times $6,709.21 times 10,769 divided by 10,196 equals $28,345. Derived.</li><li>The 2-to-4 count is an assumption.</li></ul>
+<p class="lc-stat">Needs a quantity or price. Derived estimate. The headline total carries this line at $0.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17k</span> — Four-foot concrete path to the Otay Valley Regional Park trailhead</td><td class="lc-expl" data-label="Explanation">A 4-foot multi-use path to the Otay Valley Regional Park trailhead is required. An errata changed it from decomposed granite to concrete. The length is not stated.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$0 – $24,832</div>
+<div class="lc-hl">Headline $0</div>
+<div class="lc-note">Derived. Not in the headline total.</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, Transportation conditions 65–66 and conditions 18–22, and the Errata in Attachment 19. Per the County of San Diego unit price list, 5-inch concrete paving is $7.44 per square foot. The range assumes a length of 0 to 790 linear feet, which is an assumption, because the path may run past the frontage. Prices are brought to October 2026 with the California Construction Cost Index.</p>
+<ul class="lc-calc"><li>High area: 790 linear feet times 4 feet equals 3,160 square feet. Assumption.</li><li>3,160 square feet times $7.44 per square foot times 10,769 divided by 10,196 equals $24,832. Derived.</li><li>The low end is $0 because the length could be shorter than the frontage, and no length is stated.</li></ul>
+<p class="lc-stat">Needs a quantity or price. Derived estimate. The headline total carries this line at $0.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17l</span> — Restriping Hollister Street</td><td class="lc-expl" data-label="Explanation">Hollister Street has to be restriped along the frontage, between Main and Marian in Chula Vista, and between Conifer and Palm, including parking removal in that last segment.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$0 – $28,391</div>
+<div class="lc-hl">Headline $0</div>
+<div class="lc-note">Derived. Not in the headline total.</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, Transportation conditions 69–70, and the Local Mobility Analysis, Table E-3. Per the County of San Diego unit price list, striping is $1.49 per linear foot and striping removal is $2.99 per linear foot. The range assumes 0 to 6,000 linear feet of lines, which is an assumption. Prices are brought to October 2026 with the California Construction Cost Index.</p>
+<ul class="lc-calc"><li>$1.49 plus $2.99 equals $4.48 per linear foot.</li><li>High: 6,000 linear feet times $4.48 per linear foot times 10,769 divided by 10,196 equals $28,391. Derived.</li><li>The low end is $0 because no length is stated.</li></ul>
+<p class="lc-stat">Needs a quantity or price. Derived estimate. The headline total carries this line at $0.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17m</span> — Public 18-inch storm drain in Hollister Street</td><td class="lc-expl" data-label="Explanation">A public 18-inch reinforced-concrete storm drain has to be built in Hollister Street. The study gives the size and slope, not the length.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$88,638 – $177,276</div>
+<div class="lc-hl">Headline $118,184</div>
+<div class="lc-note">Derived range. The headline uses the point estimate.</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Fuscoe&#x27;s Preliminary Drainage Study, pp. 10–11, and Attachment 5, conditions 13–17. The point estimate assumes a length equal to the 790-foot frontage. Per the County of San Diego unit price list, 18-inch reinforced-concrete pipe is $141.64 per linear foot. The stress-test range is 0.75 times to 1.5 times that length, or 593 to 1,185 linear feet, which is an assumption. Prices are brought to October 2026 with the California Construction Cost Index.</p>
+<ul class="lc-calc"><li>Point: 790 linear feet times $141.64 per linear foot times 10,769 divided by 10,196 equals $118,184. Derived, because length is assumed.</li><li>Low: 0.75 times $118,184 equals $88,638. Derived.</li><li>High: 1.5 times $118,184 equals $177,276. Derived.</li></ul>
+<p class="lc-stat">Estimate, derived. In the headline total. The pipe size is in the drainage study; the length is assumed.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17n</span> — Public 10-inch sewer main in Hollister Street</td><td class="lc-expl" data-label="Explanation">A public 10-inch sewer main has to be built in Hollister Street. The County cover-depth adder is not applied here, because the depth is not stated.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$74,551 – $149,103</div>
+<div class="lc-hl">Headline $99,402</div>
+<div class="lc-note">Derived range. The headline uses the point estimate.</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, Public Utilities conditions 59–67. The point estimate assumes a length of 790 linear feet. Per the County of San Diego unit price list, a 10-inch sewer main is $119.13 per linear foot. The stress-test range is 0.75 times to 1.5 times that amount, an assumption. Prices are brought to October 2026 with the California Construction Cost Index.</p>
+<ul class="lc-calc"><li>Point: 790 linear feet times $119.13 per linear foot times 10,769 divided by 10,196 equals $99,402. Derived, because length is assumed.</li><li>Low: 0.75 times $99,402 equals $74,551. Derived.</li><li>High: 1.5 times $99,402 equals $149,103. Derived.</li><li>The County cover adder is not applied, because depth is not stated.</li></ul>
+<p class="lc-stat">Estimate, derived. In the headline total. Length and cover depth are assumed.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17o</span> — Sewer manhole</td><td class="lc-expl" data-label="Explanation">A sewer manhole is required with the public sewer main in Hollister Street. This line is for one County-standard sewer manhole at the County unit price.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$5,354 – $5,354</div>
+<div class="lc-hl">Headline $5,354</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, Public Utilities conditions 59–67. The page uses a count of 1. Per the County of San Diego unit price list, manhole SM-01 is $5,069.16. Prices are brought to October 2026 with the California Construction Cost Index.</p>
+<ul class="lc-calc"><li>1 times $5,069.16 times 10,769 divided by 10,196 equals $5,354.</li></ul>
+<p class="lc-stat">Sourced estimate. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17p</span> — New Hollister Street streetlights</td><td class="lc-expl" data-label="Explanation">New streetlights have to be installed on Hollister Street. The count is not in the record. Install the City-required streetlights along the frontage, at a count that a lighting plan will set.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$18,897 – $56,690</div>
+<div class="lc-hl">Headline $0</div>
+<div class="lc-note">Derived. Not in the headline total.</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 5, conditions 7–9, and Attachment 6, conditions 16–17. Per the County of San Diego unit price list, a street light is $8,945.62. The range assumes 2 to 6 lights on about 790 linear feet, which is an assumption. Prices are brought to October 2026 with the California Construction Cost Index.</p>
+<ul class="lc-calc"><li>Low: 2 times $8,945.62 times 10,769 divided by 10,196 equals $18,897. Derived.</li><li>High: 6 times $8,945.62 times 10,769 divided by 10,196 equals $56,690. Derived.</li></ul>
+<p class="lc-stat">Needs a quantity or price. Derived estimate. The headline total carries this line at $0. The number of lights is not stated.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17q</span> — Putting existing and proposed overhead utilities underground</td><td class="lc-expl" data-label="Explanation">Existing and proposed overhead utilities along Hollister have to be put underground. Underground the existing and proposed overhead lines along the frontage, to the utility company&#x27;s and the City&#x27;s standards.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div>
+<div class="lc-note">Placeholder, stress test, $0 – $1,500,000</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 5, conditions 7–9, and Attachment 6, conditions 16–17. No price is in the County list or in the record. A utility-company estimate, for example from San Diego Gas &amp; Electric, is needed.</p>
+<ul class="lc-calc"><li>No price is in the record, so no sourced amount is calculated.</li><li>The $1,500,000 high end is a placeholder assumption, not a bid.</li></ul>
+<p class="lc-stat">Needs a quantity or price. Unpriced. The headline total carries this line at $0. The stress-test high is a placeholder, not a sourced price.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17r</span> — Two City-standard 25-foot driveways</td><td class="lc-expl" data-label="Explanation">Two City-standard driveways, each 25 feet wide, have to be built on Hollister. The 12-foot driveway depth used in the price is a plan-scale assumption.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$6,616 – $6,616</div>
+<div class="lc-hl">Headline $6,616</div>
+<div class="lc-note">Derived.</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, condition 16. The area used is 2 times 25 feet times a 12-foot parkway depth, or 600 square feet, a plan-scale figure. Per the County of San Diego unit price list, a driveway, standard G-14, is $10.44 per square foot. Prices are brought to October 2026 with the California Construction Cost Index.</p>
+<ul class="lc-calc"><li>2 times 25 feet times 12 feet equals 600 square feet. Plan-scale.</li><li>600 square feet times $10.44 per square foot times 10,769 divided by 10,196 equals $6,616. Derived.</li></ul>
+<p class="lc-stat">Estimate, derived. In the headline total. The paved area is a plan-scale calculation.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17s</span> — Traffic control for the off-site work</td><td class="lc-expl" data-label="Explanation">Work in a live street needs traffic control — cones, signage, flagging, and related measures — while the off-site improvements are built. Provide traffic control for the duration of the off-site street and utility work.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$23,425 – $23,425</div>
+<div class="lc-hl">Headline $23,425</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, Transportation conditions 68–70, the work is in a live street. Per the County of San Diego unit price list, “Traffic Control, estimated improvement $0–$1 million” is 6.6 percent. The base used is $354,921, the sum of the off-site estimate rows, already brought to October 2026 dollars.</p>
+<ul class="lc-calc"><li>6.6 percent times $354,921 equals $23,425.</li><li>The $354,921 base is the sum of the off-site estimate rows as they stood when this line was set. The page notes that this line is static and does not recalculate if those rows change.</li></ul>
+<p class="lc-stat">Sourced estimate. In the headline total. This amount is static: it does not update if the off-site rows above are edited.</p>
+</div>
+</details></td></tr>
+<tr class="lc-group"><td colspan="4">Habitat</td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A16</span> — Habitat restoration, 2.3-acre on-site buffer, installation plus a 5-year program</td><td class="lc-expl" data-label="Explanation">About 2.3 acres along the north edge of the site, from Interstate 5 to Hollister, must be restored as native habitat and then maintained for five years.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$450,717 – $450,717</div>
+<div class="lc-hl">Headline $450,717</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per the City&#x27;s staff report PC-25-032, p. 7, and RECON&#x27;s Native Plant Restoration Plan for Multi-Habitat Planning Area land on the Bella Mar Project, March 26, 2021, including Figure 4, the on-site restoration is 2.3 acres. The dollar-per-acre rate is from Merkel &amp; Associates&#x27; Chula Vista Bayfront Sweetwater Park Habitat Mitigation Plan, revised January 12, 2023, Table 8: $1,083,530 for 6.44 acres, which is $168,250 per acre, covering installation and a 5-year program. Prices are brought to October 2026 with the California Construction Cost Index, using the January 2023 index of 9,246. The County and habitat-plan support range of $287,985 to $464,778, in lines A16a through A16d, brackets the modeled amount and is not added again.</p>
+<ul class="lc-calc"><li>$1,083,530 divided by 6.44 acres equals $168,250 per acre.</li><li>2.3 acres times $168,250 per acre times 10,769 divided by 9,246 equals $450,717.</li><li>The modeled amount is unchanged at $450,717.</li></ul>
+<p class="lc-stat">Sourced. In the headline total. Support lines A16a through A16d break this amount down; they are not added again. A later line, H1, covers perpetual care after year 5 and is not in this amount.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A16a</span> — Support only: site preparation for the habitat area, already in A16</td><td class="lc-expl" data-label="Explanation">Before planting, non-native plants have to be removed from the 2.3-acre buffer, including cutting, hauling, and herbicide as needed. This support line is already included in A16.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$55,780 – $69,840</div>
+<div class="lc-hl">Included in A16; not added</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per RECON&#x27;s Native Plant Restoration Plan, §§4.1–4.1.2 / PDF p. 12. The low dollar figure uses Sweetwater Park habitat plan Table 8 site preparation of $134,095 spread over 6.44 acres and then over 2.3 acres, times the January 2023-to-October 2026 cost index. The high figure uses the County clearing-and-grubbing price of $0.66 per square foot on 2.3 acres, times the July 2025-to-October 2026 cost index. The habitat-plan figure includes five grow-kill cycles that this plan does not call for.</p>
+<ul class="lc-calc"><li>Low: $134,095 divided by 6.44 acres times 2.3 acres times 10,769 divided by 9,246 equals $55,780. Derived.</li><li>High: $0.66 per square foot times 2.3 acres times 43,560 square feet per acre times 10,769 divided by 10,196 equals $69,840. Derived.</li></ul>
+<p class="lc-stat">Memo. Support for A16. Not added.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A16b</span> — Support only: container plants and seed, already in A16</td><td class="lc-expl" data-label="Explanation">The restoration plan calls for about 500 one-gallon plants per acre, about 1,150 plants in all, plus a hand-applied seed mix. This support line is already included in A16.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$61,676 – $217,613</div>
+<div class="lc-hl">Included in A16; not added</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per RECON&#x27;s Native Plant Restoration Plan, PDF pp. 13–14. The high figure uses Sweetwater Park habitat plan Table 8 site planting of $523,143 spread over 6.44 acres and then over 2.3 acres, times the January 2023-to-October 2026 cost index. The low figure is a County-list cross-check: 1,150 one-gallon shrubs at $8.96 each, plus hydro-seed at $0.48 per square foot on 2.3 acres, times the July 2025-to-October 2026 cost index. Hydro-seed is a list-price proxy; the plan specifies hand-applied seed.</p>
+<ul class="lc-calc"><li>High: $523,143 divided by 6.44 acres times 2.3 acres times 10,769 divided by 9,246 equals $217,613. Derived.</li><li>Low: 1,150 times $8.96, plus $0.48 per square foot times 2.3 acres times 43,560, all times 10,769 divided by 10,196, equals $61,676. Derived. Hydro-seed is a proxy.</li></ul>
+<p class="lc-stat">Memo. Support for A16. Not added.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A16c</span> — Support only: temporary irrigation, already in A16</td><td class="lc-expl" data-label="Explanation">Temporary irrigation has to be installed on the 2.3-acre habitat strip and then removed once the plants are established. This support line is already included in A16.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$95,237 – $102,033</div>
+<div class="lc-hl">Included in A16; not added</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per RECON&#x27;s Native Plant Restoration Plan, PDF p. 15. The high figure uses Sweetwater Park habitat plan Table 8 site irrigation of $245,288 spread over 6.44 acres and then over 2.3 acres, times the January 2023-to-October 2026 cost index. The low figure uses the County slope-irrigation price of $0.90 per square foot on 2.3 acres, times the July 2025-to-October 2026 cost index.</p>
+<ul class="lc-calc"><li>High: $245,288 divided by 6.44 acres times 2.3 acres times 10,769 divided by 9,246 equals $102,033. Derived.</li><li>Low: $0.90 per square foot times 2.3 acres times 43,560 square feet per acre times 10,769 divided by 10,196 equals $95,237. Derived.</li></ul>
+<p class="lc-stat">Memo. Support for A16. Not added.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A16d</span> — Support only: 120-day plant establishment plus five years of maintenance and monitoring, already in A16</td><td class="lc-expl" data-label="Explanation">After planting, there is a 120-day establishment period and then five years of maintenance and monitoring. This support line is already included in A16.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$75,292 – $75,292</div>
+<div class="lc-hl">Included in A16; not added</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per RECON&#x27;s Native Plant Restoration Plan, PDF pp. 17–20. The dollar figure uses Sweetwater Park habitat plan Table 8: 5-year maintenance of $97,004 plus mitigation monitoring of $84,000, noting that the habitat-plan monitoring line includes installation inspection, a 180-day establishment period, and 5-year monitoring, while this plan&#x27;s establishment period is 120 days. That sum is spread over 6.44 acres and then over 2.3 acres, times the January 2023-to-October 2026 cost index. No second unit price for a 5-year habitat program is on the County list, so low equals high.</p>
+<ul class="lc-calc"><li>$97,004 plus $84,000 equals $181,004.</li><li>$181,004 divided by 6.44 acres times 2.3 acres times 10,769 divided by 9,246 equals $75,292. Derived.</li></ul>
+<p class="lc-stat">Memo. Support for A16. Not added.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">H1</span> — Habitat restoration, perpetual maintenance after year 5</td><td class="lc-expl" data-label="Explanation">After the 5-year restoration program in A16, the applicant has to maintain the 2.3-acre on-site restoration forever, under a recorded Covenant of Easement.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$5,939 – $35,247</div>
+<div class="lc-hl">Headline $20,593</div>
+<div class="lc-note">The headline is the mid or point estimate.</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per RECON&#x27;s Native Plant Restoration Plan, PDF p. 21, maintenance is in perpetuity, with a Covenant of Easement and a resource manager and funding mechanism. Per Attachment 5, condition 30; Attachment 6, item i and condition 3; San Diego Municipal Code section 143.0152; and the City&#x27;s staff report, p. 7, which notes that the 2002 approval required similar restoration that was never performed. The Sweetwater Park habitat plan, §6.3, says long-term management is needed but gives no dollar figure. The yearly rates are derived from: the County of San Diego 2008 Multiple Species Conservation Program annual report, June 17, 2009, “approximately $150 per acre” for management and monitoring in the South County, brought forward with the cost index from December 2008, index 5,322, to October 2026, index 10,769, which is $304 per acre, used as the low; and the San Diego Habitat Conservancy estimate for long-term management of the 3Roots Habitat Preserve, August 30, 2019, $29,012.03 a year divided by 25.42 acres, brought forward from August 2019, index 6,823, to October 2026, which is $1,801 per acre, used as the high. The City Multiple Species Conservation Program planning factor of $47 per acre per year for areas near urban development is in 1996 dollars and is not used as a bound, because the Department of General Services does not publish the construction-cost index before 2001.</p>
+<ul class="lc-calc"><li>Low yearly rate: about $150 per acre times 10,769 divided by 5,322 equals $304 per acre. Derived.</li><li>High yearly rate: $29,012.03 divided by 25.42 acres times 10,769 divided by 6,823 equals $1,801 per acre. Derived.</li><li>Mid yearly rate: the average of $304 and $1,801, which is $1,052 per acre. Derived.</li><li>Mid yearly cost: $1,052 per acre times 2.3 acres equals $2,421 per year. Derived.</li><li>Present value at 8 percent, first payment in year 6: $2,421 divided by 0.08, then divided by 1.08 to the fifth power, equals $20,593. Derived.</li><li>The low and high present values, $5,939 and $35,247, use the same method on the low and high yearly costs.</li></ul>
+<p class="lc-stat">Estimate, derived. In the headline total. This is a capitalized operating obligation, not a hard cost, and it does not load the soft-cost, financing, or contingency percentages. It is the only new habitat cost entering the model beyond A16.</p>
+</div>
+</details></td></tr>
+<tr class="lc-group"><td colspan="4">On-site improvements</td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A1</span> — Clearing and grubbing of the development area</td><td class="lc-expl" data-label="Explanation">The development area has to be cleared of vegetation and debris before grading. The 2.30-acre north habitat buffer is left out, because that land is not to be developed.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$374,100 – $374,100</div>
+<div class="lc-hl">Headline $374,100</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per the Tentative Parcel Map No. 2361780, Sheet 1, and the City&#x27;s Planning Commission staff report PC-25-032, the site is 14.62 gross acres and about 2.30 acres stay in the habitat buffer. Per the County of San Diego unit price list, effective July 2025, clearing and grubbing is $0.66 per square foot. Prices are brought to October 2026 with the California Construction Cost Index.</p>
+<ul class="lc-calc"><li>14.62 acres minus 2.30 acres equals 12.32 acres.</li><li>12.32 acres times 43,560 square feet per acre equals 536,659 square feet.</li><li>536,659 square feet times $0.66 per square foot times 10,769 divided by 10,196 equals $374,100.</li></ul>
+<p class="lc-stat">Sourced. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A9</span> — Asphalt paving for surface parking stalls</td><td class="lc-expl" data-label="Explanation">The surface parking lot has to be paved. The site provides 437 parking spaces in total, and only the 258 surface spaces are in this line.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$499,082 – $499,082</div>
+<div class="lc-hl">Headline $499,082</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Sheet T.2, Project Data, in Attachment 8, and the City&#x27;s staff report, 437 spaces are provided: 74 garage, 105 garage and tandem, and 258 surface. The 330 square feet per stall is a Cumming Group Q1 2025 market-analysis allowance, used as an area proxy, not a measured takeoff. Per the County of San Diego unit price list: 4-inch asphalt is $3.26 per square foot, 8-inch Class 2 base is $1.70 per square foot, and subgrade preparation is $0.59 per square foot, for $5.55 per square foot in all. Prices are brought to October 2026 with the California Construction Cost Index.</p>
+<ul class="lc-calc"><li>437 spaces provided minus 74 garage minus 105 garage and tandem equals 258 surface stalls.</li><li>258 stalls times 330 square feet per stall equals 85,140 square feet. The 330 square feet is an area proxy.</li><li>$3.26 plus $1.70 plus $0.59 equals $5.55 per square foot.</li><li>85,140 square feet times $5.55 per square foot times 10,769 divided by 10,196 equals $499,082.</li></ul>
+<p class="lc-stat">Sourced. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A10</span> — Paving of internal drives and fire lanes</td><td class="lc-expl" data-label="Explanation">The interior streets and fire lanes on the property have to be paved, in addition to the surface parking in A9. Pave the on-site drives and fire lanes.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, item (d), internal drives are required. Per the County of San Diego unit price list, the same asphalt and base prices used in A9 would apply once an area is known. No area is stated in the record.</p>
+<ul class="lc-calc"><li>No area is stated, so no amount is calculated.</li><li>The County asphalt, base, and subgrade prices in A9 would be the starting rates once an area is taken off the plans.</li></ul>
+<p class="lc-stat">Needs a quantity or price. The headline total carries this line at $0. Not priced in the record.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A11</span> — On-site concrete curb, gutter, and walks</td><td class="lc-expl" data-label="Explanation">The property itself needs concrete curbs, gutters, and sidewalks, separate from the work in the public street, which is already itemized in A17c and A17d.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, conditions 16–17. Per the County of San Diego unit price list, curb and gutter is $38.75 per linear foot, and sidewalk is $6.55 to $8.19 per square foot. No on-site lengths or areas are stated in the record.</p>
+<ul class="lc-calc"><li>No on-site length or area is stated, so no amount is calculated.</li><li>Off-site curb and sidewalk are not in this line; they are in A17c and A17d.</li></ul>
+<p class="lc-stat">Needs a quantity or price. The headline total carries this line at $0. Not priced in the record.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A13</span> — On-site water and sewer mains and laterals</td><td class="lc-expl" data-label="Explanation">The property needs its own water and sewer pipes from the public mains to the buildings. Drinking water is served by California American Water, not by the City.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, Public Utilities conditions 58–67, water is by California American Water. Per the County of San Diego unit price list, a 6-inch sewer is $104.36 per linear foot and a hydrant is $5,740. No on-site pipe lengths are stated.</p>
+<ul class="lc-calc"><li>No on-site length is stated, so no amount is calculated.</li><li>The public sewer in Hollister is not in this line; it is in A17n.</li></ul>
+<p class="lc-stat">Needs a quantity or price. The headline total carries this line at $0. Not priced in the record.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A14</span> — On-site electric, gas, and telecom</td><td class="lc-expl" data-label="Explanation">Electric, gas, and telephone or data lines have to be brought across the property to the buildings. Putting existing overhead lines along Hollister underground is a separate line, A17q.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 5, conditions 7–9. No utility estimate is in the record. This row has no unit-price source attached on the page.</p>
+<ul class="lc-calc"><li>No quantity or price is in the record, so no amount is calculated.</li><li>Off-site undergrounding is not in this line; it is in A17q.</li></ul>
+<p class="lc-stat">Needs a quantity or price. The headline total carries this line at $0. Not priced in the record. The source on this row is thin: the conditions require the work, but there is no unit price and no quantity.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A18</span> — Landscape, hardscape, pool, spa, and play areas</td><td class="lc-expl" data-label="Explanation">The project includes clubhouse amenities, a pool and spa, play areas, a field, and a publicly accessible trail and overlook. Those site amenities are not priced in this model row.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per the City&#x27;s staff report, pp. 2 and 8, and Attachment 6, items c–d and g.8–9, and conditions 12–13 and 43–48. No landscape-plan area takeoff is attached to this row, and the row has no unit-price source on the page.</p>
+<ul class="lc-calc"><li>No area or count is entered on this row, so no amount is calculated.</li></ul>
+<p class="lc-stat">Needs a quantity or price. The headline total carries this line at $0. Not priced in the record. The source is thin on quantities: the amenities are required, but areas and counts are not taken off.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A19</span> — Demolition of remnant go-kart asphalt and a concrete pad</td><td class="lc-expl" data-label="Explanation">The City&#x27;s staff report describes remnant go-kart paving on the site. The waste-management plan says there is no demolition. Until that conflict is resolved and an area is measured, there is no amount.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per the Waste Management Plan §5.1, no demolition; versus the City&#x27;s staff report, p. 5, remnant go-kart paving. Per the County of San Diego unit price list, asphalt removal is $4.47 per square foot. No area is stated.</p>
+<ul class="lc-calc"><li>No area is stated, so no amount is calculated.</li><li>The County removal price would apply once an area is known, if demolition is in fact required.</li></ul>
+<p class="lc-stat">Needs a quantity or price. The headline total carries this line at $0. Not priced in the record. The record conflicts on whether demolition is needed.</p>
+</div>
+</details></td></tr>
+<tr class="lc-group"><td colspan="4">Buildings</td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">B1</span> — Fourteen three-story walk-up buildings and the clubhouse, Parcel 1</td><td class="lc-expl" data-label="Explanation">Parcel 1 is 14 three-story, wood-frame walk-up apartment buildings plus a 4,350 square foot clubhouse, including 53,516 square feet of garages.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$103,053,514 – $103,053,514</div>
+<div class="lc-hl">Headline $103,053,514</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Sheet T.2, Project Data, in Attachment 8, the building gross floor area for this parcel is 377,552 square feet. The dollar-per-square-foot rate is $260, from the California Tax Credit Allocation Committee and California Debt Limit Allocation Committee project staff report CA-25-798, Otay Ranch II, Chula Vista, December 10, 2025. That filing is a four-story building and “includes on-site work”; its gross-versus-net basis is not labeled. Prices are brought to October 2026 with the California Construction Cost Index, using the December 2025 index of 10,258, which is $272.95 per square foot. A cross-check is Rider Levett Bucknall&#x27;s Los Angeles multifamily low of $275, adjusted by the BAE Urban Economics San Diego-to-Los Angeles factors of 1.13 and 1.14, which equals $272.59.</p>
+<ul class="lc-calc"><li>377,552 square feet times $260 per square foot times 10,769 divided by 10,258 equals $103,053,514.</li><li>Cross-check only: $275 times 1.13 divided by 1.14 equals $272.59 per square foot, close to the $272.95 used here.</li></ul>
+<p class="lc-stat">Sourced. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">B2</span> — Building 15, the four-story affordable building with elevators, Parcel 2</td><td class="lc-expl" data-label="Explanation">Parcel 2 is Building 15, a four-story affordable apartment building with elevators, 100,453 square feet of gross floor area. A heavy-slab foundation premium is not included in this line.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$27,418,831 – $27,418,831</div>
+<div class="lc-hl">Headline $27,418,831</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Sheet T.2, Project Data, the gross floor area is 100,453 square feet. The same $260 per square foot from the Otay Ranch II tax-credit staff report, CA-25-798, December 10, 2025, is used, because that comparable is itself a four-story building. Prices are brought to October 2026 with the California Construction Cost Index, 10,769 divided by 10,258.</p>
+<ul class="lc-calc"><li>100,453 square feet times $260 per square foot times 10,769 divided by 10,258 equals $27,418,831.</li></ul>
+<p class="lc-stat">Sourced. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-group"><td colspan="4">Code &amp; conditions</td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">B3</span> — Interior noise reduction of up to 31 decibels, plus mechanical ventilation, for buildings near Interstate 5</td><td class="lc-expl" data-label="Explanation">Buildings closest to Interstate 5 have to reduce interior noise by up to 31 decibels, using higher-rated windows, doors, and walls, and they need mechanical ventilation so windows can stay closed.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div>
+<div class="lc-note">Placeholder, stress test, $0 – $1,000,000</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, condition 39, and RECON&#x27;s Noise Analysis Report, December 21, 2020. No price is in the record. Part of this work may already sit inside the $260 per square foot comparable, but that is not demonstrated.</p>
+<ul class="lc-calc"><li>No price is in the record, so no sourced amount is calculated.</li><li>The $1,000,000 high end is a placeholder assumption, not a bid.</li></ul>
+<p class="lc-stat">Needs a quantity or price. Unpriced. The headline total carries this line at $0. The stress-test high is a placeholder.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">B4</span> — MERV-13 air filtration in each of the 380 apartments</td><td class="lc-expl" data-label="Explanation">Each of the 380 apartments has to have MERV-13 filtration, a mid-to-high grade of air-filter efficiency, in its heating and cooling system.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div>
+<div class="lc-note">Placeholder, stress test, $0 – $190,000</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, condition 37. No price is in the record.</p>
+<ul class="lc-calc"><li>No price is in the record, so no sourced amount is calculated.</li><li>$500 times 380 units equals $190,000. That $500 is a placeholder assumption, not a sourced unit price.</li></ul>
+<p class="lc-stat">Needs a quantity or price. Unpriced. The headline total carries this line at $0. The stress-test high is a placeholder.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">B5</span> — Solid 3.5-foot balcony railings on the second and third floors nearest Interstate 5</td><td class="lc-expl" data-label="Explanation">Balconies on the second and third floors closest to Interstate 5 have to have solid railings 3.5 feet high, so they block more noise than an open rail would.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div>
+<div class="lc-note">Placeholder, stress test, $0 – $250,000</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, condition 38, and RECON&#x27;s Noise Analysis Report, Figure 8. No price is in the record.</p>
+<ul class="lc-calc"><li>No price is in the record, so no sourced amount is calculated.</li><li>The $250,000 high end is a placeholder assumption, not a bid.</li></ul>
+<p class="lc-stat">Needs a quantity or price. Unpriced. The headline total carries this line at $0. The stress-test high is a placeholder.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">B6</span> — Dual-glazed, dual-tempered openings on the north faces of Buildings 1 through 5, plus 10-foot returns</td><td class="lc-expl" data-label="Explanation">Windows and other openings on the north faces of Buildings 1 through 5, and for 10 feet around the corners, have to use dual-glazed, dual-tempered glass.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div>
+<div class="lc-note">Placeholder, stress test, $0 – $300,000</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, conditions 49–53, and the City&#x27;s staff report, p. 14. No price is in the record.</p>
+<ul class="lc-calc"><li>No price is in the record, so no sourced amount is calculated.</li><li>The $300,000 high end is a placeholder assumption, not a bid.</li></ul>
+<p class="lc-stat">Needs a quantity or price. Unpriced. The headline total carries this line at $0. The stress-test high is a placeholder.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">C12</span> — Full-time archaeological and Native American monitors during all soil disturbance, plus curation</td><td class="lc-expl" data-label="Explanation">Full-time archaeological and Native American monitors are required whenever soil is disturbed, and finds may have to be curated. Duration and billing rates are not in the record.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div>
+<div class="lc-note">Placeholder, stress test, $0 – $300,000</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 18, mitigation measure HR-1, pp. 11–19 of that attachment, and the City&#x27;s staff report, p. 19.</p>
+<ul class="lc-calc"><li>Duration and rates are not in the record, so no sourced amount is calculated.</li><li>The $300,000 high end is a placeholder assumption, not a bid.</li></ul>
+<p class="lc-stat">Needs a quantity or price. Unpriced. The headline total carries this line at $0. The stress-test high is a placeholder.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">C13</span> — Biological surveys and monitoring</td><td class="lc-expl" data-label="Explanation">Protocol surveys and monitoring are required for least Bell&#x27;s vireo and Ridgway&#x27;s rail, plus burrowing-owl and nesting-bird surveys, and a biologist for the habitat-preserve edge.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div>
+<div class="lc-note">Placeholder, stress test, $0 – $50,000</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 18, mitigation measures Bio-1A, Bio-1B, Bio-2, and Bio-3; Attachment 5, condition 28; Attachment 6, condition 54; RECON&#x27;s Burrowing Owl Assessment, January 13, 2020, p. 3; and the California Department of Fish and Wildlife comment letter, May 26, 2022, p. 3. No rate or duration is priced.</p>
+<ul class="lc-calc"><li>No rate or duration is in the record, so no sourced amount is calculated.</li><li>The $50,000 high end is a placeholder assumption, not a bid.</li></ul>
+<p class="lc-stat">Needs a quantity or price. Unpriced. The headline total carries this line at $0. The stress-test high is a placeholder.</p>
+</div>
+</details></td></tr>
+<tr class="lc-group"><td colspan="4">Fees</td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">C2</span> — Building permit, plan check, and inspection fees</td><td class="lc-expl" data-label="Explanation">The City of San Diego Development Services Department charges fees to review plans, issue building permits, and inspect the work. Those fees have not been estimated on this page.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, informational notes, and the City of San Diego Development Services fee schedules. A Development Services fee estimate is needed.</p>
+<ul class="lc-calc"><li>No City fee estimate is in the record, so no amount is calculated.</li></ul>
+<p class="lc-stat">Needs a quantity or price. The headline total carries this line at $0. Not priced in the record.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">C3</span> — Citywide development impact fees for parks, fire, library, and mobility</td><td class="lc-expl" data-label="Explanation">The City charges one-time development impact fees on new apartments, covering parks, fire, library, and mobility. Affordable-unit exemptions, if any, have not been verified, so the calculation uses all 380 units.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$8,440,114 – $8,440,114</div>
+<div class="lc-hl">Headline $8,440,114</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per the City of San Diego, Fiscal Year 2027 City Planning Department Fee and Deposit Schedule, multi-family table by unit size, totaling $8,440,114, which is $22,210.83 per unit on average. The City&#x27;s staff report is also cited. The page points to a development-impact-fee detail for the unit-size breakdown; this memo uses the page&#x27;s already-entered total and does not invent a new breakdown.</p>
+<ul class="lc-calc"><li>380 units times $22,210.8263 per unit, the page&#x27;s average, equals $8,440,114.</li></ul>
+<p class="lc-stat">Sourced. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">C4</span> — Regional transportation congestion-improvement program fee</td><td class="lc-expl" data-label="Explanation">A regional transportation fee, often called the RTCIP fee, is charged on each new dwelling unit. Pay the regional transportation fee on 380 dwelling units.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$1,181,754 – $1,181,754</div>
+<div class="lc-hl">Headline $1,181,754</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per the City of San Diego, Fiscal Year 2027 City Planning Department Fee and Deposit Schedule, the rate is $3,109.88 per dwelling unit.</p>
+<ul class="lc-calc"><li>380 dwelling units times $3,109.88 per dwelling unit equals $1,181,754.</li></ul>
+<p class="lc-stat">Sourced. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">C5</span> — School fees, South Bay Union and Sweetwater Union High, Level 1</td><td class="lc-expl" data-label="Explanation">The two local school districts charge a combined Level 1 school fee on residential floor area. Garages are left out of the area. Pay school fees on 364,635 square feet of assessable residential area.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$1,961,736 – $1,961,736</div>
+<div class="lc-hl">Headline $1,961,736</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Sheet T.2, residential leasable area is 364,635 square feet, with garages excluded. Per the California Department of General Services, Office of Public School Construction, State Allocation Board index adjustment on developer fees, January 28, 2026, the 2026 statutory Level 1 maximum is used, together with the South Bay Union School District and Sweetwater Union High School District developer-fee materials: $2.37 plus $3.01 equals $5.38 per square foot.</p>
+<ul class="lc-calc"><li>$2.37 plus $3.01 equals $5.38 per square foot.</li><li>364,635 square feet times $5.38 per square foot equals $1,961,736.</li></ul>
+<p class="lc-stat">Sourced. In the headline total. Level 2 fees or a community-facilities district have not been verified.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">C6</span> — City water capacity charge</td><td class="lc-expl" data-label="Explanation">The City of San Diego publishes a water capacity charge of $3,047 per equivalent dwelling unit. Water here is served by California American Water, so that City charge may not apply.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, Public Utilities condition 58, the water purveyor is California American Water. The City rate cited on the page is from the Public Utilities Fiscal Year 2024–2028 Five-Year Financial Outlook, $3,047 per equivalent dwelling unit. No equivalent-dwelling-unit count and no California American Water fee schedule are entered.</p>
+<ul class="lc-calc"><li>No equivalent-dwelling-unit count is entered, and the City charge may not apply, so no amount is calculated.</li></ul>
+<p class="lc-stat">Needs a quantity or price. The headline total carries this line at $0. This charge may not apply.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">C7</span> — City wastewater capacity charge</td><td class="lc-expl" data-label="Explanation">The City of San Diego charges a wastewater capacity charge of $5,154 per equivalent dwelling unit for sewer service. The number of equivalent dwelling units needs a City determination.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, Public Utilities conditions 59–67, sewer is City service. The rate cited on the page is from the Public Utilities Fiscal Year 2024–2028 Five-Year Financial Outlook, $5,154 per equivalent dwelling unit. No count is entered.</p>
+<ul class="lc-calc"><li>No equivalent-dwelling-unit count is entered, so no amount is calculated.</li></ul>
+<p class="lc-stat">Needs a quantity or price. The headline total carries this line at $0. Not priced in the record. Sewer is City service, but the equivalent-dwelling-unit count has not been determined.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">C8</span> — San Diego County Water Authority system and treatment capacity charges</td><td class="lc-expl" data-label="Explanation">The San Diego County Water Authority charges system and treatment capacity charges that often depend on meter size. Whether those charges apply through California American Water&#x27;s wholesale arrangement has not been verified, and no meter.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 6, Public Utilities condition 58, and the San Diego County Water Authority capacity-charge schedule. No meter count or size is entered.</p>
+<ul class="lc-calc"><li>No meter schedule is in the record, and applicability is not verified, so no amount is calculated.</li></ul>
+<p class="lc-stat">Needs a quantity or price. The headline total carries this line at $0. Not priced in the record.</p>
+</div>
+</details></td></tr>
+<tr class="lc-group"><td colspan="4">Soft costs</td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">C1</span> — Architecture and engineering</td><td class="lc-expl" data-label="Explanation">Design fees for architecture and engineering, expressed as a percentage of site work plus building cost, using the same ratio as the Otay Ranch II tax-credit filing.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$5,544,743 – $5,544,743</div>
+<div class="lc-hl">Headline $5,544,743</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per the California Tax Credit Allocation Committee staff report CA-25-798, Otay Ranch II, Chula Vista, December 10, 2025: architecture and engineering of $3,010,500 divided by construction cost of $73,589,410 equals 4.0909 percent.</p>
+<ul class="lc-calc"><li>$3,010,500 divided by $73,589,410 equals 4.0909 percent.</li><li>4.0909 percent times $135,538,461 equals $5,544,743.</li></ul>
+<p class="lc-stat">Sourced. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">C9</span> — Legal fees</td><td class="lc-expl" data-label="Explanation">Legal fees are expressed as a percentage of site work plus building cost, using the same ratio as the Otay Ranch II tax-credit filing. The amount moves if that total changes.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$731,230 – $731,230</div>
+<div class="lc-hl">Headline $731,230</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per the California Tax Credit Allocation Committee staff report CA-25-798, Otay Ranch II: legal of $397,000 divided by construction cost of $73,589,410 equals 0.5395 percent.</p>
+<ul class="lc-calc"><li>$397,000 divided by $73,589,410 equals 0.5395 percent.</li><li>0.5395 percent times $135,538,461 equals $731,230.</li></ul>
+<p class="lc-stat">Sourced. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">C10</span> — Soft-cost contingency</td><td class="lc-expl" data-label="Explanation">A contingency allowance on soft costs, expressed as a percentage of site work plus building cost, using the same ratio as the Otay Ranch II tax-credit filing.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$2,026,029 – $2,026,029</div>
+<div class="lc-hl">Headline $2,026,029</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per the California Tax Credit Allocation Committee staff report CA-25-798, Otay Ranch II: soft-cost contingency of $1,100,000 divided by construction cost of $73,589,410 equals 1.4948 percent.</p>
+<ul class="lc-calc"><li>$1,100,000 divided by $73,589,410 equals 1.4948 percent.</li><li>1.4948 percent times $135,538,461 equals $2,026,029.</li></ul>
+<p class="lc-stat">Sourced. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">C11</span> — Other soft costs: insurance, title, taxes during construction, and marketing</td><td class="lc-expl" data-label="Explanation">Remaining soft costs include insurance, title, property taxes during construction, marketing, bond premiums, a mitigation-monitoring deposit, various recorded agreements, and a California Department of Fish and Wildlife filing fee.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Attachment 5, condition 12; Attachment 6, conditions 16–23, 28, and 59–68, on bonds, easements, and agreements; Attachment 18, the mitigation monitoring and reporting program, on the monitoring deposit; and the California Department of Fish and Wildlife filing fee. This row has no unit-price source on the page.</p>
+<ul class="lc-calc"><li>No amounts are in the record, so no amount is calculated.</li></ul>
+<p class="lc-stat">Needs a quantity or price. The headline total carries this line at $0. Not priced in the record. The source is thin: many required bonds, agreements, and insurance items are named, but none is priced.</p>
+</div>
+</details></td></tr>
+<tr class="lc-group"><td colspan="4">Financing &amp; contingency</td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">D1</span> — Construction interest and financing costs</td><td class="lc-expl" data-label="Explanation">Interest during construction and related financing costs, expressed as a percentage of site work plus building cost, using the same ratio as the Otay Ranch II tax-credit filing.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$25,673,018 – $25,673,018</div>
+<div class="lc-hl">Headline $25,673,018</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per the California Tax Credit Allocation Committee staff report CA-25-798, Otay Ranch II: “Const. Interest, Perm. Financing” of $13,938,933 divided by construction cost of $73,589,410 equals 18.9415 percent.</p>
+<ul class="lc-calc"><li>$13,938,933 divided by $73,589,410 equals 18.9415 percent.</li><li>18.9415 percent times $135,538,461 equals $25,673,018.</li></ul>
+<p class="lc-stat">Sourced. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">E1</span> — Hard-cost contingency</td><td class="lc-expl" data-label="Explanation">A contingency allowance on hard costs, expressed as a percentage of site work plus building cost, using the same ratio as the Otay Ranch II tax-credit filing.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$6,221,622 – $6,221,622</div>
+<div class="lc-hl">Headline $6,221,622</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per the California Tax Credit Allocation Committee staff report CA-25-798, Otay Ranch II: hard-cost contingency of $3,377,971 divided by construction cost of $73,589,410 equals 4.5903 percent.</p>
+<ul class="lc-calc"><li>$3,377,971 divided by $73,589,410 equals 4.5903 percent.</li><li>4.5903 percent times $135,538,461 equals $6,221,622.</li></ul>
+<p class="lc-stat">Sourced. In the headline total.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">F1</span> — Developer fee</td><td class="lc-expl" data-label="Explanation">A developer fee, if one is taken, has not been set for this market-rate project. The page found no public market-rate standard. Decide whether a developer fee is taken, and in what amount.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per the California Tax Credit Allocation Committee staff report CA-25-798, Otay Ranch II, the tax-credit developer fee on that comparable was $16,034,030. That figure is a regulated tax-credit fee and is shown only as a reference, not as this project&#x27;s fee.</p>
+<ul class="lc-calc"><li>No percentage or amount is entered, so no amount is calculated.</li></ul>
+<p class="lc-stat">Needs a quantity or price. The headline total carries this line at $0. Not priced in the record.</p>
+</div>
+</details></td></tr>
+<tr class="lc-group"><td colspan="4">Land</td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">G1</span> — Land basis</td><td class="lc-expl" data-label="Explanation">The amount assigned to the land in this valuation case. It is an input, not an appraisal of what the land would sell for. Nothing is built under this line.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$19,000,000 – $19,000,000</div>
+<div class="lc-hl">Headline $19,000,000</div>
+<div class="lc-note">Case input, not a sourced market value.</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">$19.0 million is from Michael&#x27;s call inputs on November 16, 2026. Alternatives noted on the page are $0, which is Michael&#x27;s position that the land is worth essentially nothing, and $2,468,072, the 2026 assessed value from the San Diego County Assessor, Recorder, and County Clerk. The $19 million figure itself is not a sourced sale or appraisal.</p>
+<ul class="lc-calc"><li>1 times $19,000,000 equals $19,000,000.</li><li>No cost-index factor is applied.</li></ul>
+<p class="lc-stat">Case input. Not a sourced market value. In the headline total at $19,000,000.</p>
+</div>
+</details></td></tr>
+<tr class="lc-group"><td colspan="4">Income adjustments</td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">O1</span> — Rent shortfall on 11 apartments at the 30 percent of area-median-income cap</td><td class="lc-expl" data-label="Explanation">Eleven affordable apartments must be rented at the 30% of area-median-income cap. Those caps are lower than the other affordable rents in the model, which cuts yearly rental income.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$127,000 a year – $127,000 a year</div>
+<div class="lc-hl">Headline $127,000 a year</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per the City&#x27;s Planning Commission staff report PC-25-032, p. 7, the affordable mix is 28 units at 80 percent, 22 at 60 percent, and 11 at 30 percent of area median income, plus 1 manager unit. Per the California Tax Credit Allocation Committee 2026 maximum gross rent limits, for placements in service on or after May 1, 2026, the 30 percent caps are $984, $1,181, and $1,364 a month for a one-, two-, and three-bedroom unit. The comparison rents in the model are $1,838 to $2,518 a month. The $127,000 a year figure is the calculation from the November 16, 2026 conditions-impact analysis, used as the page estimate. A bedroom-by-bedroom multiplier is not separately itemized on the page beyond that total.</p>
+<ul class="lc-calc"><li>11 units at the 30 percent caps of $984, $1,181, and $1,364 a month, compared with model rents of $1,838 to $2,518 a month, equal about $127,000 a year of lost gross potential rent. Estimate, from the November 16 conditions analysis.</li><li>Utility allowances are not in the record and are not subtracted here; they would make the shortfall larger.</li></ul>
+<p class="lc-stat">Sourced estimate. Deducted from yearly income. In the headline value.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">O2</span> — Perpetual maintenance of the stormwater treatment facilities, as an operating expense</td><td class="lc-expl" data-label="Explanation">The owner has to maintain the biofiltration basin, the packaged treatment unit, the permeable pavers, and the green-street facilities forever, under a stormwater-facility maintenance agreement.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
+<div class="lc-hl">Headline $0</div>
+<div class="lc-note">Placeholder, stress test, $0 – $25,000 a year</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per Fuscoe&#x27;s Storm Water Quality Management Plan, pp. 30–32, and Attachment 6, conditions 32–33, which require a Best Management Practice Maintenance Agreement. No cost is in the record.</p>
+<ul class="lc-calc"><li>No cost is in the record, so no sourced amount is calculated.</li><li>The $25,000-a-year high end is a placeholder assumption, not a bid.</li></ul>
+<p class="lc-stat">Needs a quantity or price. Unpriced. No yearly amount is entered, so nothing is deducted in the headline. The stress-test high is a placeholder.</p>
+</div>
+</details></td></tr>
+<tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">O3</span> — Flag only: the model&#x27;s one-bedroom affordable rent matches the 60 percent efficiency-unit cap, not the one-bedroom cap</td><td class="lc-expl" data-label="Explanation">This is a flag only, not a deduction. The model&#x27;s one-bedroom affordable rent matches the 60% efficiency-unit cap, not the higher one-bedroom cap, and the difference is not applied.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Flag only; not applied</div>
+<div class="lc-hl">Headline $0</div>
+<div class="lc-note">Flag only; not applied. Unused upper bound is $75,093 a year more income, not a cost.</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
+<summary>Sources &amp; Methods</summary>
+<div>
+<p class="lc-cite">Per the California Tax Credit Allocation Committee 2026 maximum gross rent limits, and the November 14 rent memo, which is an internal, not public, source. The 48 one-bedroom affordable units and the 11 units already at the 30 percent cap in O1 are the counts used in the unused upper-bound arithmetic.</p>
+<ul class="lc-calc"><li>This calculation is not applied.</li><li>If it were: 48 units times $1,968 minus $1,837.63, times 12 months, equals $75,093 a year as an upper bound, before utility allowances and before the 30 percent-tier mix in O1.</li></ul>
+<p class="lc-stat">Flag only. Not applied. Not deducted in the headline.</p>
+</div>
+</details></td></tr>
+</tbody>
+</table>
+</div>
+<p class="note-below">Headline figures on this page are unchanged: net present value −$61,209,294 and residual land value −$42,209,294. Amounts labeled derived are calculated from a source; they are not contractor bids. Lines marked “not priced in the record” or “included in A16; not added” are not added again into the headline total.</p>
 </section>
 
 <section class="block" id="how-value">
