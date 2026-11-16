@@ -651,6 +651,83 @@ table.cat-table .lc-calc li { margin: 0.2rem 0; }
     border-top-color: #4F5D75;
   }
 }
+
+/* Record drawings + hotspot pop-ups. Page-only; shared css/styles.css is unchanged. */
+#record-drawings { color: #2D3142; }
+#record-drawings .rd-intro { max-width: 46rem; color: #2D3142; }
+.hs-figure { margin: 1.6rem 0 2rem; }
+.hs-figure h3 { margin: 0 0 0.2rem; font-size: 1.15rem; color: #2D3142; }
+.hs-figure .hs-cap { margin: 0 0 0.7rem; font-size: 0.85rem; color: #4F5D75; }
+.hs-stage { position: relative; background: #FFFFFF; border: 1px solid #4F5D75; border-radius: 8px; overflow: auto; box-shadow: 0 2px 10px rgba(45, 49, 66, 0.10); }
+.hs-stage img { display: block; width: 100%; height: auto; }
+.hs-pin {
+  position: absolute; width: 1.7rem; height: 1.7rem; margin: 0; padding: 0;
+  border: 2px solid #2D3142; border-radius: 50%;
+  background: #EF8354; color: #2D3142;
+  font-family: Arial, Helvetica, sans-serif; font-size: 0.75rem; font-weight: 700; line-height: 1;
+  transform: translate(-50%, -50%); cursor: pointer; z-index: 2;
+  box-shadow: 0 1px 3px rgba(45, 49, 66, 0.35);
+}
+.hs-pin:hover, .hs-pin:focus-visible { background: #2D3142; color: #FFFFFF; outline: 3px solid #EF8354; outline-offset: 2px; }
+.hs-pin[aria-expanded="true"] { background: #2D3142; color: #FFFFFF; }
+.hs-dialog {
+  border: 1px solid #2D3142; border-radius: 10px; padding: 1.1rem 1.2rem 1.15rem;
+  max-width: min(32rem, calc(100vw - 2rem)); color: #2D3142; background: #FFFFFF;
+  box-shadow: 0 8px 28px rgba(45, 49, 66, 0.28);
+  font-family: Arial, Helvetica, sans-serif;
+  position: fixed; inset: 0; margin: auto; height: fit-content; width: min(32rem, calc(100vw - 2rem));
+}
+.hs-dialog::backdrop { background: rgba(45, 49, 66, 0.45); }
+.hs-dialog h3 { margin: 0 1.8rem 0.55rem 0; font-size: 1.12rem; color: #2D3142; }
+.hs-dialog p { margin: 0.4rem 0; font-size: 0.95rem; line-height: 1.45; color: #2D3142; }
+.hs-dialog .hs-k { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #4F5D75; margin-bottom: 0.15rem; }
+.hs-dialog .hs-cost { background: #BFC0C0; border-radius: 6px; padding: 0.55rem 0.7rem; color: #2D3142; }
+.hs-dialog .hs-src { font-size: 0.82rem; color: #4F5D75; }
+.hs-dialog__close {
+  position: absolute; top: 0.55rem; right: 0.55rem; width: 2rem; height: 2rem;
+  border: 1px solid #4F5D75; border-radius: 4px; background: #FFFFFF; color: #2D3142;
+  font-size: 1.2rem; line-height: 1; cursor: pointer;
+}
+.hs-dialog__close:hover, .hs-dialog__close:focus-visible { background: #2D3142; color: #FFFFFF; outline: 2px solid #EF8354; outline-offset: 2px; }
+.street-yard {
+  margin: 1.8rem 0 2rem; padding: 1.1rem 1.2rem 1.2rem;
+  border: 1px solid #4F5D75; border-left: 5px solid #EF8354; border-radius: 8px; background: #FFFFFF;
+}
+.street-yard h3 { margin: 0 0 0.45rem; }
+.street-yard blockquote { margin: 0.6rem 0; padding: 0.45rem 0.8rem; background: #BFC0C0; border-left: 4px solid #2D3142; color: #2D3142; }
+.street-yard blockquote footer { font-size: 0.82rem; color: #4F5D75; margin-top: 0.3rem; }
+.street-yard img { display: block; width: 100%; max-width: 52rem; height: auto; margin: 0.8rem 0 0.3rem; border: 1px solid #4F5D75; border-radius: 6px; }
+.street-yard .sy-table-wrap { overflow-x: auto; margin: 0.85rem 0 1rem; }
+.street-yard table.sy-figs {
+  width: 100%; border-collapse: collapse; font-size: 0.88rem;
+  color: #2D3142; background: #FFFFFF; font-family: Arial, Helvetica, sans-serif;
+}
+.street-yard table.sy-figs th {
+  background: #2D3142; color: #FFFFFF; font-weight: 700;
+  text-align: left; padding: 0.4rem 0.55rem;
+}
+.street-yard table.sy-figs td {
+  border-bottom: 1px solid #BFC0C0; padding: 0.4rem 0.55rem; color: #2D3142;
+}
+.street-yard table.sy-figs tbody tr:nth-child(even) td { background: #BFC0C0; }
+.street-yard table.sy-figs .num { text-align: right; white-space: nowrap; }
+.street-yard table.sy-figs caption {
+  caption-side: bottom; text-align: left; font-size: 0.82rem;
+  color: #2D3142; padding-top: 0.4rem;
+}
+.rd-gallery { margin: 1.6rem 0 0.4rem; }
+.rd-gallery h3 { margin: 0 0 0.4rem; }
+.rd-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 0.9rem; }
+.rd-grid figure { margin: 0; background: #FFFFFF; border: 1px solid #4F5D75; border-radius: 8px; overflow: hidden; }
+.rd-grid img { display: block; width: 100%; height: auto; }
+.rd-grid figcaption { padding: 0.5rem 0.7rem 0.7rem; font-size: 0.82rem; color: #2D3142; }
+#line-catalog .lc-illust { margin: 0.7rem 0 0.15rem; padding: 0; }
+#line-catalog .lc-illust img { display: block; width: 100%; max-width: 28rem; height: auto; border: 1px solid #4F5D75; border-radius: 4px; background: #FFFFFF; }
+#line-catalog .lc-illust figcaption { font-size: 0.78rem; color: #2D3142; margin: 0.3rem 0 0; }
+@media (max-width: 700px) {
+  .hs-pin { width: 1.85rem; height: 1.85rem; font-size: 0.72rem; }
+  .hs-dialog { margin: auto 0.6rem; width: calc(100% - 1.2rem); }
+}
 </style>
 </head>
 <body data-page="company" data-company="bella">
@@ -834,6 +911,165 @@ table.cat-table .lc-calc li { margin: 0.2rem 0; }
 </article>
 </section>
 
+
+<section class="block" id="record-drawings">
+  <h2>What the Drawings Show</h2>
+  <p class="rd-intro">These are drawings from the approved exhibit, Attachment 8 of Planning Commission Report PC-25-032. Click a numbered marker to see, in ordinary language, what has to be built at that place, which permit condition requires it (Attachments 5, 6, and 8), and the likely cost. Every cost comes from the <a href="#line-catalog">Cost Lines, One by One</a> table on this page, using that line’s low, high, and headline figures. If a drawn element has no catalog line, the pop-up says it is not priced in this model. Nothing here changes the valuation.</p>
+
+<figure class="hs-figure" id="fig-hollister-section">
+  <h3>Illustrative Hollister Street section</h3>
+  <p class="hs-cap">Attachment 8, landscape sheet L-5 (Illustrative Street Plan / Sections / Signage), PDF p. 90. Click a numbered place for what has to be built and the catalog cost.</p>
+  <div class="hs-stage">
+    <img src="img/record/hollister-section.jpg" alt="Illustrative section looking along Hollister Street: a widened roadway, a 6-foot bike lane, a 6-foot planted parkway, a 6-foot sidewalk, and the proposed 72-foot right-of-way compared with the existing 66-foot right-of-way. Attachment 8, sheet L-5, PDF page 90." width="1800" height="888" loading="lazy" decoding="async">
+    <button type="button" class="hs-pin" style="left:32%;top:66%;" data-title="Street widening, 48-foot pavement" data-what="Hollister Street in front of the site has to be built out to a 48-foot pavement width along the entire frontage, as labeled on this section." data-cond="Attachment 6, transportation condition 68, requires installation of 48 feet of pavement width along the project frontage, together with restriping." data-cost="&lt;strong&gt;A17b — Hollister Street widening, 16 feet of pavement along the frontage.&lt;/strong&gt; $74,094 – $107,604. Headline $74,094." data-src="Attachment 8, sheet L-5, PDF p. 90. The section labels “48′ pavement width.”" aria-haspopup="dialog" aria-expanded="false" aria-label="Street widening, 48-foot pavement. Open details.">1</button><button type="button" class="hs-pin" style="left:37%;top:86%;" data-title="6-foot bike lane" data-what="A 6-foot bike lane is shown in the new street section, on the pavement next to the parkway." data-cond="Attachment 6, condition 68, requires restriping Hollister Street to include buffered Class II bike lanes, along with two travel lanes and a continuous two-way left-turn lane." data-cost="&lt;strong&gt;A17l — Restriping Hollister Street.&lt;/strong&gt; $0 – $28,391. Headline $0. Derived. Not in the headline total. The new pavement itself is priced on A17b." data-src="Attachment 8, sheet L-5, PDF p. 90. The section labels “6′ bikelane.”" aria-haspopup="dialog" aria-expanded="false" aria-label="6-foot bike lane. Open details.">2</button><button type="button" class="hs-pin" style="left:45%;top:86%;" data-title="6-foot parkway" data-what="A 6-foot planted parkway sits between the bike lane and the sidewalk. Condition 68 calls for a 12-foot parkway that includes this planting strip and the 6-foot sidewalk." data-cond="Attachment 6, condition 68, requires construction of a 12-foot parkway with a 6-foot non-contiguous sidewalk, curb, and gutter." data-cost="&lt;strong&gt;A17e — Off-site parkway planting and irrigation.&lt;/strong&gt; $10,413 – $10,413. Headline $10,413. Derived." data-src="Attachment 8, sheet L-5, PDF p. 90. The section labels “6′ parkway.”" aria-haspopup="dialog" aria-expanded="false" aria-label="6-foot parkway. Open details.">3</button><button type="button" class="hs-pin" style="left:56%;top:62%;" data-title="6-foot sidewalk" data-what="A 6-foot sidewalk is set back from the curb, on the site side of the parkway, inside the proposed right-of-way." data-cond="Attachment 6, condition 68, requires a six-foot (6′-0″) wide non-contiguous sidewalk as part of the 12-foot parkway." data-cost="&lt;strong&gt;A17d — Off-site 6-foot sidewalk, full frontage, set back from the curb.&lt;/strong&gt; $41,002 – $41,002. Headline $41,002." data-src="Attachment 8, sheet L-5, PDF p. 90. The section labels “6′ sidewalk.”" aria-haspopup="dialog" aria-expanded="false" aria-label="6-foot sidewalk. Open details.">4</button><button type="button" class="hs-pin" style="left:24%;top:82%;" data-title="Six-foot right-of-way dedication" data-what="The section compares a 66-foot existing right-of-way with a 72-foot proposed right-of-way — a 6-foot dedication on the project side of Hollister Street." data-cond="Attachment 6, condition 68, requires the owner to dedicate six feet (6′-0″) of right-of-way along the project frontage on Hollister Street." data-cost="&lt;strong&gt;A17a — Six-foot right-of-way dedication on Hollister Street.&lt;/strong&gt; $0 – $0. Headline $0. Not part of the construction total. The value of the land given up is not priced here." data-src="Attachment 8, sheet L-5, PDF p. 90. The section labels “72′ proposed right-of-way” and “66′ existing right-of-way.”" aria-haspopup="dialog" aria-expanded="false" aria-label="Six-foot right-of-way dedication. Open details.">5</button>
+  </div>
+</figure>
+
+<figure class="hs-figure" id="fig-hollister-plan">
+  <h3>Illustrative Hollister Street plan</h3>
+  <p class="hs-cap">The plan on the same L-5 sheet, Attachment 8, PDF p. 90, showing the frontage, including the mid-block crossing, bus stop, and monument-sign locations.</p>
+  <div class="hs-stage">
+    <img src="img/record/hollister-plan.jpg" alt="Plan view of Hollister Street along the Bella Mar frontage, labeled with a visibility triangle, monument signs, a mid-block crosswalk, a 6-foot bike lane, a bus stop, and further monument signs and a visibility triangle at the north. Attachment 8, sheet L-5, PDF page 90." width="2000" height="469" loading="lazy" decoding="async">
+    <button type="button" class="hs-pin" style="left:17%;top:82%;" data-title="Mid-block crosswalk" data-what="A mid-block crosswalk is shown on Hollister Street near the south end of the frontage, at the southern driveway." data-cond="Attachment 6, condition 67, requires a mid-block crossing across Hollister Street on the north side of the southern project driveway with a rectangular rapid-flashing-beacon system." data-cost="&lt;strong&gt;A17j — Mid-block crossing with rectangular rapid-flashing beacons at the south driveway.&lt;/strong&gt; $14,173 – $28,345. Headline $0. Derived. Not in the headline total." data-src="Attachment 8, sheet L-5, PDF p. 90. The plan labels “cross walk.”" aria-haspopup="dialog" aria-expanded="false" aria-label="Mid-block crosswalk. Open details.">1</button><button type="button" class="hs-pin" style="left:30%;top:76%;" data-title="6-foot bike lane (plan)" data-what="The 6-foot bike lane is also labeled in plan along the site side of Hollister Street." data-cond="Attachment 6, condition 68, requires buffered Class II bike lanes as part of the Hollister Street restriping." data-cost="&lt;strong&gt;A17l — Restriping Hollister Street.&lt;/strong&gt; $0 – $28,391. Headline $0. Derived. Not in the headline total." data-src="Attachment 8, sheet L-5, PDF p. 90. The plan labels “6′ bikelane.”" aria-haspopup="dialog" aria-expanded="false" aria-label="6-foot bike lane (plan). Open details.">2</button><button type="button" class="hs-pin" style="left:41%;top:70%;" data-title="Bus stop" data-what="A bus stop is shown on the site side of Hollister Street, about mid-frontage, with a City-standard boarding slab." data-cond="Attachment 6, engineering condition 28, requires a new bus-stop slab per current City standards, adjacent to the site on Hollister Street. The landscape plan also labels a bus stop (item 10)." data-cost="&lt;strong&gt;A17h — Two Route 932 bus stops, with City-standard slabs.&lt;/strong&gt; Not priced in the record. Headline $0. Placeholder, stress test, $0 – $60,000." data-src="Attachment 8, sheet L-5, PDF p. 90. The plan labels “bus stop.”" aria-haspopup="dialog" aria-expanded="false" aria-label="Bus stop. Open details.">3</button><button type="button" class="hs-pin" style="left:16%;top:58%;" data-title="Monument signs" data-what="Monument signs are shown at the driveways, and a note on the sheet says each sign has to sit outside the visibility triangle." data-cond="The locations are on Attachment 8, sheet L-5, PDF p. 90, and on the landscape plan (item 22), which repeats: “Monument sign to be located outside the visibility triangle.” Attachment 6 does not give the signs their own numbered cost condition." data-cost="&lt;strong&gt;Not priced in this model.&lt;/strong&gt; There is no matching line in Cost Lines, One by One. The signs are drawn on the landscape and signage sheets, but they are not a separate priced line in the catalog." data-src="Attachment 8, sheet L-5, PDF p. 90. The plan labels “monument signs.”" aria-haspopup="dialog" aria-expanded="false" aria-label="Monument signs. Open details.">4</button><button type="button" class="hs-pin" style="left:7%;top:78%;" data-title="Visibility triangle" data-what="A visibility triangle is shown at the south driveway. It is a sight-distance clear area, not a structure to be built. The monument signs have to stay outside it." data-cond="Labeled on Attachment 8, sheet L-5, PDF p. 90, and in the landscape-plan notes on sheet L-1, PDF p. 86." data-cost="&lt;strong&gt;Not priced in this model.&lt;/strong&gt; There is no matching line in Cost Lines, One by One. A visibility triangle is a set-aside for sight distance, not a construction pay item in the catalog." data-src="Attachment 8, sheet L-5, PDF p. 90. The plan labels “visibility triangle.”" aria-haspopup="dialog" aria-expanded="false" aria-label="Visibility triangle. Open details.">5</button>
+  </div>
+</figure>
+
+<figure class="hs-figure" id="fig-section-a-full">
+  <h3>Sheet 4, Cross Section A (full width)</h3>
+  <p class="hs-cap">Attachment 8, Tentative Parcel Map conceptual cross sections, Sheet 4 of 5, PDF p. 84. West is Interstate 5 and the biofiltration basin; east is Hollister Street. The labeled zooms below are the clickable drawings.</p>
+  <div class="hs-stage">
+    <img src="img/record/sheet4-section-a.jpg" alt="Full-width Cross Section A from Interstate 5 and the biofiltration basin on the west, across building pads with finished floors from 23.90 to 27.90 feet, to Hollister Street on the east. Attachment 8, Sheet 4, PDF page 84." width="2200" height="314" loading="lazy" decoding="async">
+  </div>
+</figure>
+
+<figure class="hs-figure" id="fig-section-a-west">
+  <h3>Section A, west end: basin, pads, and the 100-year flood line</h3>
+  <p class="hs-cap">Zoom of the west end of Cross Section A, Attachment 8, Sheet 4, PDF p. 84.</p>
+  <div class="hs-stage">
+    <img src="img/record/sheet4-a-west.jpg" alt="West end of Cross Section A, showing Interstate 5, a 43-foot biofiltration basin with graded slope benches, existing grade, the existing 100-year water-surface elevation, and a building pad with a finished floor of 23.90 feet. Attachment 8, Sheet 4, PDF page 84." width="1226" height="429" loading="lazy" decoding="async">
+    <button type="button" class="hs-pin" style="left:24%;top:35%;" data-title="Biofiltration basin" data-what="A 43-foot-wide biofiltration basin is shown against the Interstate 5 right-of-way. The slopes are labeled with 2:1 maximum and narrow graded shelves (called benches on the civil sheet). Those shelves are slope benches, not sitting benches." data-cond="The basin is BF-1 on the stormwater plan. Attachment 8, Sheet 4, Section A and Detail C/4, PDF p. 84. Permanent BMP maintenance is required under the Attachment 5 stormwater conditions of the map and permit." data-cost="&lt;strong&gt;A12a — Biofiltration basin BF-1, 11,220 square feet.&lt;/strong&gt; $141,377 – $282,754. Headline $141,377." data-src="Attachment 8, Sheet 4, Cross Section A, PDF p. 84. The section labels “43′ basin.”" aria-haspopup="dialog" aria-expanded="false" aria-label="Biofiltration basin. Open details.">1</button><button type="button" class="hs-pin" style="left:68%;top:58%;" data-title="Building pad and finished floor 23.90 feet" data-what="The first building pad is raised to a finished floor of 23.90 feet, above the existing grade and above the existing 100-year water-surface line shown as a dashed hatch." data-cond="Attachment 6, condition 25, requires fill in the Special Flood Hazard Area that is used to create a building pad to be compacted to 95 percent of Standard Proctor. Sheet 3 notes that finished floors shall be 2 feet above the 100-year water-surface elevation." data-cost="&lt;strong&gt;A2 — Import fill.&lt;/strong&gt; $2,453,066 – $2,453,066. Headline $2,453,066. The 81,350 cubic yards already include trucking the dirt to the site." data-src="Attachment 8, Sheet 4, Cross Section A, PDF p. 84. The section labels “23.90 FF,” “ex. grade,” and “ex. 100 year WSE.”" aria-haspopup="dialog" aria-expanded="false" aria-label="Building pad and finished floor 23.90 feet. Open details.">2</button>
+  </div>
+</figure>
+
+<figure class="hs-figure" id="fig-section-a-east">
+  <h3>Section A, east end: Hollister wall, guardrail, and the 6-foot dedication</h3>
+  <p class="hs-cap">Zoom of the east end of Cross Section A, Attachment 8, Sheet 4, PDF p. 84.</p>
+  <div class="hs-stage">
+    <img src="img/record/sheet4-a-east.jpg" alt="East end of Cross Section A at Hollister Street, labeled with a retaining wall 3 feet maximum exposed, a 42-inch guardrail or wall, a curb, a 6-foot right-of-way dedication from 66 feet existing to 72 feet proposed, and a 4-foot graded slope bench with 2:1 daylight on the far side of the street. Building finished floor 27.90 feet. Attachment 8, Sheet 4, PDF page 84." width="932" height="429" loading="lazy" decoding="async">
+    <button type="button" class="hs-pin" style="left:52%;top:62%;" data-title="Hollister retaining wall, 3 feet max exposed" data-what="A retaining wall at the site side of Hollister Street is labeled “H = 3′ max exposed,” with a 42-inch guardrail or wall on top. The wall is in the floodplain and has to be designed for inundated conditions." data-cond="Attachment 6, conditions 30 and 31, require proof that retaining walls can withstand inundated conditions, a top-of-wall profile against the 100-year water surface, a height at least 2 feet above the base flood elevation, and a private maintenance agreement. The wall is shown on Attachment 8, Sheet 4, Sections A and B, PDF p. 84." data-cost="&lt;strong&gt;A15 — Flood-rated retaining walls.&lt;/strong&gt; $167,989 – $587,962. Headline $0. Derived. Not in the headline total. The catalog does not have a separate guardrail line; the 42-inch rail is shown with this wall." data-src="Attachment 8, Sheet 4, Cross Section A, PDF p. 84. The section labels “retaining wall H = 3′ max exposed” and “guardrail or wall H = 42″.”" aria-haspopup="dialog" aria-expanded="false" aria-label="Hollister retaining wall, 3 feet max exposed. Open details.">1</button><button type="button" class="hs-pin" style="left:68%;top:18%;" data-title="Six-foot right-of-way dedication" data-what="The existing 66-foot right-of-way is widened to 72 feet by a 6-foot dedication on the project side of Hollister Street." data-cond="Attachment 6, condition 68, requires dedication of six feet of right-of-way along the project frontage on Hollister Street." data-cost="&lt;strong&gt;A17a — Six-foot right-of-way dedication on Hollister Street.&lt;/strong&gt; $0 – $0. Headline $0. Not part of the construction total. The value of the land given up is not priced here." data-src="Attachment 8, Sheet 4, Cross Section A, PDF p. 84. The section labels “6′ R/W dedication,” “66′ existing,” and “72′ proposed.”" aria-haspopup="dialog" aria-expanded="false" aria-label="Six-foot right-of-way dedication. Open details.">2</button><button type="button" class="hs-pin" style="left:62%;top:55%;" data-title="Curb" data-what="A curb is labeled in the new Hollister Street section, with the sidewalk set back from it as a non-contiguous parkway section." data-cond="Attachment 6, condition 68, requires curb and gutter as part of the 12-foot parkway on Hollister Street." data-cost="&lt;strong&gt;A17c — Off-site curb and gutter, 8-inch Type G, full frontage.&lt;/strong&gt; $32,333 – $32,333. Headline $32,333." data-src="Attachment 8, Sheet 4, Cross Section A, PDF p. 84. The section labels “curb.”" aria-haspopup="dialog" aria-expanded="false" aria-label="Curb. Open details.">3</button><button type="button" class="hs-pin" style="left:90%;top:48%;" data-title="4-foot slope bench (not a sitting bench)" data-what="On the far side of Hollister, the civil sheet labels a “4′ bench w/ 2:1 daylight.” That is a narrow graded shelf on the slope, used to daylight the grade, not a park bench for sitting." data-cond="Shown on Attachment 8, Sheet 4, Cross Section A, PDF p. 84. No Attachment 6 condition describes a sitting-bench run, and no “Bearwell Loop” trail appears in the record." data-cost="&lt;strong&gt;Not priced in this model.&lt;/strong&gt; There is no matching line in Cost Lines, One by One. This is a grading shelf on the civil section, not a priced site-amenity bench." data-src="Attachment 8, Sheet 4, Cross Section A, PDF p. 84." aria-haspopup="dialog" aria-expanded="false" aria-label="4-foot slope bench (not a sitting bench). Open details.">4</button>
+  </div>
+</figure>
+
+<figure class="hs-figure" id="fig-section-b-full">
+  <h3>Sheet 4, Cross Section B (full width)</h3>
+  <p class="hs-cap">Attachment 8, Sheet 4, PDF p. 84. A second cut through the pads, again ending at Hollister Street with the 3-foot wall, 42-inch guardrail, and 6-foot dedication. The east zoom below is clickable.</p>
+  <div class="hs-stage">
+    <img src="img/record/sheet4-section-b.jpg" alt="Full-width Cross Section B from Interstate 5 across the pads, with a finished floor of 27.00 feet on the east building, to Hollister Street. Attachment 8, Sheet 4, PDF page 84." width="2200" height="314" loading="lazy" decoding="async">
+  </div>
+</figure>
+
+<figure class="hs-figure" id="fig-section-b-east">
+  <h3>Section B, east end: the same Hollister wall and dedication</h3>
+  <p class="hs-cap">Zoom of the east end of Cross Section B, Attachment 8, Sheet 4, PDF p. 84.</p>
+  <div class="hs-stage">
+    <img src="img/record/sheet4-b-east.jpg" alt="East end of Cross Section B at Hollister Street, again labeled with a 3-foot maximum exposed retaining wall, a 42-inch guardrail or wall, curb, and a 6-foot right-of-way dedication from 66 feet existing to 72 feet proposed. Attachment 8, Sheet 4, PDF page 84." width="834" height="492" loading="lazy" decoding="async">
+    <button type="button" class="hs-pin" style="left:57%;top:62%;" data-title="Retaining wall and 42-inch guardrail" data-what="Section B repeats the Hollister Street wall: 3 feet maximum exposed, with a 42-inch guardrail or wall, at the edge of the raised pad." data-cond="Attachment 6, conditions 30 and 31, and Attachment 8, Sheet 4, Cross Section B, PDF p. 84." data-cost="&lt;strong&gt;A15 — Flood-rated retaining walls.&lt;/strong&gt; $167,989 – $587,962. Headline $0. Derived. Not in the headline total." data-src="Attachment 8, Sheet 4, Cross Section B, PDF p. 84." aria-haspopup="dialog" aria-expanded="false" aria-label="Retaining wall and 42-inch guardrail. Open details.">1</button><button type="button" class="hs-pin" style="left:72%;top:24%;" data-title="Six-foot right-of-way dedication" data-what="The 66-foot existing right-of-way and 72-foot proposed right-of-way, with a 6-foot dedication, are labeled again on Section B." data-cond="Attachment 6, condition 68." data-cost="&lt;strong&gt;A17a — Six-foot right-of-way dedication on Hollister Street.&lt;/strong&gt; $0 – $0. Headline $0. Not part of the construction total." data-src="Attachment 8, Sheet 4, Cross Section B, PDF p. 84." aria-haspopup="dialog" aria-expanded="false" aria-label="Six-foot right-of-way dedication. Open details.">2</button>
+  </div>
+</figure>
+
+<figure class="hs-figure" id="fig-basin-c">
+  <h3>Biofiltration basin detail C/4</h3>
+  <p class="hs-cap">Attachment 8, Sheet 4, PDF p. 84. A not-to-scale detail of basin BF-1: 18-inch soil media, a gravel layer, an impermeable liner, an overflow structure, and a subdrain.</p>
+  <div class="hs-stage">
+    <img src="img/record/basin-detail-c.jpg" alt="Biofiltration basin detail C on Sheet 4, showing sloped sides, 3-inch mulch, 4-inch washed gravel, 18-inch soil media, a 12-inch stone sub-base, a 30-mil liner, a 6-inch perforated subdrain, and an overflow control structure. Attachment 8, Sheet 4, PDF page 84." width="1578" height="639" loading="lazy" decoding="async">
+    <button type="button" class="hs-pin" style="left:48%;top:40%;" data-title="Biofiltration basin BF-1, construction detail" data-what="The detail shows how the 11,220-square-foot basin is to be built: mulch, soil media with a 5-inch-per-hour infiltration rate, a gravel and stone section, a liner to the top of the basin, a perforated subdrain, and an overflow structure." data-cond="Attachment 8, Sheet 4, Detail C/4, PDF p. 84. Stormwater construction and a maintenance agreement are required in the Attachment 5 map conditions and the permit’s engineering conditions." data-cost="&lt;strong&gt;A12a — Biofiltration basin BF-1, 11,220 square feet.&lt;/strong&gt; $141,377 – $282,754. Headline $141,377." data-src="Attachment 8, Sheet 4, Biofiltration Basin Detail C/4, PDF p. 84." aria-haspopup="dialog" aria-expanded="false" aria-label="Biofiltration basin BF-1, construction detail. Open details.">1</button>
+  </div>
+</figure>
+
+<figure class="hs-figure" id="fig-mhpa-e">
+  <h3>North retaining wall and public path, Detail E/4</h3>
+  <p class="hs-cap">Attachment 8, Sheet 4, Cross Section E, PDF p. 84. This is the north edge of the developed pad, at the Multi-Habitat Planning Area. The path is the privately owned, publicly accessible trail required by the permit — not a “Bearwell Loop,” a name that does not appear in the record. The detail does not show sitting benches.</p>
+  <div class="hs-stage">
+    <img src="img/record/mhpa-detail-e.jpg" alt="Cross Section E on Sheet 4: a 7.5-foot maximum exposed retaining wall with a 3-foot freestanding wall and fence, a 4.5-foot recreation easement, and a 4-foot-minimum decomposed-granite trail, privately maintained, on the Multi-Habitat Planning Area side. Attachment 8, Sheet 4, PDF page 84." width="1364" height="513" loading="lazy" decoding="async">
+    <button type="button" class="hs-pin" style="left:16%;top:40%;" data-title="North retaining wall, 7.5 feet max" data-what="A retaining wall at the north edge of the pad is labeled “7.5′ max” exposed, with a 3-foot freestanding wall and fence on top, privately maintained, per the landscape plans." data-cond="Attachment 6, conditions 30 and 31, cover flood-rated retaining walls. Attachment 8, Sheet 4, Detail E/4, PDF p. 84, and the landscape sheets (L-1 note 4 and L-2) say the MHPA perimeter wall height varies; see the civil drawings for the top of wall." data-cost="&lt;strong&gt;A15 — Flood-rated retaining walls.&lt;/strong&gt; $167,989 – $587,962. Headline $0. Derived. Not in the headline total." data-src="Attachment 8, Sheet 4, Cross Section E/4, PDF p. 84." aria-haspopup="dialog" aria-expanded="false" aria-label="North retaining wall, 7.5 feet max. Open details.">1</button><button type="button" class="hs-pin" style="left:28%;top:22%;" data-title="Public decomposed-granite trail and recreation easement" data-what="A 4-foot-minimum decomposed-granite trail sits in a 4.5-foot recreation easement on the MHPA side of the wall, privately maintained, as shown on the landscape plans. Permit conditions 12 and 13 require this privately owned, publicly accessible trail and overlook, with a recorded recreation easement." data-cond="Attachment 6, conditions 12 and 13. Landscape plan legend item 25 is “public path — decomposed granite trail,” and item 23 is the Otay Valley observation point, Attachment 8, sheet L-1, PDF p. 86." data-cost="&lt;strong&gt;A18 — Landscape, hardscape, pool, spa, and play areas.&lt;/strong&gt; Not priced in the record. Headline $0. The catalog row that includes the publicly accessible trail and overlook is not priced in the record. This north path is not the same item as A17k, the 4-foot concrete path to the Otay Valley Regional Park trailhead along Hollister Street." data-src="Attachment 8, Sheet 4, Detail E/4, PDF p. 84." aria-haspopup="dialog" aria-expanded="false" aria-label="Public decomposed-granite trail and recreation easement. Open details.">2</button>
+  </div>
+</figure>
+
+<figure class="hs-figure" id="fig-mhpa-views">
+  <h3>MHPA Wall View 1 and View 2</h3>
+  <p class="hs-cap">Attachment 8, landscape sheet L-2, PDF p. 87. These are views from the parking aisle, looking at the wall, the wrought-iron fence, and the decomposed-granite path. No sitting benches are shown.</p>
+  <div class="hs-stage">
+    <img src="img/record/mhpa-wall-views.jpg" alt="Two labeled views of the Multi-Habitat Planning Area perimeter wall: a 3-foot stucco block wall, a 1-foot-6-inch wrought-iron fence, a decomposed-granite walking path, and a parking or drive aisle. Attachment 8, sheet L-2, PDF page 87." width="1200" height="1532" loading="lazy" decoding="async">
+    <button type="button" class="hs-pin" style="left:55%;top:21%;" data-title="3-foot stucco block wall" data-what="View 1 looks at the MHPA perimeter wall from the parking aisle. Legend item 1 is a 3-foot stucco block wall. The civil detail sets the exposed retaining-wall height, up to 7.5 feet, behind this finish." data-cond="Attachment 8, sheet L-2, PDF p. 87, legend item 1, and Detail E/4 on Sheet 4, PDF p. 84. Attachment 6, conditions 30 and 31." data-cost="&lt;strong&gt;A15 — Flood-rated retaining walls.&lt;/strong&gt; $167,989 – $587,962. Headline $0. Derived. Not in the headline total." data-src="Attachment 8, sheet L-2, MHPA Wall View 1, PDF p. 87. Legend item 1." aria-haspopup="dialog" aria-expanded="false" aria-label="3-foot stucco block wall. Open details.">1</button><button type="button" class="hs-pin" style="left:60%;top:17%;" data-title="1-foot-6-inch wrought-iron fence" data-what="Legend item 2 is a 1-foot-6-inch wrought-iron fence on top of the stucco wall." data-cond="Attachment 8, sheet L-2, PDF p. 87, legend item 2, and Detail E/4 on Sheet 4, PDF p. 84. Attachment 6, conditions 30 and 31." data-cost="&lt;strong&gt;A15 — Flood-rated retaining walls.&lt;/strong&gt; $167,989 – $587,962. Headline $0. Derived. Not in the headline total." data-src="Attachment 8, sheet L-2, MHPA Wall View 1, PDF p. 87. Legend item 2." aria-haspopup="dialog" aria-expanded="false" aria-label="1-foot-6-inch wrought-iron fence. Open details.">2</button><button type="button" class="hs-pin" style="left:47%;top:25%;" data-title="Decomposed-granite walking path" data-what="A decomposed-granite walking path runs between the parking aisle and the wall. This is the publicly accessible trail on the pad side of the north wall, shown here and in Detail E/4. The views do not show sitting benches." data-cond="Attachment 6, conditions 12 and 13, and Attachment 8, sheet L-2, PDF p. 87, legend item 3, “decomposed granite walking path.”" data-cost="&lt;strong&gt;A18 — Landscape, hardscape, pool, spa, and play areas.&lt;/strong&gt; Not priced in the record. Headline $0. Not priced in the record." data-src="Attachment 8, sheet L-2, MHPA Wall View 1, PDF p. 87. Legend item 3." aria-haspopup="dialog" aria-expanded="false" aria-label="Decomposed-granite walking path. Open details.">3</button><button type="button" class="hs-pin" style="left:32%;top:30%;" data-title="Parking or drive aisle" data-what="Legend item 4 is the parking or drive aisle in front of the path and the wall. It is shown for context in these views." data-cond="Attachment 8, sheet L-2, PDF p. 87, legend item 4." data-cost="Not priced in this model." data-src="Attachment 8, sheet L-2, MHPA Wall View 1, PDF p. 87. Legend item 4." aria-haspopup="dialog" aria-expanded="false" aria-label="Parking or drive aisle. Open details.">4</button>
+  </div>
+</figure>
+
+<figure class="hs-figure" id="fig-temp-f">
+  <h3>Temporary sidewalk on Hollister Street, Detail F/4</h3>
+  <p class="hs-cap">Attachment 8, Sheet 4, PDF p. 84, from station 7+3.35 to 14+8.19, on the east side toward the Palm Golf Center.</p>
+  <div class="hs-stage">
+    <img src="img/record/temp-sidewalk-f.jpg" alt="Hollister Street temporary sidewalk cross section F: a proposed temporary 4-foot asphalt-concrete sidewalk and a 6-inch Type A asphalt berm, next to a 3-foot maximum exposed retaining wall with a guardrail or a slope, as shown on the plans. Attachment 8, Sheet 4, PDF page 84." width="1253" height="513" loading="lazy" decoding="async">
+    <button type="button" class="hs-pin" style="left:42%;top:50%;" data-title="Temporary 4-foot asphalt sidewalk" data-what="A proposed temporary 4-foot asphalt-concrete sidewalk is shown on the east side of Hollister Street, with a 1.5 percent cross slope, from the south end of the project frontage toward Conifer Avenue." data-cond="Attachment 6, condition 64, requires a temporary four-foot-wide asphalt concrete sidewalk starting from the southern end of the project site frontage to Conifer Avenue." data-cost="&lt;strong&gt;A17f — Temporary 4-foot asphalt sidewalk to Conifer Avenue.&lt;/strong&gt; $6,548 – $11,304. Headline $6,548. Derived." data-src="Attachment 8, Sheet 4, Cross Section F/4, PDF p. 84." aria-haspopup="dialog" aria-expanded="false" aria-label="Temporary 4-foot asphalt sidewalk. Open details.">1</button><button type="button" class="hs-pin" style="left:52%;top:36%;" data-title="Temporary asphalt berm" data-what="A proposed temporary 6-inch Type A asphalt-concrete berm, per City Standard Drawing G-05, sits at the edge of the temporary sidewalk." data-cond="The berm is shown with the temporary sidewalk on Attachment 8, Sheet 4, Detail F/4, PDF p. 84, and is the companion item to condition 64." data-cost="&lt;strong&gt;A17g — Asphalt berm with the temporary sidewalk.&lt;/strong&gt; $8,757 – $8,757. Headline $8,757." data-src="Attachment 8, Sheet 4, Cross Section F/4, PDF p. 84." aria-haspopup="dialog" aria-expanded="false" aria-label="Temporary asphalt berm. Open details.">2</button><button type="button" class="hs-pin" style="left:34%;top:42%;" data-title="Retaining wall with guardrail, 3 feet max exposed" data-what="The same 3-foot maximum exposed retaining wall with a guardrail, or a slope, is called out on this temporary-sidewalk section." data-cond="Attachment 6, conditions 30 and 31, and Attachment 8, Sheet 4, Detail F/4, PDF p. 84." data-cost="&lt;strong&gt;A15 — Flood-rated retaining walls.&lt;/strong&gt; $167,989 – $587,962. Headline $0. Derived. Not in the headline total." data-src="Attachment 8, Sheet 4, Cross Section F/4, PDF p. 84." aria-haspopup="dialog" aria-expanded="false" aria-label="Retaining wall with guardrail, 3 feet max exposed. Open details.">3</button>
+  </div>
+</figure>
+
+<aside class="street-yard" id="street-yard">
+  <h3>What “street yard” means</h3>
+  <p>The phrase appears on the landscape drawings in Attachment 8, not as a street-construction item. Sheet L-6, “Street Yard Landscape Calculation,” PDF p. 91, paints a <strong>street yard</strong> along Interstate 5 and along Hollister Street, and a <strong>remaining yard</strong> as a band around the buildings. The sheet does not itself define “street yard.” The definition is in the San Diego Municipal Code, Land Development Code, Chapter 11, Article 3, Division 1:</p>
+  <blockquote>“Street yard means the area of a lot or premises that lies between the edge of the nearest street and the street wall line.”<footer>— San Diego Municipal Code §113.0103.</footer></blockquote>
+  <p>The same section defines the other yard shown on the sheet:</p>
+  <blockquote>“Remaining yard means the portion of the yards on a premises that is not within the street yard.”<footer>— San Diego Municipal Code §113.0103.</footer></blockquote>
+  <p>Sheet L-1 of the same set cites “City of San Diego Landscape Regulations and Standards” (Attachment 8, PDF p. 86). Those regulations, in Chapter 14, Article 2, Division 4, set the planting-area and plant-point math that sheet L-6 is doing. Section 142.0404 states:</p>
+  <blockquote>“The required planting area is determined by multiplying the total square footage of the street yard or remaining yard/common open space area on the premises, by the percentage shown in Table 142-04C, unless stated otherwise in the table. The required planting points are determined by multiplying the total square footage of the street yard or remaining yard/common open space area on the premises, by the points shown in the table.”<footer>— San Diego Municipal Code §142.0404. For “Multiple Dwelling Unit Residential Development,” Table 142-04C requires a street-yard planting area of 50 percent of the total street yard area and 0.05 plant points per square foot of total street yard area.</footer></blockquote>
+  <p>Sheet L-6 uses those same 50 percent and 0.05 factors. Its figures, quoted from the sheet, are:</p>
+  <div class="sy-table-wrap">
+  <table class="sy-figs">
+  <caption>Street-yard and related landscape calculations, quoted from Attachment 8, sheet L-6, PDF p. 91.</caption>
+  <thead>
+  <tr><th>Area on sheet L-6</th><th class="num">Total area</th><th class="num">Planting required</th><th class="num">Planting provided</th></tr>
+  </thead>
+  <tbody>
+  <tr><td>Interstate 5 freeway street yard</td><td class="num">59,752 sf</td><td class="num">29,876 sf (50%)</td><td class="num">40,189 sf</td></tr>
+  <tr><td>Hollister Street street yard</td><td class="num">29,232 sf</td><td class="num">14,616 sf (50%)</td><td class="num">12,433 sf</td></tr>
+  <tr><td>Total street yard</td><td class="num">88,984 sf</td><td class="num">44,492 sf (50%)</td><td class="num">52,622 sf</td></tr>
+  <tr><td>Vehicular use area inside the street yard</td><td class="num">38,589 sf</td><td class="num">1,929 sf (× 0.05 on the sheet)</td><td class="num">9,640 sf</td></tr>
+  <tr><td>Vehicular use area outside the street yard</td><td class="num">159,073 sf</td><td class="num">4,772 sf (× 0.03 on the sheet)</td><td class="num">29,703 sf</td></tr>
+  <tr><td>Remaining yard</td><td class="num">77,467 sf</td><td class="num">23,240 sf (30%)</td><td class="num">40,892 sf</td></tr>
+  </tbody>
+  </table>
+  </div>
+  <p>The same blocks also list plant points. For the Interstate 5 street yard, points required are 2,988 and points provided are 17,945. For the Hollister street yard, points required are 1,462 and points provided are 6,942. For the total street yard, points required are 4,450 and points provided are 24,887. The Interstate 5 and total street-yard blocks show excess planting area (10,313 sf and 8,130 sf). The Hollister block does not; planting area provided there, 12,433 sf, is less than the 14,616 sf required.</p>
+  <p>The sheet’s own note on the remaining yard reads:</p>
+  <blockquote>“NOTE: REMAINING YARD CONSIST OF A 10-FOOT OFFSET FROM THE BUILDING ENVELOPE OF EACH RESIDENTAIL STRUCTURE.”<footer>— Attachment 8, sheet L-6, PDF p. 91 (spelling as on the sheet).</footer></blockquote>
+  <p>On this site, sheet L-6 applies the Municipal Code definition along Interstate 5 and along Hollister Street (gold on the sheet). That street yard is not the 6-foot parkway in the public right-of-way; the parkway is catalog line A17e. On-site street-yard planting is part of the unpriced landscape work on line A18.</p>
+  <img src="img/record/street-yard.jpg" alt="Landscape calculation sheet L-6, with street yard shown in gold along Interstate 5 and Hollister Street, remaining yard shown in green as a band around the buildings, and the planting-area calculations on the right and bottom. Attachment 8, PDF page 91." width="2000" height="1144" loading="lazy" decoding="async">
+  <p class="hs-cap">Attachment 8, sheet L-6, PDF p. 91. Gold is the street yard; green is the remaining yard.</p>
+  <img src="img/record/street-yard-calcs.jpg" alt="The landscape-calculation blocks on sheet L-6: Interstate 5 freeway street yard, Hollister Street street yard, total street yard, remaining yard, and vehicular use area inside and outside the street yard. Attachment 8, PDF page 91." width="2000" height="2207" loading="lazy" decoding="async">
+  <p class="hs-cap">The calculation blocks from the same sheet, quoted in the table above. Attachment 8, sheet L-6, PDF p. 91.</p>
+</aside>
+
+<div class="rd-gallery" id="record-gallery">
+  <h3>Other drawings from the record</h3>
+  <p class="rd-intro">These sheets are part of Attachment 8 but are not pinned above, or they support a line that is not priced. Each caption says which catalog line, if any, the drawing goes with.</p>
+  <div class="rd-grid">
+    <figure><img src="img/record/monument-options.jpg" alt="Two rendered options for a low monument sign in a planted bed at a driveway, with cars in the parking area. Attachment 8, sheet L-5, PDF page 90." width="1200" height="952" loading="lazy" decoding="async"><figcaption>Monument-sign options, Attachment 8, sheet L-5, PDF p. 90. Not priced in this model.</figcaption></figure>
+    <figure><img src="img/record/landscape-plan.jpg" alt="Color landscape plan of Bella Mar, with a numbered legend along the left, the Interstate 5 freeway on the west, Hollister Street on the east, and a public path along the north Multi-Habitat Planning Area edge. Attachment 8, sheet L-1, PDF page 86." width="1600" height="1031" loading="lazy" decoding="async"><figcaption>Landscape plan, Attachment 8, sheet L-1, PDF p. 86. Legend items include the pool and play areas (1–5), the bus stop (10), the MHPA perimeter wall (19), the 6-foot bike lane and crosswalk (20–21), monument signs (22), the Otay Valley observation point (23), and the decomposed-granite public path (25). On-site amenities and the north path are catalog line A18, which is not priced in the record. No sitting benches and no “Bearwell Loop” are labeled on this sheet.</figcaption></figure>
+    <figure><img src="img/record/sheet3-grading.jpg" alt="Civil grading plan of Parcels 1 and 2, with finished-floor elevations on each building pad, the Otay River and floodway to the north, Interstate 5 to the west, and Hollister Street to the east. Attachment 8, Sheet 3, PDF page 83." width="1542" height="1200" loading="lazy" decoding="async"><figcaption>Conceptual grading and utilities, Attachment 8, Tentative Parcel Map Sheet 3 of 5, PDF p. 83. Building pads with finished-floor elevations, the limit of the floodway, the west basin, and construction notes for the north retaining wall (Detail E/4), Hollister curb, sidewalk, temporary asphalt sidewalk, and mid-block crosswalk. Fill to raise the pads is catalog line A2. The wall notes point to A15.</figcaption></figure>
+    <figure><img src="img/record/sheet4-hollister-plan.jpg" alt="Civil plan of Hollister Street along the project frontage from station 6+55 to 13+50, with construction notes and a connection toward Conifer Avenue. Attachment 8, Sheet 4, PDF page 84." width="1800" height="482" loading="lazy" decoding="async"><figcaption>Hollister Street plan on Sheet 4, stations 6+55 to 13+50, Attachment 8, PDF p. 84, looking toward Conifer Avenue. This is the civil plan that goes with the temporary-sidewalk section F/4 and the widening section. Related catalog lines include A17b, A17f, and A17g.</figcaption></figure>
+  </div>
+</div>
+
+<dialog id="hs-dialog" class="hs-dialog" aria-labelledby="hs-dialog-title">
+  <button type="button" class="hs-dialog__close" aria-label="Close">&times;</button>
+  <h3 id="hs-dialog-title"></h3>
+  <p><span class="hs-k">What has to be built</span> <span id="hs-dialog-what"></span></p>
+  <p><span class="hs-k">What requires it</span> <span id="hs-dialog-cond"></span></p>
+  <p class="hs-cost"><span class="hs-k">Likely cost</span> <span id="hs-dialog-cost"></span></p>
+  <p class="hs-src" id="hs-dialog-src"></p>
+</dialog>
+
+</section>
+
 <section class="block" id="line-catalog">
 <h2>Cost Lines, One by One</h2>
 <p class="lc-intro">Every cost line and income adjustment on this page is listed below, grouped by category. The low and high, and the amount in the headline total, are the figures already used on this page and in the supporting memos. Open Sources &amp; Methods for the citation and the calculation. Support lines are marked so they are not added twice. Where the record has no price, the line says so.</p>
@@ -887,7 +1123,8 @@ table.cat-table .lc-calc li { margin: 0.2rem 0; }
 <p class="lc-cite">Per the Tentative Parcel Map No. 2361780, Sheet 1, the import quantity is 81,350 cubic yards, made up of 78,200 cubic yards on the site and 3,150 cubic yards off the site. Per the County of San Diego unit price list, effective July 2025, imported fill is $28.55 per cubic yard. The Caltrans contract cost data item for imported borrow is cited as a cross-check, not as the price used. Prices are brought to October 2026 with the California Construction Cost Index. Per Geocon&#x27;s geotechnical investigation, Project G2129-52-03, April 24, 2019, §7, fill is part of the earthwork program.</p>
 <ul class="lc-calc"><li>78,200 cubic yards on the site plus 3,150 cubic yards off the site equals 81,350 cubic yards.</li><li>81,350 cubic yards times $28.55 per cubic yard times 10,769 divided by 10,196 equals $2,453,066.</li><li>81,350 cubic yards divided by 10 cubic yards per truck equals about 8,135 truckloads. Derived. Trucking is inside the $28.55 price.</li></ul>
 <p class="lc-stat">Sourced. In the headline total. This is the merged A2 and A3 line. Trucking the dirt to the site is included in the County import price and is not added separately.</p>
-</div>
+
+<figure class="lc-illust"><img src="img/record/sheet4-a-west.jpg" alt="Cross Section A, west end, Attachment 8, Sheet 4, PDF p. 84. The pad is raised to a finished floor of 23.90 feet, above existing grade and the existing 100-year flood line." width="1226" height="429" loading="lazy" decoding="async"><figcaption>Cross Section A, west end, Attachment 8, Sheet 4, PDF p. 84. The pad is raised to a finished floor of 23.90 feet, above existing grade and the existing 100-year flood line.</figcaption></figure></div>
 </details></td></tr>
 <tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A23</span> — Extra fill to make up for soil compaction</td><td class="lc-expl" data-label="Explanation">Dirt shrinks when it is compacted. The tentative-map import quantity has no shrink factor, so more trucked-in dirt may be needed than the 81,350 cubic yards already counted.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$0 – $353,712</div>
 <div class="lc-hl">Headline $0</div>
@@ -927,7 +1164,8 @@ table.cat-table .lc-calc li { margin: 0.2rem 0; }
 <p class="lc-cite">Per Attachment 6, conditions 30–31 and item (f); the City&#x27;s staff report, p. 16; and Attachment 8, landscape sheet L-2. Per the County of San Diego unit price list, a masonry wall is $67.11 per square foot. Prices are brought to October 2026 with the California Construction Cost Index. The wall lengths used for the range are assumptions, not measured takeoffs. The page notes that this County masonry price is likely low for walls designed to stand in floodwater.</p>
 <ul class="lc-calc"><li>Low area: 790 linear feet times 3 feet equals 2,370 square feet, a Hollister-only assumption.</li><li>High area: 2,370 plus 790 linear feet times 7.5 feet equals 8,295 square feet, a rectangular-parcel assumption for the north edge plus Hollister.</li><li>2,370 square feet times $67.11 per square foot times 10,769 divided by 10,196 equals $167,989. Derived.</li><li>8,295 square feet times $67.11 per square foot times 10,769 divided by 10,196 equals $587,962. Derived.</li></ul>
 <p class="lc-stat">Needs a quantity or price. Derived estimate. The headline total carries this line at $0. Wall lengths are not public, and the descriptions in the record conflict, which the page flags.</p>
-</div>
+
+<figure class="lc-illust"><img src="img/record/mhpa-wall-views.jpg" alt="MHPA Wall Views 1 and 2, Attachment 8, sheet L-2, PDF p. 87. A 3-foot stucco wall, a 1-foot-6-inch fence, and a decomposed-granite path." width="1200" height="1532" loading="lazy" decoding="async"><figcaption>MHPA Wall Views 1 and 2, Attachment 8, sheet L-2, PDF p. 87. A 3-foot stucco wall, a 1-foot-6-inch fence, and a decomposed-granite path.</figcaption></figure><figure class="lc-illust"><img src="img/record/mhpa-detail-e.jpg" alt="Detail E/4, Attachment 8, Sheet 4, PDF p. 84. North retaining wall, 7.5 feet maximum exposed, with a 3-foot freestanding wall and fence." width="1364" height="513" loading="lazy" decoding="async"><figcaption>Detail E/4, Attachment 8, Sheet 4, PDF p. 84. North retaining wall, 7.5 feet maximum exposed, with a 3-foot freestanding wall and fence.</figcaption></figure><figure class="lc-illust"><img src="img/record/sheet4-a-east.jpg" alt="Cross Section A at Hollister Street, Attachment 8, Sheet 4, PDF p. 84. Retaining wall 3 feet maximum exposed, with a 42-inch guardrail or wall." width="932" height="429" loading="lazy" decoding="async"><figcaption>Cross Section A at Hollister Street, Attachment 8, Sheet 4, PDF p. 84. Retaining wall 3 feet maximum exposed, with a 42-inch guardrail or wall.</figcaption></figure></div>
 </details></td></tr>
 <tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A7</span> — FEMA review fees for the flood-map revisions</td><td class="lc-expl" data-label="Explanation">Because the site is in federal flood zone AE and buildings must sit at least two feet above the flood level, the Federal Emergency Management Agency has to review a Conditional Letter of Map Revision.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$15,000 – $15,000</div>
 <div class="lc-hl">Headline $15,000</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
@@ -955,7 +1193,8 @@ table.cat-table .lc-calc li { margin: 0.2rem 0; }
 <p class="lc-cite">Per Fuscoe&#x27;s Priority Development Project Storm Water Quality Management Plan, November 25, 2020, pp. 47 and 80–81, basin BF-1 is 11,220 square feet, underdrained, because infiltration is infeasible. Per Fuscoe&#x27;s Preliminary Drainage Study, p. 10, and Attachment 5, conditions 13–17. Per the County of San Diego unit price list, “Detention Basin, Large (subdivision)” is $11.93 per square foot. Prices are brought to October 2026 with the California Construction Cost Index.</p>
 <ul class="lc-calc"><li>11,220 square feet times $11.93 per square foot times 10,769 divided by 10,196 equals $141,377.</li><li>The stress-test high is $141,377 times 2 equals $282,754. Derived. The factor of 2 is an assumption.</li></ul>
 <p class="lc-stat">Sourced estimate. In the headline total. The stress test also uses a higher derived bound.</p>
-</div>
+
+<figure class="lc-illust"><img src="img/record/basin-detail-c.jpg" alt="Biofiltration basin detail C/4, Attachment 8, Sheet 4, PDF p. 84." width="1578" height="639" loading="lazy" decoding="async"><figcaption>Biofiltration basin detail C/4, Attachment 8, Sheet 4, PDF p. 84.</figcaption></figure></div>
 </details></td></tr>
 <tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A12c</span> — Packaged stormwater treatment unit for drainage area 7</td><td class="lc-expl" data-label="Explanation">One drainage area is treated with a manufactured wetland-style unit, a Bioclean Modular Wetland system, instead of the large basin. It is a single packaged treatment device.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$12,598 – $37,793</div>
 <div class="lc-hl">Headline $12,598</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
@@ -1002,7 +1241,8 @@ table.cat-table .lc-calc li { margin: 0.2rem 0; }
 <p class="lc-cite">Per Attachment 5, condition 31, and Attachment 6, Transportation condition 68. The area is a plan-scale calculation: 790 linear feet times 6 feet equals 4,740 square feet, about 0.11 acre. Derived.</p>
 <ul class="lc-calc"><li>790 linear feet times 6 feet equals 4,740 square feet, about 0.11 acre. Derived.</li><li>This is not added as a construction line.</li></ul>
 <p class="lc-stat">Memo. No construction cost. Land given up, not added.</p>
-</div>
+
+<figure class="lc-illust"><img src="img/record/sheet4-a-east.jpg" alt="Cross Section A, Attachment 8, Sheet 4, PDF p. 84, labeling the 6-foot right-of-way dedication from 66 feet existing to 72 feet proposed." width="932" height="429" loading="lazy" decoding="async"><figcaption>Cross Section A, Attachment 8, Sheet 4, PDF p. 84, labeling the 6-foot right-of-way dedication from 66 feet existing to 72 feet proposed.</figcaption></figure></div>
 </details></td></tr>
 <tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17b</span> — Hollister Street widening, 16 feet of pavement along the frontage</td><td class="lc-expl" data-label="Explanation">Hollister Street has to be widened by 16 feet of pavement along the project frontage. That is 790 linear feet of new pavement, a derived area of 12,640 square feet.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$74,094 – $107,604</div>
 <div class="lc-hl">Headline $74,094</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
@@ -1011,7 +1251,8 @@ table.cat-table .lc-calc li { margin: 0.2rem 0; }
 <p class="lc-cite">Per the Local Mobility Analysis, January 2021, pp. 3–4, the widening is 16 feet. Per Attachment 5, condition 31, and Attachment 6, Transportation condition 68. The frontage length used is 790 linear feet. Per the County of San Diego unit price list, the parking-lot section of 4-inch asphalt, 8-inch Class 2 base, and subgrade is $3.26 plus $1.70 plus $0.59, or $5.55 per square foot, used as the point estimate. The collector-street structural section is not in the record. The stress-test high uses County “Pavement Design, Schedule J” at $7.47 plus $0.59 subgrade. Prices are brought to October 2026 with the California Construction Cost Index.</p>
 <ul class="lc-calc"><li>790 linear feet times 16 feet equals 12,640 square feet.</li><li>Low: 12,640 square feet times $5.55 per square foot times 10,769 divided by 10,196 equals $74,094.</li><li>High: 12,640 square feet times $8.06 per square foot times 10,769 divided by 10,196 equals $107,604. Derived.</li></ul>
 <p class="lc-stat">Estimate, derived. In the headline total.</p>
-</div>
+
+<figure class="lc-illust"><img src="img/record/hollister-section.jpg" alt="Illustrative Hollister Street section, Attachment 8, sheet L-5, PDF p. 90, labeling 48-foot pavement width." width="1800" height="888" loading="lazy" decoding="async"><figcaption>Illustrative Hollister Street section, Attachment 8, sheet L-5, PDF p. 90, labeling 48-foot pavement width.</figcaption></figure></div>
 </details></td></tr>
 <tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17c</span> — Off-site curb and gutter, 8-inch Type G, full frontage</td><td class="lc-expl" data-label="Explanation">New curb and gutter have to be built along the Hollister frontage. That work is 790 linear feet of 8-inch Type G curb and gutter, at the County unit price.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$32,333 – $32,333</div>
 <div class="lc-hl">Headline $32,333</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
@@ -1020,7 +1261,8 @@ table.cat-table .lc-calc li { margin: 0.2rem 0; }
 <p class="lc-cite">Per Attachment 5, condition 31, and Attachment 6, Transportation condition 68. The length used is 790 linear feet. Per the County of San Diego unit price list, 8-inch Type G curb and gutter is $38.75 per linear foot. Prices are brought to October 2026 with the California Construction Cost Index.</p>
 <ul class="lc-calc"><li>790 linear feet times $38.75 per linear foot times 10,769 divided by 10,196 equals $32,333.</li></ul>
 <p class="lc-stat">Sourced estimate. In the headline total.</p>
-</div>
+
+<figure class="lc-illust"><img src="img/record/sheet4-a-east.jpg" alt="Cross Section A, Attachment 8, Sheet 4, PDF p. 84, with the curb labeled in the new Hollister section." width="932" height="429" loading="lazy" decoding="async"><figcaption>Cross Section A, Attachment 8, Sheet 4, PDF p. 84, with the curb labeled in the new Hollister section.</figcaption></figure></div>
 </details></td></tr>
 <tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17d</span> — Off-site 6-foot sidewalk, full frontage, set back from the curb</td><td class="lc-expl" data-label="Explanation">A 6-foot sidewalk, separated from the curb by a parkway, has to be built along the Hollister frontage. Build 4,740 square feet of sidewalk, which is 790 linear feet times 6 feet.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$41,002 – $41,002</div>
 <div class="lc-hl">Headline $41,002</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
@@ -1029,7 +1271,8 @@ table.cat-table .lc-calc li { margin: 0.2rem 0; }
 <p class="lc-cite">Per Attachment 5, condition 31; Attachment 6, Transportation condition 68; and the Local Mobility Analysis, pp. 3–4. Per the County of San Diego unit price list, sidewalk in the 1-to-5,000 square foot band is $8.19 per square foot. Prices are brought to October 2026 with the California Construction Cost Index.</p>
 <ul class="lc-calc"><li>790 linear feet times 6 feet equals 4,740 square feet.</li><li>4,740 square feet times $8.19 per square foot times 10,769 divided by 10,196 equals $41,002.</li></ul>
 <p class="lc-stat">Sourced estimate. In the headline total.</p>
-</div>
+
+<figure class="lc-illust"><img src="img/record/hollister-section.jpg" alt="Illustrative Hollister Street section, Attachment 8, sheet L-5, PDF p. 90, labeling the 6-foot sidewalk." width="1800" height="888" loading="lazy" decoding="async"><figcaption>Illustrative Hollister Street section, Attachment 8, sheet L-5, PDF p. 90, labeling the 6-foot sidewalk.</figcaption></figure></div>
 </details></td></tr>
 <tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17e</span> — Off-site parkway planting and irrigation</td><td class="lc-expl" data-label="Explanation">The remaining parkway, after the 6-foot sidewalk, has to be planted and irrigated. Green-street bioretention in that parkway is not in this price; it stays in unpriced line A17.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$10,413 – $10,413</div>
 <div class="lc-hl">Headline $10,413</div>
@@ -1039,7 +1282,8 @@ table.cat-table .lc-calc li { margin: 0.2rem 0; }
 <p class="lc-cite">Per Attachment 5, condition 31, and Attachment 6, conditions 43–48. The area is 790 linear feet times 6 feet, or 4,740 square feet. Per the County of San Diego unit price list, slope planting of ground cover plus trees and shrubs is $1.18 per square foot and slope irrigation is $0.90 per square foot, used as proxies, for $2.08 per square foot. Prices are brought to October 2026 with the California Construction Cost Index.</p>
 <ul class="lc-calc"><li>790 linear feet times 6 feet equals 4,740 square feet.</li><li>$1.18 plus $0.90 equals $2.08 per square foot, used as proxies.</li><li>4,740 square feet times $2.08 per square foot times 10,769 divided by 10,196 equals $10,413. Derived.</li></ul>
 <p class="lc-stat">Estimate, derived. In the headline total.</p>
-</div>
+
+<figure class="lc-illust"><img src="img/record/hollister-section.jpg" alt="Illustrative Hollister Street section, Attachment 8, sheet L-5, PDF p. 90, labeling the 6-foot parkway." width="1800" height="888" loading="lazy" decoding="async"><figcaption>Illustrative Hollister Street section, Attachment 8, sheet L-5, PDF p. 90, labeling the 6-foot parkway.</figcaption></figure></div>
 </details></td></tr>
 <tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17f</span> — Temporary 4-foot asphalt sidewalk to Conifer Avenue</td><td class="lc-expl" data-label="Explanation">A temporary 4-foot-wide asphalt sidewalk has to be built from the site to Conifer Avenue. Build 2,780 square feet of temporary asphalt walk.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$6,548 – $11,304</div>
 <div class="lc-hl">Headline $6,548</div>
@@ -1049,7 +1293,8 @@ table.cat-table .lc-calc li { margin: 0.2rem 0; }
 <p class="lc-cite">Per Attachment 6, Transportation condition 64 and item g.7, and Attachment 8, Sheet 4. The length used is 695 linear feet, from station 6+55 to 13+50, times 4 feet, or 2,780 square feet. Per the County of San Diego unit price list, 2-inch asphalt is $1.64 per square foot and subgrade is $0.59 per square foot, for $2.23 per square foot at the low end. The high end uses 4-inch asphalt at $3.26 plus $0.59, because thickness is not stated. Prices are brought to October 2026 with the California Construction Cost Index.</p>
 <ul class="lc-calc"><li>695 linear feet times 4 feet equals 2,780 square feet.</li><li>Low: 2,780 square feet times $2.23 per square foot times 10,769 divided by 10,196 equals $6,548.</li><li>High: 2,780 square feet times $3.85 per square foot times 10,769 divided by 10,196 equals $11,304. Derived.</li></ul>
 <p class="lc-stat">Sourced estimate. In the headline total. Thickness is not stated, so the stress test has a higher derived bound.</p>
-</div>
+
+<figure class="lc-illust"><img src="img/record/temp-sidewalk-f.jpg" alt="Temporary sidewalk section F/4, Attachment 8, Sheet 4, PDF p. 84." width="1253" height="513" loading="lazy" decoding="async"><figcaption>Temporary sidewalk section F/4, Attachment 8, Sheet 4, PDF p. 84.</figcaption></figure></div>
 </details></td></tr>
 <tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17g</span> — Asphalt berm with the temporary sidewalk</td><td class="lc-expl" data-label="Explanation">An asphalt berm, a low asphalt curb, has to be built with the temporary sidewalk to Conifer Avenue. That work is 695 linear feet of 4-inch asphalt berm.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$8,757 – $8,757</div>
 <div class="lc-hl">Headline $8,757</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
@@ -1058,7 +1303,8 @@ table.cat-table .lc-calc li { margin: 0.2rem 0; }
 <p class="lc-cite">Per Attachment 6, Transportation condition 64. The length used is 695 linear feet. Per the County of San Diego unit price list, a 4-inch asphalt berm, standard G-5, is $11.93 per linear foot. Prices are brought to October 2026 with the California Construction Cost Index.</p>
 <ul class="lc-calc"><li>695 linear feet times $11.93 per linear foot times 10,769 divided by 10,196 equals $8,757.</li></ul>
 <p class="lc-stat">Sourced estimate. In the headline total.</p>
-</div>
+
+<figure class="lc-illust"><img src="img/record/temp-sidewalk-f.jpg" alt="Temporary sidewalk section F/4, Attachment 8, Sheet 4, PDF p. 84, labeling the Type A asphalt berm." width="1253" height="513" loading="lazy" decoding="async"><figcaption>Temporary sidewalk section F/4, Attachment 8, Sheet 4, PDF p. 84, labeling the Type A asphalt berm.</figcaption></figure></div>
 </details></td></tr>
 <tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17h</span> — Two Route 932 bus stops, with City-standard slabs</td><td class="lc-expl" data-label="Explanation">The southbound bus stop has to be relocated and a new northbound stop has to be built, both with City-standard concrete slabs, for Route 932.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
 <div class="lc-hl">Headline $0</div>
@@ -1068,7 +1314,8 @@ table.cat-table .lc-calc li { margin: 0.2rem 0; }
 <p class="lc-cite">Per Attachment 6, condition 28 and items g.2–3, and the Local Mobility Analysis, pp. 3–4. No unit price is in the County list or in the record.</p>
 <ul class="lc-calc"><li>No unit price is in the record, so no sourced amount is calculated.</li><li>The $60,000 high end is a placeholder assumption, not a bid or a list price.</li></ul>
 <p class="lc-stat">Needs a quantity or price. Unpriced. The headline total carries this line at $0. The stress-test high is a placeholder, not a sourced price.</p>
-</div>
+
+<figure class="lc-illust"><img src="img/record/hollister-plan.jpg" alt="Illustrative street plan, Attachment 8, sheet L-5, PDF p. 90, with the bus stop labeled mid-frontage." width="2000" height="469" loading="lazy" decoding="async"><figcaption>Illustrative street plan, Attachment 8, sheet L-5, PDF p. 90, with the bus stop labeled mid-frontage.</figcaption></figure></div>
 </details></td></tr>
 <tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17i</span> — Three curb ramps, two at the site and one at Conifer Avenue</td><td class="lc-expl" data-label="Explanation">Three pedestrian curb ramps are required: two at the site and one at Conifer Avenue. They must be built to the City&#x27;s standard for curb ramps.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$6,614 – $6,614</div>
 <div class="lc-hl">Headline $6,614</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
@@ -1087,7 +1334,8 @@ table.cat-table .lc-calc li { margin: 0.2rem 0; }
 <p class="lc-cite">Per Attachment 6, Transportation condition 67, and the Errata in Attachment 19. Rectangular rapid-flashing beacons are not in the County unit price list. The range uses 2 to 4 County “Signal Ahead Flasher” assemblies at $6,709.21 each as a proxy, not as a price for this beacon type. The count of assemblies is an assumption. Prices, when used, are brought to October 2026 with the California Construction Cost Index.</p>
 <ul class="lc-calc"><li>Low: 2 times $6,709.21 times 10,769 divided by 10,196 equals $14,173. Derived.</li><li>High: 4 times $6,709.21 times 10,769 divided by 10,196 equals $28,345. Derived.</li><li>The 2-to-4 count is an assumption.</li></ul>
 <p class="lc-stat">Needs a quantity or price. Derived estimate. The headline total carries this line at $0.</p>
-</div>
+
+<figure class="lc-illust"><img src="img/record/hollister-plan.jpg" alt="Illustrative street plan, Attachment 8, sheet L-5, PDF p. 90, with the mid-block crosswalk labeled near the south driveway." width="2000" height="469" loading="lazy" decoding="async"><figcaption>Illustrative street plan, Attachment 8, sheet L-5, PDF p. 90, with the mid-block crosswalk labeled near the south driveway.</figcaption></figure></div>
 </details></td></tr>
 <tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17k</span> — Four-foot concrete path to the Otay Valley Regional Park trailhead</td><td class="lc-expl" data-label="Explanation">A 4-foot multi-use path to the Otay Valley Regional Park trailhead is required. An errata changed it from decomposed granite to concrete. The length is not stated.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$0 – $24,832</div>
 <div class="lc-hl">Headline $0</div>
@@ -1107,7 +1355,8 @@ table.cat-table .lc-calc li { margin: 0.2rem 0; }
 <p class="lc-cite">Per Attachment 6, Transportation conditions 69–70, and the Local Mobility Analysis, Table E-3. Per the County of San Diego unit price list, striping is $1.49 per linear foot and striping removal is $2.99 per linear foot. The range assumes 0 to 6,000 linear feet of lines, which is an assumption. Prices are brought to October 2026 with the California Construction Cost Index.</p>
 <ul class="lc-calc"><li>$1.49 plus $2.99 equals $4.48 per linear foot.</li><li>High: 6,000 linear feet times $4.48 per linear foot times 10,769 divided by 10,196 equals $28,391. Derived.</li><li>The low end is $0 because no length is stated.</li></ul>
 <p class="lc-stat">Needs a quantity or price. Derived estimate. The headline total carries this line at $0.</p>
-</div>
+
+<figure class="lc-illust"><img src="img/record/hollister-section.jpg" alt="Illustrative Hollister Street section, Attachment 8, sheet L-5, PDF p. 90, labeling the 6-foot bike lane." width="1800" height="888" loading="lazy" decoding="async"><figcaption>Illustrative Hollister Street section, Attachment 8, sheet L-5, PDF p. 90, labeling the 6-foot bike lane.</figcaption></figure></div>
 </details></td></tr>
 <tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A17m</span> — Public 18-inch storm drain in Hollister Street</td><td class="lc-expl" data-label="Explanation">A public 18-inch reinforced-concrete storm drain has to be built in Hollister Street. The study gives the size and slope, not the length.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-range">$88,638 – $177,276</div>
 <div class="lc-hl">Headline $118,184</div>
@@ -1295,7 +1544,8 @@ table.cat-table .lc-calc li { margin: 0.2rem 0; }
 <p class="lc-cite">Per the City&#x27;s staff report, pp. 2 and 8, and Attachment 6, items c–d and g.8–9, and conditions 12–13 and 43–48. No landscape-plan area takeoff is attached to this row, and the row has no unit-price source on the page.</p>
 <ul class="lc-calc"><li>No area or count is entered on this row, so no amount is calculated.</li></ul>
 <p class="lc-stat">Needs a quantity or price. The headline total carries this line at $0. Not priced in the record. The source is thin on quantities: the amenities are required, but areas and counts are not taken off.</p>
-</div>
+
+<figure class="lc-illust"><img src="img/record/landscape-plan.jpg" alt="Landscape plan, Attachment 8, sheet L-1, PDF p. 86, including the pool and play areas, the north public path (legend 25), and the observation point (legend 23). Not priced in the record." width="1600" height="1031" loading="lazy" decoding="async"><figcaption>Landscape plan, Attachment 8, sheet L-1, PDF p. 86, including the pool and play areas, the north public path (legend 25), and the observation point (legend 23). Not priced in the record.</figcaption></figure><figure class="lc-illust"><img src="img/record/mhpa-wall-views.jpg" alt="The decomposed-granite walking path in MHPA Wall View 2, Attachment 8, sheet L-2, PDF p. 87. Not priced in the record." width="1200" height="1532" loading="lazy" decoding="async"><figcaption>The decomposed-granite walking path in MHPA Wall View 2, Attachment 8, sheet L-2, PDF p. 87. Not priced in the record.</figcaption></figure></div>
 </details></td></tr>
 <tr class="lc-row"><td class="lc-id" data-label="Identification"><span class="lc-code">A19</span> — Demolition of remnant go-kart asphalt and a concrete pad</td><td class="lc-expl" data-label="Explanation">The City&#x27;s staff report describes remnant go-kart paving on the site. The waste-management plan says there is no demolition. Until that conflict is resolved and an area is measured, there is no amount.</td><td class="lc-cost" data-label="Estimated Cost"><div class="lc-head">Not priced in the record</div>
 <div class="lc-hl">Headline $0</div></td><td data-label="Sources &amp; Methods"><details class="lc-src">
@@ -2289,4 +2539,43 @@ document.addEventListener('DOMContentLoaded', function(){ reset(); bindControls(
 })();
 
 </script>
+
+<script>
+(function(){
+  var dlg = document.getElementById('hs-dialog');
+  if (!dlg || !dlg.showModal) return;
+  var title = document.getElementById('hs-dialog-title');
+  var what = document.getElementById('hs-dialog-what');
+  var cond = document.getElementById('hs-dialog-cond');
+  var cost = document.getElementById('hs-dialog-cost');
+  var src = document.getElementById('hs-dialog-src');
+  var lastPin = null;
+  function closeDlg(){
+    if (dlg.open) dlg.close();
+    if (lastPin){ lastPin.setAttribute('aria-expanded','false'); lastPin.focus(); }
+    lastPin = null;
+  }
+  function openPin(btn){
+    if (lastPin && lastPin !== btn) lastPin.setAttribute('aria-expanded','false');
+    lastPin = btn;
+    btn.setAttribute('aria-expanded','true');
+    title.textContent = btn.getAttribute('data-title') || '';
+    what.textContent = btn.getAttribute('data-what') || '';
+    cond.textContent = btn.getAttribute('data-cond') || '';
+    cost.innerHTML = btn.getAttribute('data-cost') || '';
+    src.textContent = btn.getAttribute('data-src') || '';
+    if (!dlg.open) dlg.showModal();
+  }
+  document.getElementById('record-drawings').addEventListener('click', function(e){
+    var btn = e.target.closest('.hs-pin');
+    if (btn) openPin(btn);
+  });
+  dlg.querySelector('.hs-dialog__close').addEventListener('click', closeDlg);
+  dlg.addEventListener('click', function(e){ if (e.target === dlg) closeDlg(); });
+  dlg.addEventListener('close', function(){
+    if (lastPin){ lastPin.setAttribute('aria-expanded','false'); }
+  });
+})();
+</script>
+
 </body></html>
